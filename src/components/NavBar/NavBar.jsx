@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import './nav.css'
 
 
+
 const Nav = () => {
 
   return (
@@ -17,7 +18,7 @@ const Nav = () => {
             <div className='nav-links'>
               <Link to='/'>Home</Link>
               <Link to='/emergency'>Emergency</Link>
-              <Button colorScheme='teal' size={{base:'sm' ,md:'md'}} className='btn btn-primary' >Log In</Button>
+              <button  className='btn' ><Link to='/login'>Log In</Link></button>
             </div>
       </div>
     </div>

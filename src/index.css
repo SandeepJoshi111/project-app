@@ -11,6 +11,8 @@
 :root{
   --color-primary:#00867e;
   --color-primary-variant:rgb(0,128,128,0.5);
+  --color-white:white;
+  --color-black:black;
 
 
   --transition: all 400ms ease;
@@ -22,14 +24,40 @@
 .container{
   width: var(--container-lg);
 }
-@media screen and(max-width: 1280px) {
+
+.btn{
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding:  10px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  width: 6rem;
+  margin: 1rem;
+  border: 1px solid var(--color-primary-variant);
+  transition: var(--transition);
+}
+
+.btn:hover{
+  background: var(--color-white);
+  color: var(--color-primary);
+
+}
+@media screen and(max-width: 1024px) {
   .container{
     width: var(--container-md) ;
   }
+  .btn{
+    font-size: 2rem;
+    width: 4rem;
+  }
 }
-@media screen and(max-width: 768px) {
+@media screen and(max-width: 600px) {
   .container{
     width: var(--container-sm) ;
+  }
+  .btn{
+    font-size: 1rem;
+    width: 3rem;
   }
 }
 
