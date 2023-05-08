@@ -17,7 +17,22 @@ const SignUp = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
-  const handleSubmission = () => {
+  const handleSubmission = async(e) => {
+    e.preventDefault()
+    const{firstName,lastName,email} =values;
+
+    const res = await fetch("https://healthcarenepal-app-default-rtdb.firebaseio.com/hcnform.json",
+    {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        firstName,
+        lastName,
+        email,
+      })
+    })
     if (
       !values.firstName ||
       !values.lastName ||
@@ -43,6 +58,7 @@ const SignUp = () => {
         setSubmitButtonDisabled(false);
         setErrorMsg(err.message);
       });
+      
   };
   return (
     <div className="container signup-container">
@@ -51,8 +67,8 @@ const SignUp = () => {
         <input
           type="text"
           placeholder="First Name"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, firstName: event.target.value }))
+          onChange={(e) =>
+            setValues({ ...values, firstName: e.target.value })
           }
         />
 
@@ -60,8 +76,8 @@ const SignUp = () => {
         <input
           type="text"
           placeholder="Last Name"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, lastName: event.target.value }))
+          onChange={(e) =>
+            setValues({ ...values, lastName: e.target.value })
           }
         />
 
@@ -71,8 +87,8 @@ const SignUp = () => {
           id="email"
           name="email"
           placeholder="E-mail"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, email: event.target.value }))
+          onChange={(e) =>
+            setValues ({ ...values, email: e.target.value })
           }
         />
         <label>Password</label>
@@ -81,8 +97,8 @@ const SignUp = () => {
           id="password"
           name="password"
           placeholder="Password"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, pass: event.target.value }))
+          onChange={(e) =>
+            setValues((prev) => ({ ...prev, pass: e.target.value }))
           }
         />
         <div className="btn-footer">

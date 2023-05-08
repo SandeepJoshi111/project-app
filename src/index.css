@@ -51,13 +51,13 @@
     width: 4rem;
   }
 }
-@media screen and(max-width: 600px) {
+@media screen and(max-width: 768) {
   .container{
     width: var(--container-sm) ;
   }
   .btn{
     font-size: 1rem;
-    width: 3rem;
+    width: rem;
   }
 }
 
