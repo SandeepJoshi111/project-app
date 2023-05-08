@@ -19,6 +19,7 @@ const Nav = () => {
               <Link to='/'>Home</Link>
               <Link to='/emergency'>Emergency</Link>
               <button  className='btn' ><Link to='/login'>Log In</Link></button>
+              <h1></h1>
             </div>
       </div>
     </div>

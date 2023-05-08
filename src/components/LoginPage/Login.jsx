@@ -3,9 +3,12 @@ import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../../firebase/Firebase";
+import { auth, db } from "../../firebase/Firebase";
+import { child, get, ref } from "firebase/database";
 
-const Login = (props) => {
+const Login = () => {
+
+  
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -16,6 +19,15 @@ const Login = (props) => {
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
   const handleSubmission = () => {
+//     var dbRef = ref(db);
+//     get(child(dbRef,"hcnform"))
+//       .then((snapshot)=>{
+//         var data=[];
+//           snapshot.forEach(childSnapshot =>{
+//         data.push(childSnapshot.val());
+//         console.log(data)
+//     })
+// })
     if (
       !values.email ||
       !values.pass
