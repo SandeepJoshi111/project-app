@@ -1,11 +1,12 @@
 import React from "react";
-import Nav from "./components/NavBar/Nav";
+import NavBar from "./components/NavBar/NavBar";
+import MainLayouts from "./layouts/MainLayouts";
 
 function App() {
   return (
-    <>
-      <Nav/>
-    </>
+    <MainLayouts>
+      <p>Home</p>
+    </MainLayouts>
   );
 }
 

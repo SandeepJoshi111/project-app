@@ -1,3 +1,6 @@
+.container{
+    width: 100vw;
+}
 .nav-content{
     width: 100vw;
     display: flex;
@@ -6,19 +9,35 @@
     height: 5rem;
     box-shadow: 1px 1px 15px .5px rgb(148, 147, 147);
     align-items: center;
+    font-size: 1rem;
 }
 .nav-image{
     width: 200px;
     height: 200px;
+    align-items: center;
+    display: flex;
+    justify-content: center;    
 
 }
-.btn{
-    margin-right: 3rem;
-}
+
 
 .nav-links{
-    width: 50vh;
+   
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 1rem   ;
+
+}
+@media screen and (max-width:1024px) {
+    .nav-content{
+        font-size: 15px;
+    }
+    .btn{
+        font-size: 10px;
+    }
+}
+@media screen and(max-width:600px) {
+    .nav-content{
+        font-size: 12px;
+    }
 }

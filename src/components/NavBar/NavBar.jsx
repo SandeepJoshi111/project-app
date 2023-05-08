@@ -1,9 +1,12 @@
-import { Box, Button, Link } from '@chakra-ui/react'
+import { Box, Button, background } from '@chakra-ui/react'
 import React from 'react'
 import LOGO from '../../assets/HCN-removebg-preview.png'
+import { Link } from 'react-router-dom'
 import './nav.css'
 
+
 const Nav = () => {
+
   return (
     <div className='container nav-container'>
       <div className='nav-content'>
@@ -12,9 +15,9 @@ const Nav = () => {
             </div>
             
             <div className='nav-links'>
-              <Link href=''>Home</Link>
-              <Link href='/emergency'>Emergency</Link>
-              <Button colorScheme='teal' className='btn btn-primary'>Log In</Button>
+              <Link to='/'>Home</Link>
+              <Link to='/emergency'>Emergency</Link>
+              <Button colorScheme='teal' size={{base:'sm' ,md:'md'}} className='btn btn-primary' >Log In</Button>
             </div>
       </div>
     </div>
