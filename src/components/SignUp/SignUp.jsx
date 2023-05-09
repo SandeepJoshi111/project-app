@@ -5,11 +5,12 @@ import { createUserWithEmailAndPassword  } from "firebase/auth";
 import { auth } from "../../firebase/Firebase";
 import firebase from 'firebase/compat/app';
 import 'firebase/firestore';
+import {BiArrowBack} from 'react-icons/bi'
 
 const SignUp = () => {
   const navigate = useNavigate();
 
-  const [firstName, setFirstName] = useState('');
+    const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -41,6 +42,9 @@ const SignUp = () => {
   };
   return (
     <div className="container signup-container">
+    <div className="backsignup">
+              <Link to='/'><BiArrowBack/></Link>
+          </div>
       <div className="signup-box">
         <label>First Name</label>
         <input
@@ -76,8 +80,10 @@ const SignUp = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+       
+
         <div className="btn-footer">
-        {error && <b>{error}</b>}
+        {error && <p>{error}</p>}
           <button
             onClick={handleSubmission}
             className="btn btn-primary">
@@ -90,6 +96,7 @@ const SignUp = () => {
             </span>
           </div>
         </div>
+
       </div>
     </div>
   );

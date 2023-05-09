@@ -2,19 +2,16 @@ import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import MainLayouts from "./layouts/MainLayouts";
 import Header from "./components/Header/Header";
-import {db} from '../src/firebase/Firebase';
-import SignUp from "./components/SignUp/SignUp";
+import firebase from "firebase/compat/app";
+import "firebase/firestore";
+import Login from "./components/LoginPage/Login";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-
   return (
-
-           <MainLayouts>
-     
-            <Header/>
-           </MainLayouts>
-
-
+    <MainLayouts>
+      <Header/>
+    </MainLayouts>
   );
 }
 

@@ -1,78 +1,68 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
-import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db } from "../../firebase/Firebase";
-import { child, get, ref } from "firebase/database";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth} from "../../firebase/Firebase";
+import {BiArrowBack} from 'react-icons/bi'
+import firebase from 'firebase/compat/app';
+import 'firebase/firestore';
 
-const Login = () => {
+
+const Login = (props) => {
 
   
   const navigate = useNavigate();
-  const [values, setValues] = useState({
-    email: "",
-    pass: "",
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
 
-  const [errorMsg, setErrorMsg] = useState("");
-  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
-
-  const handleSubmission = () => {
-//     var dbRef = ref(db);
-//     get(child(dbRef,"hcnform"))
-//       .then((snapshot)=>{
-//         var data=[];
-//           snapshot.forEach(childSnapshot =>{
-//         data.push(childSnapshot.val());
-//         console.log(data)
-//     })
-// })
-    if (
-      !values.email ||
-      !values.pass
-    ) {
-      setErrorMsg("Fill all fields");
-      return;
-    }
-    setErrorMsg("");
-
-    setSubmitButtonDisabled(true);
-    signInWithEmailAndPassword(auth, values.email, values.pass)
-      .then(async (res) => {
-        setSubmitButtonDisabled(false);
-        navigate("/");
+  function handleLogin() {
+    signInWithEmailAndPassword(auth,email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/")
+        props.onLogin(user);
       })
-      .catch((err) => {
-        setSubmitButtonDisabled(false);
-        setErrorMsg(err.message);
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
       });
-  };
+  }
   return (
     <div className="container login-container">
+
+          <div className="backlogin">
+              <Link to='/'><BiArrowBack/></Link>
+          </div>
       <div className="login-box">
         <label>Email</label>
-        <input type="text" id="email" name="email" placeholder="E-mail" 
-        onChange={(event) =>
-          setValues((prev) => ({ ...prev, email: event.target.value }))
-        }/>
+        <input
+         type="text" 
+        id="email" 
+        name="email" 
+        placeholder="E-mail" 
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        />
+
+
         <label>Password</label>
         <input
           type="password"
           id="password"
           name="password"
           placeholder="Password"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, pass: event.target.value }))
-          }
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         <div className="btn-footer">
-          <b>{errorMsg}</b>
-          <button className="btn" disabled={submitButtonDisabled} onClick={handleSubmission}>Log In</button>
+        {error ? <p>{error}</p> : null}
+          <button className="btn" onClick={handleLogin}>Log In</button>
 
           <div>
-            Don't have an account{" "}
+            Don't have an account?{" "}
             <span>
               <Link to="/signup">Register</Link>
             </span>
