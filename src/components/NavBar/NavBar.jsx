@@ -9,6 +9,7 @@ import "firebase/compat/auth";
 import Login from "../LoginPage/Login";
 
 const Nav = () => {
+  // TO RETRIEVE DATA FROM FIREBASE 
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);
 
@@ -36,12 +37,12 @@ const Nav = () => {
       }
     });
   }, []);
-
+  // SIGN OUT
   function handleLogout() {
     firebase.auth().signOut();
     setUser(null);
   }
-
+ // END OF RETRIVAL
 
   return (
     <div className="container nav-container">
@@ -52,6 +53,8 @@ const Nav = () => {
 
         <div className="nav-links">
           <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/hospital">Hospital</Link>
           <Link to="/emergency">Emergency</Link>
 
           {/* <button  className='btn' ><Link to='/login'>Log In</Link></button> */}

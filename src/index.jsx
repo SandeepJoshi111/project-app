@@ -10,6 +10,10 @@ import {
 import Emergency from './pages/Emergency';
 import Login from './components/LoginPage/Login';
 import SignUp from './components/SignUp/SignUp';
+import Patient from './pages/Patient';
+import Doctor from './pages/Doctor';
+import Hospital from './pages/Hospital';
+import Services from './pages/Services';
 
 const router = createBrowserRouter([
   {
@@ -17,9 +21,18 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
+    path: "/services",
+    element: <Services/>,
+  },
+  {
+    path: "/hospital",
+    element: <Hospital/>,
+  },
+  {
     path: "/emergency",
     element: <Emergency/>,
   },
+ 
   {
     path: "/login",
     element: <Login/>,
@@ -28,6 +41,15 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp/>,
   },
+  {
+    path: "/patient",
+    element: <Patient/>,
+  },
+  {
+    path: "/dcotor",
+    element: <Doctor/>,
+  },
+  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
