@@ -8,6 +8,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/firestore';
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
+import {motion} from 'framer-motion';
 
 
 const Login = (props) => {
@@ -36,7 +37,14 @@ const Login = (props) => {
   return (
     <div className="container login-container">
       
-      <div className="login-box">
+      <motion.div className="login-box"
+         initial={{scale:0.1}}
+         animate={{scale:1}}
+
+         transition={{ type: "spring", stiffness: 100  }}
+         >
+
+
       <div className="register-form">
           <Link className="user active" to='/login'>
             <div>
@@ -87,7 +95,7 @@ const Login = (props) => {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

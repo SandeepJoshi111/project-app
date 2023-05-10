@@ -1,31 +1,32 @@
-body{
-     overflow-x: hidden;
-     
-}
-
-.emergency-container{
+.hospital-container{
     width: var(--container-lg);
-    height: 100%;
+    height: fit-content;
     text-align: center;
-
 }
-.img-grid{
+.hospital-grid{
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 1rem;
+
+
 }
 
-.img-wrap{  
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hospital-wrap{
     margin-top: 10px;
-   height: 200px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   color: var(--color-primary);
-   overflow-x: hidden;
-   word-wrap: break-word;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    overflow-x: hidden;
+    word-wrap:normal;
     border-radius: 10px;
     background: var(--color-white);
     box-shadow: 0px 2px 0px 0px gray;
@@ -33,38 +34,29 @@ body{
     transform: scale(1);
     transition: var(--transition);
     cursor: pointer;
-   
 }
-.img-wrap:hover{
+.hospital-wrap:hover{
     transform: scale(1.02) !important;
     box-shadow: 0px 2px 10px .1px gray;
 }
-.img-wrap h1{
+.hospital-logo{
+    position: absolute;
+    top: 1rem;
+}
+.hospital-content{
+    position: absolute;
+    top: 6rem;
+}
+.hospital-wrap h1{
     font-size: 1.2rem;
     color: var(--color-black);
     font-weight: 600;
-}
-.location{
-    display: flex;
-    gap: 1rem;
-}
-.phone{
-    display: flex;
-    gap: 1rem;
-}
-.emergency-logo{
-    position: absolute;
-    top: 1rem;
-
-}
-.emergency-content{
-    position: absolute;
-    top: 7rem;
+    
 }
 
 
 @media screen and (max-width:1024px){
-    .img-grid{
+    .hospital-grid{
         grid-template-columns: repeat(2,1fr);
     }
 
@@ -72,7 +64,7 @@ body{
 
 
 @media screen and (max-width:600px){
-    .img-grid{
+    .hospital-grid{
         grid-template-columns: repeat(1,1fr);
     }
 

@@ -8,6 +8,7 @@ import "firebase/firestore";
 import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
+import {motion} from 'framer-motion';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -47,7 +48,11 @@ const SignUp = () => {
   };
   return (
     <div className="container signup-container">
-      <div className="signup-box">
+      <motion.div className="signup-box"
+      initial={{scale:0.1}}
+      animate={{scale:1}}
+      transition={{ type: "spring" , stiffness: 100 }}
+      >
         
         <div className="register-form">
           <Link className="user active" to='/signup'>
@@ -117,7 +122,7 @@ const SignUp = () => {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
