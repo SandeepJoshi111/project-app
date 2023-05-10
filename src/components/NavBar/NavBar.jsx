@@ -8,10 +8,11 @@ import "firebase/firestore";
 import "firebase/compat/auth";
 import Login from "../LoginPage/Login";
 
-const Nav = () => {
+const NavBar = () => {
   // TO RETRIEVE DATA FROM FIREBASE 
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);
+
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -37,11 +38,15 @@ const Nav = () => {
       }
     });
   }, []);
+
+  
   // SIGN OUT
   function handleLogout() {
     firebase.auth().signOut();
+    alert('Logged Out')
     setUser(null);
   }
+  // MODAL
  // END OF RETRIVAL
 
   return (
@@ -62,13 +67,14 @@ const Nav = () => {
           {user ? (
           <li className="logout">
             {/* <div> {user.firstName} {user.lastName}.</div> */}
-            <button className="btn btn-hover" onClick={handleLogout}>{user.firstName}</button>
+            <button className="btn btn-hover" onClick={handleLogout}>{user.firstName} </button>
           </li>
         ) : (
           <li className="login">
-            <button className="btn" onClick={() => setShowLogin(true)}><Link to='/login'>Log In</Link></button>
+            <Link to='/login'><button className="btn" onClick={() => setShowLogin(true)}>Log In</button></Link>
           </li>
         )}
+
 
       {showLogin && (
         <Login onLogin={(user) => {
@@ -81,4 +87,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default NavBar;

@@ -14,6 +14,8 @@ import Patient from './pages/Patient';
 import Doctor from './pages/Doctor';
 import Hospital from './pages/Hospital';
 import Services from './pages/Services';
+import SignUpDoctor from './components/SignUp/SignUpDoctor';
+
 
 const router = createBrowserRouter([
   {
@@ -42,11 +44,15 @@ const router = createBrowserRouter([
     element: <SignUp/>,
   },
   {
+    path: "/signupdoctor",
+    element: <SignUpDoctor/>,
+  },
+  {
     path: "/patient",
     element: <Patient/>,
   },
   {
-    path: "/dcotor",
+    path: "/doctor",
     element: <Doctor/>,
   },
   

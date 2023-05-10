@@ -9,13 +9,14 @@ import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 
-const SignUp = () => {
+const SignUpDoctor = () => {
   const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [speciality, setSpeciality] = useState("");
   const [error, setError] = useState(null);
 
   const handleSubmission = () => {
@@ -24,20 +25,21 @@ const SignUp = () => {
         const user = userCredential.user;
         firebase
           .firestore()
-          .collection("users")
+          .collection("doctor")
           .doc(user.uid)
           .set({
             firstName: firstName,
             lastName: lastName,
             email: email,
+            speciality:speciality,
           })
           .then(() => {
-            console.log("User added with ID: ", user.uid);
-            navigate("/login");
-            alert("Successgully Registered as a User");
+            console.log("Doctor added with ID: ", user.uid);
+            navigate("/logindoctor");
+            alert("Successgully Registered as a Doctor")
           })
           .catch((error) => {
-            console.error("Error adding user details: ", error);
+            console.error("Error adding doctor details: ", error);
           });
       })
       .catch((error) => {
@@ -50,13 +52,13 @@ const SignUp = () => {
       <div className="signup-box">
         
         <div className="register-form">
-          <Link className="user active" to='/signup'>
+          <Link className="user " to='/signup'>
             <div>
               <FaUserAlt />
             </div>
             User
           </Link>
-          <Link className="doctor" to='/signupdoctor'>
+          <Link className="doctor active" to='/signupdoctor'>
             <div>
               <FaUserMd />
             </div>
@@ -95,6 +97,15 @@ const SignUp = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        <label>Speciality</label>
+        <input
+          type="text"
+          id="speciality"
+          name="speciality"
+          placeholder="Speciality"
+          value={speciality}
+          onChange={(e) => setSpeciality(e.target.value)}
+        />
         <label>New Password</label>
         <input
           type="password"
@@ -122,4 +133,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpDoctor;

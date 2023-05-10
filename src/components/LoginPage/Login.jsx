@@ -3,9 +3,11 @@ import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth} from "../../firebase/Firebase";
-import {BiArrowBack} from 'react-icons/bi'
+import {RxCross1} from 'react-icons/rx'
 import firebase from 'firebase/compat/app';
 import 'firebase/firestore';
+import { FaUserAlt } from "react-icons/fa";
+import { FaUserMd } from "react-icons/fa";
 
 
 const Login = (props) => {
@@ -22,7 +24,9 @@ const Login = (props) => {
         // Signed in
         const user = userCredential.user;
         navigate("/patient")
+        alert("Loggin In");
         props.onLogin(user);
+
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -31,11 +35,13 @@ const Login = (props) => {
   }
   return (
     <div className="container login-container">
-
-          <div className="backlogin">
-              <Link to='/'><BiArrowBack/></Link>
-          </div>
+      
       <div className="login-box">
+
+
+      <div className="backlogin">
+              <Link to='/'><RxCross1/></Link>
+          </div>
         <label>Email</label>
         <input
          type="text" 

@@ -5,7 +5,6 @@ const MainLayouts = ({children}) => {
     <div>
         <NavBar/>
         <div>{children}</div>
-        <p>Sidebar</p>
     </div>
   )
 }

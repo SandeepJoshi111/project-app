@@ -15,6 +15,8 @@
     padding: 20px;
     border: 1px solid var(--color-black);
     height: auto;
+    box-shadow: 0px 5px 20px 2px gray;
+    background: var(--color-white);
 }
 
 input{
@@ -35,7 +37,7 @@ label{
     align-items: center;
     justify-content: center;
 }
-p{
+.btn-footer p{
     color: red;
 }
 span{
@@ -50,11 +52,50 @@ span{
     transition: var(--transition);
     background: var(--color-primary);
     color: var(--color-white);
+    right: 1rem ;
+    border: 1px solid var(--color-primary-variant);
+    
 }
 .backlogin:hover{
     background: var(--color-white);
     color:var(--color-primary);
-    border: 1px solid var(--color-primary-variant);
+   
+}
+
+.register-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem  ;
+    top: .1rem;
+    color: var(--color-primary-variant);
+    margin: -10px 0px;
+   
+}
+.register-form .user {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.register-form .doctor{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.register-form .user:hover{
+    color: var(--color-black);
+}
+.register-form .doctor:hover{
+    color: var(--color-black);
+}
+.active{
+    color: var(--color-primary);
 }
 @media screen and(max-width: 1024px) {
     .login-box{
