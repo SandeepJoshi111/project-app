@@ -7,38 +7,43 @@ const Hospital = () => {
   return (
     <MainLayouts>
       <div className="container hospital-container">
-        <div className="title">List Of Governmanet Hospitals</div>
+        <div className="title">List Of Government Hospitals</div>
         <div className="hospital-grid">
-          <motion.div
-            className="hospital-wrap"
-            initial={{ scale: 0.1 }}
-            animate={{ scale: 1 }}
-          >
-            <div className="hospital-logo">
-              <FaHospitalAlt size={70} />
-            </div>
-            <div className="hospital-content">
-              <h1>B & B Hospital Pvt. Ltd</h1>
-              <p>Gwarko, Kathmandu </p>
-              <p>Phone</p>
-            </div>
-          </motion.div>
+          <a href="https://www.bbhospital.com.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt size={70} />
+              </div>
+              <div className="hospital-content">
+                <h1> B & B Hospital Pvt. Ltd</h1>
+                <p>Gwarko, Kathmandu </p>
+                <p>Phone</p>
+              </div>
+            </motion.div>
+          </a>
 
-          <motion.div
-            className="hospital-wrap"
-            initial={{ scale: 0.1 }}
-            animate={{ scale: 1 }}
-          >
-            <div className="hospital-logo">
-              <FaHospitalAlt size={70} />
-            </div>
-            <div className="hospital-content">
-              <h1>Shree Birendra Hospital</h1>
-              <p>Chhauni, Kathmandu </p>
-              <p>Phone</p>
-            </div>
-          </motion.div>
+          <a href="https://birendrahospital.nepalarmy.mil.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt size={70} />
+              </div>
+              <div className="hospital-content">
+                <h1>Shree Birendra Hospital </h1>
+                <p>Chhauni, Kathmandu </p>
+                <p>Phone</p>
+              </div>
+            </motion.div>
+          </a>
 
+          <a href="https://birhospital.org.np/np" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -53,7 +58,10 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+
+          <a href="https://nph.nepalpolice.gov.np/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -68,7 +76,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
-
+          </a>
+         
+          <a href="https://csh.gov.np/ne" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -83,7 +93,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+          <a href="https://dhulikhelhospital.org/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -98,7 +110,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+          <a href="https://kmc.edu.np/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -113,7 +127,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+          <a href="https://birendrahospital.nepalarmy.mil.np/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -128,7 +144,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+          <a href="http://www.omhospitalnepal.com/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -143,7 +161,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+          <a href="https://www.pahs.edu.np/pahs-community/hospital/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -158,7 +178,9 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
 
+          <a href="http://www.tuth.org.np/" target="_blank">
           <motion.div
             className="hospital-wrap"
             initial={{ scale: 0.1 }}
@@ -173,6 +195,7 @@ const Hospital = () => {
               <p>Phone</p>
             </div>
           </motion.div>
+          </a>
         </div>
       </div>
     </MainLayouts>

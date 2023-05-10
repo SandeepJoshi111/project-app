@@ -61,8 +61,62 @@ body{
     position: absolute;
     top: 7rem;
 }
+.emergency-title{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
 
+.emergency-province{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--color-primary);
+    
+}
+marquee{
+    color: red;
+    font-weight: 500;
+}
 
+.province-container h1{
+    font-size:1.5rem;
+    display: flex;
+}
+.emergency-province li{
+    list-style-type: none;
+}
+
+.province{
+    font-size:2rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    margin: 5rem 0 2rem 0;
+    
+}
+.province p{
+    font-size: 1.2rem;
+    color: var(--color-gray);
+
+    
+    
+}
+.province img{
+    width: 200px;
+
+}
+
+.provinve-with-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 @media screen and (max-width:1024px){
     .img-grid{
         grid-template-columns: repeat(2,1fr);

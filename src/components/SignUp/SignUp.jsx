@@ -51,7 +51,7 @@ const SignUp = () => {
       <motion.div className="signup-box"
       initial={{scale:0.1}}
       animate={{scale:1}}
-      transition={{ type: "spring" , stiffness: 100 }}
+  
       >
         
         <div className="register-form">

@@ -36,11 +36,7 @@ const LoginDoctor = (props) => {
   return (
     <div className="container login-container">
       
-      <motion.div className="login-box"
-         initial={{scale:0.1}}
-         animate={{scale:1}}
-         transition={{ type: "spring" , stiffness: 100 }}
-        >
+      <motion.div className="login-box">
 
       <div className="register-form">
           <Link className="user " to='/login'>

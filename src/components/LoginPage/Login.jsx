@@ -41,7 +41,7 @@ const Login = (props) => {
          initial={{scale:0.1}}
          animate={{scale:1}}
 
-         transition={{ type: "spring", stiffness: 100  }}
+    
          >
 
 
