@@ -15,6 +15,7 @@ import Doctor from './pages/Doctor';
 import Hospital from './pages/Hospital';
 import Services from './pages/Services';
 import SignUpDoctor from './components/SignUp/SignUpDoctor';
+import LoginDoctor from './components/LoginPage/LoginDoctor';
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>,
+  },
+  {
+    path: "/logindoctor",
+    element: <LoginDoctor/>,
   },
   {
     path: "/signup",

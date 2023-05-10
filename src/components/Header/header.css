@@ -1,0 +1,6 @@
+.header-container{
+    width: var(--container-lg);
+    height: 100%;
+    text-align: center;
+}
+

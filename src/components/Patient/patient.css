@@ -1,0 +1,23 @@
+.patient-container{
+    width: var(--container-lg);
+    height: 100%;
+    text-align: center;
+}
+.namaste{
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-primary);
+}
+
+.patient-content h1{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.patient-content p{
+    color: var(--color-primary);
+}

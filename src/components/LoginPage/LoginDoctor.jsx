@@ -10,7 +10,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 
 
-const Login = (props) => {
+const LoginDoctor = (props) => {
 
   
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Login = (props) => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/patient")
+        navigate("/doctor")
         alert("Loggin In");
         props.onLogin(user);
 
@@ -37,14 +37,15 @@ const Login = (props) => {
     <div className="container login-container">
       
       <div className="login-box">
+
       <div className="register-form">
-          <Link className="user active" to='/login'>
+          <Link className="user " to='/login'>
             <div>
               <FaUserAlt />
             </div>
             User
           </Link>
-          <Link className="doctor" to='/logindoctor'>
+          <Link className="doctor active" to='/logindoctor'>
             <div>
               <FaUserMd />
             </div>
@@ -55,6 +56,8 @@ const Login = (props) => {
       <div className="backlogin">
               <Link to='/'><RxCross1/></Link>
           </div>
+
+          
         <label>Email</label>
         <input
          type="text" 
@@ -92,4 +95,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default LoginDoctor;

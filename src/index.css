@@ -6,7 +6,6 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family:'Poppins', 'sans-serif';
-
 }
 
 :root{
@@ -18,12 +17,20 @@
 
   --transition: all 400ms ease;
 
-  --container-lg:90%;
+  --container-lg:95%;
   --container-md:86%;
   --container-sm:80%;
 }
+html{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
 .container{
   width: var(--container-lg);
+  margin: 0 auto;
 }
 
 .btn{
@@ -45,15 +52,15 @@
 }
 @media screen and (max-width: 1024px) {
   .btn{
-    font-size: 2rem;
-    width: 4rem;
+    width: 5rem !important;
+    font-size: .7rem !important;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 
   .btn{
-    font-size: 1rem;
-    width: 1rem;
+    font-size: .5rem !important;
+    width:4rem !important;
   }
 }
 

@@ -37,6 +37,29 @@ const NavBar = () => {
         setUser(null);
       }
     });
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Retrieve user data from Firestore collection
+        const db = firebase.firestore();
+        db.collection('doctor').doc(user.uid).get()
+          .then((doc) => {
+            if (doc.exists) {
+              const data = doc.data();
+              setUser({
+                uid: user.uid,
+                firstName: data.firstName,
+                lastName: data.lastName
+              });
+            }
+          })
+          .catch((error) => {
+            console.log('Error getting user data:', error);
+          });
+      } else {
+        setUser(null);
+      }
+    });
   }, []);
 
   
@@ -67,7 +90,7 @@ const NavBar = () => {
           {user ? (
           <li className="logout">
             {/* <div> {user.firstName} {user.lastName}.</div> */}
-            <button className="btn btn-hover" onClick={handleLogout}>{user.firstName} </button>
+            <button className="btn btn-hover" onClick={handleLogout}>Log Out </button>
           </li>
         ) : (
           <li className="login">
