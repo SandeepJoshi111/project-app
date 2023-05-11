@@ -36,7 +36,11 @@ const LoginDoctor = (props) => {
   return (
     <div className="container login-container">
       
-      <motion.div className="login-box">
+      <motion.div className="login-box"
+         initial={{opacity:0.1}}
+         animate={{opacity:1}}
+
+      >
 
       <div className="register-form">
           <Link className="user " to='/login'>

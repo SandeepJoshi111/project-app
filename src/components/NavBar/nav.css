@@ -21,17 +21,6 @@
 
 }
 
-
-.nav-links{
-   
-    display: flex;
-    align-items: center;
-    gap: 1rem   ;
-
-    position: relative;
-
-
-}
 .logout{
     display: flex;
     align-items: center;
@@ -41,6 +30,24 @@
     align-items: center;
 }
 
+
+.nav-links{
+   
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: 1.5px;
+    line-height: 1em;
+    text-transform: uppercase;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+  
  /* .btn-hover{
     font-size: 1rem;
     border-radius: 1rem;

@@ -49,8 +49,8 @@ const SignUp = () => {
   return (
     <div className="container signup-container">
       <motion.div className="signup-box"
-      initial={{scale:0.1}}
-      animate={{scale:1}}
+      initial={{opacity:0.1}}
+      animate={{opacity:1}}
   
       >
         

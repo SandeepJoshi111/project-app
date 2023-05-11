@@ -2,7 +2,7 @@ import React from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Emergency/emergency.css";
 import { FaAmbulance } from "react-icons/fa";
-import { AiFillPhone } from "react-icons/ai";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import { motion } from "framer-motion";
 import KOSHI from "../assets/1. koshi.png";
@@ -69,7 +69,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -90,7 +90,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -199,7 +199,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -267,7 +267,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -301,7 +301,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>
@@ -334,7 +334,7 @@ const Emergency = () => {
                   <p>Basundhara, Kathmandu</p>
                 </div>
                 <div className="phone">
-                  <AiFillPhone />
+                  <BsFillTelephoneFill />
                   <p>9840186344</p>
                 </div>
               </div>

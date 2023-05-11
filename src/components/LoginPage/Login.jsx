@@ -38,8 +38,8 @@ const Login = (props) => {
     <div className="container login-container">
       
       <motion.div className="login-box"
-         initial={{scale:0.1}}
-         animate={{scale:1}}
+         initial={{opacity:0.1}}
+         animate={{opacity:1}}
 
     
          >
