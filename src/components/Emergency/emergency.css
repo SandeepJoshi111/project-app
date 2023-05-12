@@ -127,13 +127,19 @@ marquee{
     .img-grid{
         grid-template-columns: repeat(2,1fr);
     }
-
+    .emergency-province{
+        gap: 1rem;
+    }
 }
 
 
 @media screen and (max-width:600px){
     .img-grid{
         grid-template-columns: repeat(1,1fr);
+    }
+    .emergency-province{
+        flex-direction: column;   
+        gap: 0.5rem;
     }
 
 }
