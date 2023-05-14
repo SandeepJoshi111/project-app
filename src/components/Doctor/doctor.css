@@ -1,4 +1,4 @@
-.doctor-container{
+/* .doctor-container{
     width: var(--container-lg);
     height: 100%;
     text-align: center;
@@ -11,7 +11,7 @@
     justify-content: center;
     gap: 1rem;
     color: var(--color-primary);
-}
+} 
 
 .doctor-content h1{
     font-size: 1.7rem;
@@ -21,4 +21,4 @@
 
 .doctor-content p{
     color: var(--color-primary);
-}
+} */

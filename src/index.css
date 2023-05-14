@@ -51,6 +51,9 @@ html{
   color: var(--color-primary);
 
 }
+
+
+
 @media screen and (max-width: 1024px) {
   .btn{
     width: 5rem !important;
@@ -59,9 +62,6 @@ html{
 }
 @media screen and (max-width: 600px) {
 
-  .btn{
-    font-size: .5rem !important;
-    width:4rem !important;
-  }
+
 }
 

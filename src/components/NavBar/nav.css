@@ -35,19 +35,95 @@
    
     display: flex;
     align-items: center;
-    gap: 1rem;
     letter-spacing: 1.5px;
     line-height: 1em;
     text-transform: uppercase;
     list-style-type: none;
     align-items: center;
     justify-content: center;
+    
+}
+
+.links{
+    background: rgba(154, 152, 152, 0.3);
+    width: max-content;
+    display: block;
+    padding: .5rem 1.2rem;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.2rem ;
+    border-radius: 3rem;
+    backdrop-filter: blur(15px);
+   
+  }
+  
+  .links li{
+    background: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    color: var(--color-light);
+    font-size: 1.5rem;
+
+  }
+#home,#services,#hospital,#emergency{
+    position: absolute;
+    left:50%;
+    top: 0;
+    transform: translateX(-50%);
+    background:  teal;
+    color: var(--color-white);
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 3rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition) !important;
+    backdrop-filter: blur(15px);
 }
 
 
+.home:hover #home{
+    top: -10%;
+    visibility: visible;
+    opacity: 1;
+}
+.services:hover #services{
+    top: -10%;
+    visibility: visible;
+    opacity: 1;
+}
+.hospital:hover #hospital{
+    top: -10%;
+    visibility: visible;
+    opacity: 1;
+}
+.emergency:hover #emergency{
+    top: -10%;
+    visibility: visible;
+    opacity: 1;
+}
 
-
-  
+.namaste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.name-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    gap: .5rem;
+}
  /* .btn-hover{
     font-size: 1rem;
     border-radius: 1rem;
@@ -89,14 +165,29 @@
 
 @media screen and (max-width:1024px) {
     .nav-content{
+        width: 100vw;
         font-size: 15px;
     }
     .btn{
         font-size: 10px;
     }
+    .namaste{
+        font-size: 1rem;
+    }
+    .name-content{
+        font-size: .8rem;
+    }
 }
 @media screen and(max-width:600px) {
     .nav-content{
+        width: 100vw;
         font-size: 12px;
     }
+    .namaste{
+        font-size: .8rem;
+    }
+    .name-content{
+        font-size: .6rem;
+    }
+   
 }
