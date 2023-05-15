@@ -16,6 +16,7 @@ import Hospital from './pages/Hospital';
 import Services from './pages/Services';
 import SignUpDoctor from './components/SignUp/SignUpDoctor';
 import LoginDoctor from './components/LoginPage/LoginDoctor';
+import Payment from './components/Payment/Payment';
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
   {
     path: "/doctor",
     element: <Doctor/>,
+  },
+  {
+    path: "/payments",
+    element: <Payment/>,
   },
   
 ]);
