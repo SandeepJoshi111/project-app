@@ -1,6 +1,6 @@
+
 .hospital-container{
     width: var(--container-lg);
-    height: fit-content;
     text-align: center;
 }
 .hospital-grid{

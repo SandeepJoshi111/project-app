@@ -8,7 +8,7 @@ import './header.css'
 function Header() {
   
   return (
-    <div className="contaienr header-container">
+    <div  className="contaienr header-container">
    
       
   </div>

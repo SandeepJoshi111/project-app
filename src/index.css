@@ -55,10 +55,7 @@ html{
 
 
 @media screen and (max-width: 1024px) {
-  .btn{
-    width: 5rem !important;
-    font-size: .7rem !important;
-  }
+ 
 }
 @media screen and (max-width: 600px) {
 

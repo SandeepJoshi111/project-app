@@ -48,7 +48,7 @@
     background: rgba(154, 152, 152, 0.3);
     width: max-content;
     display: block;
-    padding: .5rem 1.2rem;
+    padding: 1px;
     z-index: 2;
     position: fixed;
     left: 50%;
@@ -67,7 +67,7 @@
     border-radius: 50%;
     display: flex;
     color: var(--color-light);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
   }
 #home,#services,#hospital,#emergency{
@@ -75,15 +75,16 @@
     left:50%;
     top: 0;
     transform: translateX(-50%);
-    background:  teal;
+    background:  var(--color-primary);
     color: var(--color-white);
     white-space: nowrap;
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 3rem;
     visibility: hidden;
     opacity: 0;
     transition: var(--transition) !important;
     backdrop-filter: blur(15px);
+    font-size: 1.2rem;
 }
 
 
@@ -177,6 +178,13 @@
     .name-content{
         font-size: .8rem;
     }
+    .links li{
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+    #home,#services,#hospital,#emergency{
+        font-size: .8rem ;
+    }
 }
 @media screen and(max-width:600px) {
     .nav-content{
@@ -188,6 +196,13 @@
     }
     .name-content{
         font-size: .6rem;
+    }
+    .links li{
+        font-size: .5rem;
+        padding: 0.4rem;
+    }
+    #home,#services,#hospital,#emergency{
+        font-size: .8rem ;
     }
    
 }
