@@ -1,4 +1,6 @@
-.container{
+
+.nav-container{
+
     width: 100vw;
 }
 .nav-content{
@@ -11,13 +13,14 @@
     align-items: center;
     font-size: 1rem;
     
+    
 }
-.nav-image{
-    width: 200px;
-    height: 200px;
-    align-items: center;
+.nav-image img{
+    width: 200px !important;
+    height: 200px !important;
     display: flex;
-    justify-content: center;    
+    align-items: center; 
+
 
 }
 
@@ -125,44 +128,7 @@
     white-space: nowrap;
     gap: .5rem;
 }
- /* .btn-hover{
-    font-size: 1rem;
-    border-radius: 1rem;
-    padding:  10px;
-    background: var(--color-primary);
-    color: var(--color-white);
-    width: 6rem;
-    margin: 1rem;
-    border: 1px solid var(--color-primary-variant);
-    transition: var(--transition);
-    position: relative ;
-    overflow: hidden;
-   } 
-.btn-hover::after{
-    content: 'Log Out';
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 6rem;
-    background: var(--color-white);
-    padding:  10px;
-    border: 1px solid var(--color-primary-variant);
-    border-radius: 1rem;
-    font-size: 1rem;
-    margin: 1rem;
-    color: var(--color-primary);
-    transition: var(--transition);
-    top: -20px;
-    left: 100px;
-    height: 30px;
-   
-}
-.btn.btn-hover:hover::after{
-    top: -20px;
-    left:-26px;
-   
-}  */
+ 
 
 @media screen and (max-width:1024px) {
     .nav-content{

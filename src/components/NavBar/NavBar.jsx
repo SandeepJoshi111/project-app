@@ -88,14 +88,12 @@ const NavBar = () => {
     };
   }
 
-  // MODAL
-  // END OF RETRIVAL
 
   return (
     <div className="container nav-container">
       <div className="nav-content">
         <div className="nav-image">
-          <img src={LOGO} alt="logo" />
+          <Link to='/'><img src={LOGO} alt="logo" /></Link>
         </div>
 
         <div className="nav-links" >
