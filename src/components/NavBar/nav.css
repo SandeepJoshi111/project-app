@@ -2,6 +2,7 @@
 .nav-container{
 
     width: 100vw;
+
 }
 .nav-content{
     width: 100vw;
@@ -64,7 +65,7 @@
    
   }
   
-  .links li{
+.links li{
     background: transparent;
     padding: 0.9rem;
     border-radius: 50%;
@@ -72,7 +73,8 @@
     color: var(--color-light);
     font-size: 1.2rem;
 
-  }
+}
+
 #home,#services,#hospital,#emergency{
     position: absolute;
     left:50%;

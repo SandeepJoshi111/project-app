@@ -8,15 +8,16 @@
 }
 .login-box{
     width: 500px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     position: absolute;
     border-radius: 10px;
     padding: 20px;
-
     height: auto;
     box-shadow: 0px 5px 20px 2px gray;
     background: var(--color-white);
+
 }
 
 input{
@@ -48,19 +49,11 @@ span{
     position: absolute;
     top: 1rem;
     border-radius: 50%;
-    padding: 5px;
+    padding: 2px 5px ;
     transition: var(--transition);
-    background: var(--color-primary);
-    color: var(--color-white);
     right: 1rem ;
-    border: 1px solid var(--color-primary-variant);
-    
 }
-.backlogin:hover{
-    background: var(--color-white);
-    color:var(--color-primary);
-   
-}
+
 
 .register-form{
     display: flex;
@@ -68,8 +61,8 @@ span{
     justify-content: center;
     gap: 1rem  ;
     top: .1rem;
-    color: var(--color-primary-variant);
     margin: -10px 0px;
+
    
 }
 .register-form .user {
@@ -88,6 +81,7 @@ span{
     cursor: pointer;
     transition: var(--transition);
 }
+
 .register-form .user:hover{
     color: var(--color-black);
 }

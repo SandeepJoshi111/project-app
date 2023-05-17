@@ -1,4 +1,3 @@
-import { Box, Button, background } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import LOGO from "../../assets/HCN-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
@@ -7,18 +6,18 @@ import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
 import Login from "../LoginPage/Login";
-import {AiFillHome} from 'react-icons/ai'
-import {MdMiscellaneousServices} from 'react-icons/md'
+import { AiFillHome } from "react-icons/ai";
+import { MdMiscellaneousServices } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
-import {FaPrayingHands} from 'react-icons/fa'
+import { FaPrayingHands } from "react-icons/fa";
+import { Button, Modal } from "react-bootstrap";
 
 const NavBar = () => {
   // TO RETRIEVE DATA FROM FIREBASE
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);
-  
-  
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -77,70 +76,63 @@ const NavBar = () => {
     alert("Logged Out");
     setUser(null);
   }
-  const navLinkStyle = ({isActive})=>{
+  const navLinkStyle = ({ isActive }) => {
     return {
-      background:isActive? "teal":"transparent",
-      padding:"10px",
-      borderRadius:"50%",
-      color:isActive?"white":"black",
-      transition:"all 400ms ease",
-     
+      background: isActive ? "teal" : "transparent",
+      padding: "10px",
+      borderRadius: "50%",
+      color: isActive ? "white" : "black",
+      transition: "all 400ms ease",
     };
-  }
+  };
 
 
   return (
     <div className="container nav-container">
       <div className="nav-content">
         <div className="nav-image">
-          <Link to='/'><img src={LOGO} alt="logo" /></Link>
+          <Link to="/">
+            <img src={LOGO} alt="logo" />
+          </Link>
         </div>
 
-        <div className="nav-links" >
-        <div className="links">
+        <div className="nav-links">
+          <div className="links">
+            <li className="home">
+              <NavLink style={navLinkStyle} to="/">
+                <span id="home">Home</span>
+                <AiFillHome />
+              </NavLink>
+            </li>
+            <li className="services">
+              <NavLink style={navLinkStyle} to="/services">
+                <span id="services">Services</span>
+                <MdMiscellaneousServices />
+              </NavLink>
+            </li>
 
-          <li className="home"><NavLink
-             style={navLinkStyle}
-            to="/"
-          >
-            <span id="home">Home</span>
-            <AiFillHome/>
-          </NavLink>
-          </li>
-          <li className="services">
-          <NavLink
-            style={navLinkStyle}
-            to="/services"
-          >
-            <span id="services">Services</span>
-           <MdMiscellaneousServices/>
-          </NavLink>
-          </li>
-
-          <li className="hospital">
-          <NavLink
-             style={navLinkStyle}
-            to="/hospital"
-          >
-            <span id="hospital">Hospital</span>
-           <FaHospitalAlt/>
-          </NavLink></li>
-          <li className="emergency">
-          <NavLink
-            style={navLinkStyle}
-            to="/emergency"
-          >
-            <span id="emergency">Emergency</span>
-           <FaAmbulance/>
-          </NavLink></li>
+            <li className="hospital">
+              <NavLink style={navLinkStyle} to="/hospital">
+                <span id="hospital">Hospital</span>
+                <FaHospitalAlt />
+              </NavLink>
+            </li>
+            <li className="emergency">
+              <NavLink style={navLinkStyle} to="/emergency">
+                <span id="emergency">Emergency</span>
+                <FaAmbulance />
+              </NavLink>
+            </li>
           </div>
 
-          
-          
           {user ? (
             <li className="logout">
               {/* <div>Namaste</div> */}
-              <div className="name-content"> <span className="namaste">Namaste</span>   {user.firstName} {user.lastName}.</div>
+              <div className="name-content">
+                {" "}
+                <span className="namaste">Namaste</span> {user.firstName}{" "}
+                {user.lastName}.
+              </div>
               <button className="btn btn-hover" onClick={handleLogout}>
                 Log Out{" "}
               </button>
@@ -154,7 +146,7 @@ const NavBar = () => {
               </Link>
             </li>
           )}
-          
+
           {showLogin && (
             <Login
               onLogin={(user) => {
@@ -162,7 +154,7 @@ const NavBar = () => {
               }}
             />
           )}
-        
+  
         </div>
       </div>
     </div>

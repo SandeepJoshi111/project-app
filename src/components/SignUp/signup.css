@@ -65,17 +65,10 @@ span{
     top: 1rem;
     border-radius: 50%;
     padding: 5px;
-    transition: var(--transition);
-    background: var(--color-primary);
-    color: var(--color-white);
     right: 1rem;
-    border: 1px solid var(--color-primary-variant);
+
 }
-.backsignup:hover{
-    background: var(--color-white);
-    color:var(--color-primary);
-    
-}
+
 
 .register-form{
     display: flex;
@@ -83,7 +76,6 @@ span{
     justify-content: center;
     gap: 1rem  ;
     top: .1rem;
-    color: var(--color-primary-variant);
     margin: -10px 0px;
    
 }
@@ -95,6 +87,7 @@ span{
     cursor: pointer;
     transition: var(--transition);
 }
+
 .register-form .doctor{
     display: flex;
     flex-direction: column; 

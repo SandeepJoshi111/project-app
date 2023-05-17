@@ -65,10 +65,11 @@ import Payment from "./components/Payment/Payment";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <>
     <Router>
+      
       <Routes>
-        <Route path="/" element={<App />}></Route>
+        <Route exact path="/" element={<App />}></Route>
         <Route path="/services" element={<Services />}></Route>
         <Route path="/hospital" element={<Hospital />}></Route>
         <Route path="/emergency" element={<Emergency />}></Route>
@@ -81,6 +82,7 @@ root.render(
         <Route path="/payments" element={<Payment />}></Route>
       </Routes>
     </Router>
+
     {/* <RouterProvider router={router} /> */}
-  </React.StrictMode>
+  </>
 );

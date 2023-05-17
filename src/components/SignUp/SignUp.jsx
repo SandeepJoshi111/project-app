@@ -75,6 +75,7 @@ const SignUp = () => {
             <RxCross1 />
           </Link>
         </div>
+        
         <label>First Name</label>
         <input
           type="text"
