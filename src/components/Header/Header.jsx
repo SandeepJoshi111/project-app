@@ -6,11 +6,14 @@ import './header.css'
 
 
 function Header() {
-  
+  const [clipPath, setClipPath] = useState('initial');
+
   return (
-    <div  className="contaienr header-container">
-   
+    <div  className="container header-container">
+        <div className="header-content" style={{ clipPath }}>
+          <img src="" alt="" />
       
+        </div>
   </div>
   );
 }

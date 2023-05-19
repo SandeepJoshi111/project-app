@@ -10,11 +10,13 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const LoginDoctor = (props) => {
+const LoginDoctor = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userType, setUserType] = useState('');
 
   function handleLogin() {
     signInWithEmailAndPassword(auth, email, password)
@@ -23,7 +25,9 @@ const LoginDoctor = (props) => {
         const user = userCredential.user;
         navigate("/doctor");
         alert("Loggin In");
-        props.onLogin(user);
+        setIsLoggedIn(true);
+        setUserType('doctor');
+        onLogin('doctor');
       })
       .catch((error) => {
         const errorMessage = error.message;

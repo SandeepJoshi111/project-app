@@ -32,6 +32,7 @@ html{
 .container{
   width: var(--container-lg);
   margin: 0 auto;
+  height: 100%;
 }
 
 .btn{
@@ -44,6 +45,7 @@ html{
   margin: 1rem;
   border: 1px solid var(--color-primary-variant);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .btn:hover{
@@ -55,10 +57,16 @@ html{
 
 
 @media screen and (max-width: 1024px) {
- 
+ .btn{
+   width: 5rem !important;
+   font-size: .7rem !important;
+ }
 }
 @media screen and (max-width: 600px) {
-
+  .btn{
+    width: 4rem !important;
+    font-size: .6rem !important;
+  }
 
 }
 

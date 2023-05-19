@@ -62,18 +62,20 @@ function Doctor() {
   // }, []);
 
   return (
+    <MainLayouts>
 
       <div className="container doctor-container">
         {/* {user ? (
           <div className="doctor-content">
-            <div className="namaste">Namaste<FaPrayingHands/> </div>
-            <h1>Dr.  {user.firstName} {user.lastName}</h1>
-            <p>Ready for Counselling ?</p>
+          <div className="namaste">Namaste<FaPrayingHands/> </div>
+          <h1>Dr.  {user.firstName} {user.lastName}</h1>
+          <p>Ready for Counselling ?</p>
           </div>
-        ) : (
-          <div></div>
-        )} */}
+          ) : (
+            <div></div>
+          )} */}
       </div>
+          </MainLayouts>
 
   );
 }

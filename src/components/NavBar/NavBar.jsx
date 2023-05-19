@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LOGO from "../../assets/HCN-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
 import "./nav.css";
@@ -10,10 +10,13 @@ import { AiFillHome } from "react-icons/ai";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
-import { FaPrayingHands } from "react-icons/fa";
-import { Button, Modal } from "react-bootstrap";
+import { FaUserAlt } from "react-icons/fa";
+import { FaUserMd } from "react-icons/fa";
 
-const NavBar = () => {
+
+
+
+const NavBar = ({ isLoggedIn, userType }) => {
   // TO RETRIEVE DATA FROM FIREBASE
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);
@@ -86,7 +89,6 @@ const NavBar = () => {
     };
   };
 
-
   return (
     <div className="container nav-container">
       <div className="nav-content">
@@ -130,8 +132,7 @@ const NavBar = () => {
               {/* <div>Namaste</div> */}
               <div className="name-content">
                 {" "}
-                <span className="namaste">Namaste</span> {user.firstName}{" "}
-                {user.lastName}.
+                <span className="namaste">Namaste</span> {user.firstName}
               </div>
               <button className="btn btn-hover" onClick={handleLogout}>
                 Log Out{" "}
@@ -154,7 +155,18 @@ const NavBar = () => {
               }}
             />
           )}
-  
+
+          {isLoggedIn && userType === "patient" && (
+            <div className="patient-icon">
+              <FaUserAlt/>
+              </div>
+          )}
+          {isLoggedIn && userType === "doctor" && (
+            <div className="doctor-icon">
+              <FaUserMd/>
+          </div>
+          )}
+          
         </div>
       </div>
     </div>

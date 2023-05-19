@@ -5,15 +5,16 @@
 
 }
 .nav-content{
-    width: 100vw;
+    flex: 1;
     display: flex;
     justify-content: space-between; 
     padding: 1rem;
     height: 5rem;
-    box-shadow: 1px 1px 15px .5px rgb(148, 147, 147);
+    box-shadow: 1px 1px 15px .5px var(--color-primary-variant);
     align-items: center;
     font-size: 1rem;
-    
+    border-radius: 0 0 3rem 3rem;
+    width:100%;
     
 }
 .nav-image img{
@@ -28,6 +29,7 @@
 .logout{
     display: flex;
     align-items: center;
+    
 }
 .login{
     display: flex;
@@ -137,6 +139,10 @@
         width: 100vw;
         font-size: 15px;
     }
+    .nav-image img{
+        width: 150px !important;
+        height: 150px !important;
+    }
     .btn{
         font-size: 10px;
     }
@@ -153,6 +159,7 @@
     #home,#services,#hospital,#emergency{
         font-size: .8rem ;
     }
+    
 }
 @media screen and(max-width:600px) {
     .nav-content{
@@ -172,5 +179,15 @@
     #home,#services,#hospital,#emergency{
         font-size: .8rem ;
     }
-   
+    .namaste{
+        font-size: .7rem ;    
+    }
+    .name-content{
+        font-size: .5rem !important;
+    }
+    .nav-image img{
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
 }

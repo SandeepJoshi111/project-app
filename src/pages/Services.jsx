@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Services/services.css";
 import { BsFillChatDotsFill } from "react-icons/bs";
@@ -6,10 +6,11 @@ import { BsFillCalendar2CheckFill } from "react-icons/bs";
 import { RiLoginBoxFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 const Services = () => {
+  const [clipPath, setClipPath] = useState('initial');
   return (
     <MainLayouts>
       <div className="container services-container">
-        <div className="services-grid">
+        <div className="services-grid" style={{ clipPath }}>
           <Link to="/login">
             <div className="services-wrap">
               <div className="services-logo">

@@ -14,6 +14,7 @@ import Services from "./pages/Services";
 import SignUpDoctor from "./components/SignUp/SignUpDoctor";
 import LoginDoctor from "./components/LoginPage/LoginDoctor";
 import Payment from "./components/Payment/Payment";
+import Header from "./components/Header/Header";
 
 // const router = createBrowserRouter([
 //   {
