@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/Firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth,provider } from "../../firebase/Firebase";
 import { RxCross1 } from "react-icons/rx";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
+import GoogleButton from "react-google-button";
 
 const LoginDoctor = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -17,6 +18,18 @@ const LoginDoctor = ({ onLogin }) => {
   const [error, setError] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState('');
+
+  const [user,setUser] = useState(null);
+  const handleGoogleSignIn =()=>{
+    signInWithPopup(auth,provider).then((result)=>{
+      const user = result.user;
+      setUser(user);
+      navigate('/')
+    }).catch((error)=>{
+      console.log(error);
+    })
+  
+  }
 
   function handleLogin() {
     signInWithEmailAndPassword(auth, email, password)
@@ -41,7 +54,7 @@ const LoginDoctor = ({ onLogin }) => {
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}
       >
-        <div className="register-form">
+        <div className="register-form" >
           <Link className="user " to="/login">
             <div>
               <FaUserAlt />
@@ -81,6 +94,8 @@ const LoginDoctor = ({ onLogin }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <div class="separator">OR</div>
+        <div className="google"><GoogleButton type="light" onClick={handleGoogleSignIn}/></div>
 
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}

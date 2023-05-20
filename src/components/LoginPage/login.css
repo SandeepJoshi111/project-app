@@ -62,8 +62,7 @@ span{
     gap: 1rem  ;
     top: .1rem;
     margin: -10px 0px;
-
-   
+    
 }
 .register-form .user {
     display: flex;
@@ -90,6 +89,33 @@ span{
 }
 .active{
     color: var(--color-primary);
+}
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2rem;
+    color: var(--color-gray);
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+.google{
+    display: flex;
+    justify-content: center;
 }
 @media screen and(max-width: 1024px) {
     .login-box{
