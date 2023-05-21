@@ -57,7 +57,7 @@ const SignUpDoctor = () => {
       >
         
         <div className="register-form">
-          <Link className="user " to='/signup'>
+          <Link className="user " to='/signup' id="doctor-icon">
             <div>
               <FaUserAlt />
             </div>
