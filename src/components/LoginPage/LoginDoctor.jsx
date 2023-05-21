@@ -55,7 +55,7 @@ const LoginDoctor = ({ onLogin }) => {
         animate={{ opacity: 1 }}
       >
         <div className="register-form" >
-          <Link className="user " to="/login">
+          <Link className="user " to="/login" id="doctor-icon">
             <div>
               <FaUserAlt />
             </div>

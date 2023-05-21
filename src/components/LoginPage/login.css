@@ -80,6 +80,9 @@ span{
     cursor: pointer;
     transition: var(--transition);
 }
+#doctor-icon{
+    color: var(--color-primary-variant);
+}
 
 .register-form .user:hover{
     color: var(--color-black);

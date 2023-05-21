@@ -68,8 +68,8 @@ const Login = ({ onLogin }) => {
             </div>
             User
           </Link>
-          <Link className="doctor" to="/logindoctor">
-            <div>
+          <Link className="doctor" to="/logindoctor" id="doctor-icon">
+            <div >
               <FaUserMd  />
             </div>
             Doctor
