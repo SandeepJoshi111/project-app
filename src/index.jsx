@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 const App = lazy(() => import("./App"));
 const Services = lazy(() => import("./pages/Services"));
 const Hospital = lazy(() => import("./pages/Hospital"));
@@ -19,6 +20,7 @@ root.render(
   <>
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
+     
         <Routes>
           <Route exact path="/" element={<App />}></Route>
           <Route path="/services" element={<Services />}></Route>

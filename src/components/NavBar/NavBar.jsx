@@ -12,73 +12,24 @@ import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
+import UseAuth from "../../hooks/UseAuth";
+import { auth } from "../../firebase/Firebase";
+import { signOut } from "firebase/auth";
 
 
 
 
-const NavBar = ({ isLoggedIn, userType }) => {
+const NavBar = () => {
   // TO RETRIEVE DATA FROM FIREBASE
-  const [user, setUser] = useState(null);
+  const currentUser = UseAuth();
   const [showLogin, setShowLogin] = useState(false);
 
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // Retrieve user data from Firestore collection
-        const db = firebase.firestore();
-        db.collection("users")
-          .doc(user.uid)
-          .get()
-          .then((doc) => {
-            if (doc.exists) {
-              const data = doc.data();
-              setUser({
-                uid: user.uid,
-                firstName: data.firstName,
-                lastName: data.lastName,
-              });
-            }
-          })
-          .catch((error) => {
-            console.log("Error getting user data:", error);
-          });
-      } else {
-        setUser(null);
-      }
-    });
-
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // Retrieve user data from Firestore collection
-        const db = firebase.firestore();
-        db.collection("doctor")
-          .doc(user.uid)
-          .get()
-          .then((doc) => {
-            if (doc.exists) {
-              const data = doc.data();
-              setUser({
-                uid: user.uid,
-                firstName: data.firstName,
-                lastName: data.lastName,
-              });
-            }
-          })
-          .catch((error) => {
-            console.log("Error getting user data:", error);
-          });
-      } else {
-        setUser(null);
-      }
-    });
-  }, []);
-
   // SIGN OUT
-  function handleLogout() {
-    firebase.auth().signOut();
+  const  handleLogout = async()=> {
+    await signOut(auth);
     alert("Logged Out");
-    setUser(null);
   }
+
   const navLinkStyle = ({ isActive }) => {
     return {
       background: isActive ? "teal" : "transparent",
@@ -89,6 +40,7 @@ const NavBar = ({ isLoggedIn, userType }) => {
     };
   };
 
+  
   return (
     <div className="container nav-container">
       <div className="nav-content">
@@ -127,15 +79,15 @@ const NavBar = ({ isLoggedIn, userType }) => {
             </li>
           </div>
 
-          {user ? (
+          {currentUser ? (
             <li className="logout">
               {/* <div>Namaste</div> */}
               <div className="name-content">
-                {" "}
-                <span className="namaste">Namaste</span> {user.firstName}
+      
+                <span className="namaste">Namaste</span> {currentUser.displayName}
               </div>
               <button className="btn btn-hover" onClick={handleLogout}>
-                Log Out{" "}
+                Log Out
               </button>
             </li>
           ) : (
@@ -150,22 +102,14 @@ const NavBar = ({ isLoggedIn, userType }) => {
 
           {showLogin && (
             <Login
-              onLogin={(user) => {
+              onLogin={(currentUser) => {
                 setShowLogin(false);
               }}
             />
           )}
+    
 
-          {isLoggedIn && userType === "patient" && (
-            <div className="patient-icon">
-              <FaUserAlt/>
-              </div>
-          )}
-          {isLoggedIn && userType === "doctor" && (
-            <div className="doctor-icon">
-              <FaUserMd/>
-          </div>
-          )}
+     
           
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth,provider } from "../../firebase/Firebase";
+import { auth, provider } from "../../firebase/Firebase";
 import { RxCross1 } from "react-icons/rx";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
@@ -16,37 +16,54 @@ const LoginDoctor = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userType, setUserType] = useState('');
 
-  const [user,setUser] = useState(null);
-  const handleGoogleSignIn =()=>{
-    signInWithPopup(auth,provider).then((result)=>{
-      const user = result.user;
-      setUser(user);
-      navigate('/')
-    }).catch((error)=>{
-      console.log(error);
-    })
-  
-  }
+  const signInWithGoogle = async () => {
+    try {
+      const userCredential = await signInWithPopup(auth, provider);
+      console.log("userCredential", userCredential);
+      const user = userCredential.user;
+      const name = user.displayName;
 
-  function handleLogin() {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        navigate("/doctor");
-        alert("Loggin In");
-        setIsLoggedIn(true);
-        setUserType('doctor');
-        onLogin('doctor');
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
-  }
+      console.log("user", user);
+      console.log("name", name);
+      navigate("/patient");
+    } catch (error) {
+      const errorMessage = error.message;
+      setError(errorMessage);
+    }
+  };
+
+
+  // function handleLogin() {
+  //   signInWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       navigate("/doctor");
+  //       alert("Loggin In");
+  //     })
+  //     .catch((error) => {
+  //       const errorMessage = error.message;
+  //       setError(errorMessage);
+  //     });
+  // }
+
+
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log("user", user);
+      navigate("/patient");
+    } catch (error) {
+      const errorMessage = error.message;
+            setError(errorMessage);
+    }
+  };
   return (
     <div className="container login-container">
       <motion.div
@@ -54,7 +71,7 @@ const LoginDoctor = ({ onLogin }) => {
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}
       >
-        <div className="register-form" >
+        <div className="register-form">
           <Link className="user " to="/login" id="doctor-icon">
             <div>
               <FaUserAlt />
@@ -94,15 +111,19 @@ const LoginDoctor = ({ onLogin }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <div class="separator">OR</div>
-        <div className="google"><GoogleButton type="light" onClick={handleGoogleSignIn}/></div>
 
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
           <button className="btn" onClick={handleLogin}>
             Log In
           </button>
+        </div>
+        <div class="separator">OR</div>
+        <div className="google">
+          <GoogleButton type="light" onClick={signInWithGoogle} />
+        </div>
 
+        <div className="btn-footer">
           <div>
             Don't have an account?{" "}
             <span>

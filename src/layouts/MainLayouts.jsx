@@ -6,18 +6,10 @@ import LoginDoctor from "../components/LoginPage/LoginDoctor";
 import Header from "../components/Header/Header";
 
 const MainLayouts = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userType, setUserType] = useState('');
-
-  const handleLogin = (type) => {
-    setIsLoggedIn(true);
-    setUserType(type);
-  };
-
   return (
     <div>
-      <NavBar isLoggedIn={isLoggedIn} userType={userType} />
 
+      <NavBar/>
       <motion.div
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}

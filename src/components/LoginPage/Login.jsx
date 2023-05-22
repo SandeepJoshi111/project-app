@@ -2,60 +2,73 @@ import React, { useEffect, useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth ,provider} from "../../firebase/Firebase";
+import { auth, provider } from "../../firebase/Firebase";
 import { RxCross1 } from "react-icons/rx";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { color, motion } from "framer-motion";
-import {GoogleButton} from 'react-google-button';
-
-
+import { GoogleButton } from "react-google-button";
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userType, setUserType] = useState('');
-
-  const [user,setUser] = useState(null);
-  const handleGoogleSignIn =()=>{
-    signInWithPopup(auth,provider).then((result)=>{
-      const user = result.user;
-      setUser(user);
-      navigate('/')
-    }).catch((error)=>{
-      console.log(error);
-    })
-  
-  }
 
 
-  function handleLogin() {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        navigate("/patient");
-        alert("Loggin In");
-        setIsLoggedIn(true);
-        setUserType('patient');
-        onLogin('patient');
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
-  }
+  const signInWithGoogle = async () => {
+    try {
+      const userCredential = await signInWithPopup(auth, provider);
+      console.log("userCredential", userCredential);
+      const user = userCredential.user;
+      const name = user.displayName;
 
+      console.log("user", user);
+      console.log("name", name);
+      navigate('/patient')
+    } catch (error) {
+      const errorMessage = error.message;
+      setError(errorMessage);
+    }
+  };
 
- 
-  
+  // function handleLogin() {
+  //   signInWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       navigate("/patient");
+  //       alert("Loggin In");
+  //       setIsLoggedIn(true);
+  //       setUserType('patient');
+  //       onLogin('patient');
+  //     })
+  //     .catch((error) => {
+  //       const errorMessage = error.message;
+  //       setError(errorMessage);
+  //     });
+  // }
+
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log("user", user);
+      navigate("/patient");
+    } catch (error) {
+      const errorMessage = error.message;
+            setError(errorMessage);
+    }
+  };
+
   return (
-    <div  className="container login-container">
+    <div className="container login-container">
       <motion.div
         className="login-box"
         initial={{ opacity: 0.1 }}
@@ -69,8 +82,8 @@ const Login = ({ onLogin }) => {
             User
           </Link>
           <Link className="doctor" to="/logindoctor" id="doctor-icon">
-            <div >
-              <FaUserMd  />
+            <div>
+              <FaUserMd />
             </div>
             Doctor
           </Link>
@@ -101,15 +114,18 @@ const Login = ({ onLogin }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-          <div class="separator">OR</div>
-          <div className="google"><GoogleButton type="light" onClick={handleGoogleSignIn}/></div>
-
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
           <button className="btn" onClick={handleLogin}>
             Log In
           </button>
+        </div>
+        <div class="separator">OR</div>
+        <div className="google">
+          <GoogleButton type="light" onClick={signInWithGoogle} />
+        </div>
 
+        <div className="btn-footer">
           <div>
             Don't have an account?{" "}
             <span>

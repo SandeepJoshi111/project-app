@@ -97,7 +97,7 @@ span{
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 2rem;
+    margin: 1rem;
     color: var(--color-gray);
   }
   
@@ -119,6 +119,7 @@ span{
 .google{
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 @media screen and(max-width: 1024px) {
     .login-box{
