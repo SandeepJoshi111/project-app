@@ -1,6 +1,7 @@
 .header-container {
   width: 100%;
-  margin: 0 auto;
+  height: 100%;
+  text-align: center;
 }
 
 .header-content {
@@ -16,6 +17,7 @@
   align-items: center;
   justify-content: space-around;
   text-align: center;
+  margin-top: -6rem;
 }
 @keyframes clip-path {
   0% {
@@ -25,6 +27,11 @@
   100% {
     clip-path: circle(100% at 50% 0%);
   }
+}
+.home-marquee {
+  margin-top: 12px;
+  font-size: 20px;
+  color: red;
 }
 .home-image {
   display: flex;
@@ -45,10 +52,9 @@
 .home-quote h5 {
   font-size: 20px;
   color: var(--color-gray);
+  margin: 0.5rem;
 }
-#about {
-  height: 50vh;
-}
+
 .home-separator {
   display: flex;
   align-items: center;
@@ -88,9 +94,32 @@
   font-weight: 600;
 }
 
+.btn-home:hover {
+  background: var(--color-secondary);
+  color: var(--color-black);
+}
+
+/* About Section */
+#about {
+  height: 50vh;
+  background: rgba(0, 128, 128, 0.4);
+  font-size: 40px;
+}
+
+.overlap {
+  /* background: var(--color-secondary); */
+  width: var(--container-lg);
+  color: black;
+  margin: 0 auto;
+  backdrop-filter: blur(1000px);
+}
+
 @media screen and (max-width: 1024px) {
+  .home-marquee {
+    font-size: 18px;
+  }
   .home-image img {
-    width: 300px;
+    width: 400px;
     margin-top: 4rem;
   }
   .home-quote {
@@ -112,6 +141,9 @@
 @media screen and (max-width: 600px) {
   .header-content {
     flex-direction: column;
+  }
+  .home-marquee {
+    font-size: 15px;
   }
   .home-image img {
     width: 300px;
