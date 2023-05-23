@@ -106,14 +106,6 @@
   font-size: 40px;
 }
 
-.overlap {
-  /* background: var(--color-secondary); */
-  width: var(--container-lg);
-  color: black;
-  margin: 0 auto;
-  backdrop-filter: blur(1000px);
-}
-
 @media screen and (max-width: 1024px) {
   .home-marquee {
     font-size: 18px;
@@ -146,12 +138,12 @@
     font-size: 15px;
   }
   .home-image img {
-    width: 300px;
-    margin-top: 4rem;
+    width: 225px;
+    margin-top: 1rem;
   }
   .home-quote {
-    margin-top: -10rem;
-    font-size: 20px;
+    margin-top: -13rem;
+    font-size: 18px;
   }
   .home-quote h4 {
     font-size: 15px;

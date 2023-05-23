@@ -39,7 +39,7 @@ function Header() {
 
         <section className="about-container" id="about">
           About Us
-          <div className="overlap">hey</div>
+         
         </section>
       </div>
     </MainLayouts>
