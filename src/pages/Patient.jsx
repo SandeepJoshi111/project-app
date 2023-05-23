@@ -12,6 +12,7 @@ function Doctor() {
   return (
     <MainLayouts>
       <div className="contaienr patient-container">
+        <h1>Online Registered Doctors</h1>
         <div className="patient-grid">
           <div className="patient-wrap">
             <div className="doctor-icon-container">
@@ -21,63 +22,17 @@ function Doctor() {
             </div>
             <div className="doctor-content">
               <div className="doctor-name">
-                <h1>Dr. John Doe</h1>
+                <h1>Dr. Dristi Gurung</h1>
               </div>
               <div className="doctor-location">
-                <MdLocationPin /> <p>Hospital Name</p>
+                <MdLocationPin /> <p>Specialist</p>
               </div>
               <div className="buttons">
                 <div className="book-an-appointment">
                   <button className="btn-book">Book an Appointment</button>
                 </div>
                 <div className="payment">
-                  <button className="btn-book">Payments</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="patient-wrap">
-            <div className="doctor-icon-container">
-              <div className="doctor-icon">
-                <FaUserMd />
-              </div>
-            </div>
-            <div className="doctor-content">
-              <div className="doctor-name">
-                <h1>Dr. John Doe</h1>
-              </div>
-              <div className="doctor-location">
-                <MdLocationPin /> <p>Hospital Name</p>
-              </div>
-              <div className="buttons">
-                <div className="book-an-appointment">
-                  <button className="btn-book">Book an Appointment</button>
-                </div>
-                <div className="payment">
-                  <button className="btn-book">Payments</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="patient-wrap">
-            <div className="doctor-icon-container">
-              <div className="doctor-icon">
-                <FaUserMd />
-              </div>
-            </div>
-            <div className="doctor-content">
-              <div className="doctor-name">
-                <h1>Dr. John Doe</h1>
-              </div>
-              <div className="doctor-location">
-                <MdLocationPin /> <p>Hospital Name</p>
-              </div>
-              <div className="buttons">
-                <div className="book-an-appointment">
-                  <button className="btn-book">Book an Appointment</button>
-                </div>
-                <div className="payment">
-                  <button className="btn-book">Payments</button>
+                  <button className="btn-pay">Payments</button>
                 </div>
               </div>
             </div>

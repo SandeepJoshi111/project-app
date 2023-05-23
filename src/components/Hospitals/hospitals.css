@@ -12,6 +12,7 @@
 .title {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--color-primary);
 }
 
 .hospital-wrap {
@@ -21,12 +22,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: var(--color-black);
   overflow-x: hidden;
   word-wrap: normal;
   border-radius: 10px;
   background: var(--color-white);
-  box-shadow: 0px 2px 0px 0px gray;
+  box-shadow: 2px 2px 2px 2px var(--color-secondary);
   position: relative;
   transform: scale(1);
   transition: var(--transition);
@@ -39,6 +40,7 @@
 .hospital-logo {
   position: absolute;
   top: 1rem;
+  color: var(--color-accent);
 }
 .hospital-content {
   position: absolute;
@@ -46,7 +48,7 @@
 }
 .hospital-wrap h1 {
   font-size: 1.2rem;
-  color: var(--color-black);
+  color: var(--color-primary);
   font-weight: 600;
 }
 

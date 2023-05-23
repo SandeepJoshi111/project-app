@@ -8,7 +8,7 @@ import "firebase/firestore";
 import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
 
 const SignUpDoctor = () => {
   const navigate = useNavigate();
@@ -32,12 +32,12 @@ const SignUpDoctor = () => {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            speciality:speciality,
+            speciality: speciality,
           })
           .then(() => {
             console.log("Doctor added with ID: ", user.uid);
             navigate("/logindoctor");
-            alert("Successgully Registered as a Doctor")
+            alert("Successfully Registered as a Doctor");
           })
           .catch((error) => {
             console.error("Error adding doctor details: ", error);
@@ -50,27 +50,25 @@ const SignUpDoctor = () => {
   };
   return (
     <div className="container signup-container">
-      <motion.div className="signup-box"
-        initial={{opacity:0.1}}
-        animate={{opacity:1}}
- 
+      <motion.div
+        className="signup-box"
+        initial={{ opacity: 0.1 }}
+        animate={{ opacity: 1 }}
       >
-        
         <div className="register-form">
-          <Link className="user " to='/signup' id="doctor-icon">
+          <Link className="user " to="/signup" id="doctor-icon">
             <div>
               <FaUserAlt />
             </div>
             User
           </Link>
-          <Link className="doctor active" to='/signupdoctor'>
+          <Link className="doctor active" to="/signupdoctor">
             <div>
               <FaUserMd />
             </div>
             Doctor
           </Link>
         </div>
-
 
         <div className="backsignup">
           <Link to="/">

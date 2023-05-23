@@ -35,7 +35,7 @@ const SignUp = () => {
           .then(() => {
             console.log("User added with ID: ", user.uid);
             navigate("/login");
-            alert("Successgully Registered as a User");
+            alert("Successfully Registered as a User");
           })
           .catch((error) => {
             console.error("Error adding user details: ", error);
