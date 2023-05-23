@@ -1,14 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
 import "./header.css";
 import HOMEDOC from "../../assets/undraw_medicine_b-1-ol.svg";
 import MainLayouts from "../../layouts/MainLayouts";
+import emailjs from "emailjs-com";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
 
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_93mxinu",
+      "template_xb0pv3l",
+      form.current,
+      "EACVzdlFnYh2JfrHc"
+    );
+
+    e.target.reset();
+  };
   return (
     <MainLayouts>
       <div className="container header-container">
@@ -33,14 +47,43 @@ function Header() {
               <a href="#about">
                 <button className="btn-home">Details</button>
               </a>
+              <a href="#contact">
+                <button className="btn-home">Contact Us</button>
+              </a>
             </div>
           </div>
         </div>
 
         <section className="about-container" id="about">
-          About Us
-         
+          <h1 className="home-title">About Us</h1>
+          <div className="about-content">
+            <div className="left-about">Why Health Care Nepal?</div>
+            <div className="right-about">This is the reason</div>
+          </div>
         </section>
+
+        <section className="contact-container" id="contact">
+          <h1 className="home-title">Contact Us</h1>
+          <form ref={form} onSubmit={sendEmail}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Full Name"
+              required
+            />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea
+              name="message"
+              rows="7"
+              placeholder="Your Message"
+            ></textarea>
+            <button type="submit" className="btn-home">
+              Send Message
+            </button>
+          </form>
+        </section>
+
+        <footer className="footer-container" id="footer"></footer>
       </div>
     </MainLayouts>
   );
