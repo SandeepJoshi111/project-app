@@ -16,19 +16,16 @@ import UseAuth from "../../hooks/UseAuth";
 import { auth } from "../../firebase/Firebase";
 import { signOut } from "firebase/auth";
 
-
-
-
 const NavBar = () => {
   // TO RETRIEVE DATA FROM FIREBASE
   const currentUser = UseAuth();
   const [showLogin, setShowLogin] = useState(false);
 
   // SIGN OUT
-  const  handleLogout = async()=> {
+  const handleLogout = async () => {
     await signOut(auth);
     alert("Logged Out");
-  }
+  };
 
   const navLinkStyle = ({ isActive }) => {
     return {
@@ -40,7 +37,6 @@ const NavBar = () => {
     };
   };
 
-  
   return (
     <div className="container nav-container">
       <div className="nav-content">
@@ -83,8 +79,8 @@ const NavBar = () => {
             <li className="logout">
               {/* <div>Namaste</div> */}
               <div className="name-content">
-      
-                <span className="namaste">Namaste</span> {currentUser.displayName}
+                <span className="namaste">Namaste</span>{" "}
+                {currentUser.displayName}
               </div>
               <button className="btn btn-hover" onClick={handleLogout}>
                 Log Out
@@ -107,10 +103,6 @@ const NavBar = () => {
               }}
             />
           )}
-    
-
-     
-          
         </div>
       </div>
     </div>

@@ -1,23 +1,121 @@
-/* .patient-container{
-    width: var(--container-lg);
-    height: 100%;
-    text-align: center;
+.patient-container {
+  width: var(--container-lg);
+  margin: 0 auto;
 }
-.namaste{
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: var(--color-primary);
+.patient-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.patient-wrap {
+  margin-top: 10px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  word-wrap: normal;
+  border-radius: 10px;
+  background: var(--color-white);
+  box-shadow: 2px 2px 2px 2px gray;
+  position: relative;
+  transform: scale(1);
+  transition: var(--transition);
+}
+.doctor-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+  color: var(--color-white);
+  font-size: 70px;
+}
+.doctor-icon-container {
+  background: var(--color-primary);
+  height: 200px;
+  border-radius: 10px 0 0 10px;
 }
 
-.patient-content h1{
-    font-size: 1.7rem;
-    font-weight: 600;
+.doctor-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.doctor-name {
+  font-size: 0.8rem;
+}
+.doctor-location {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
 }
 
-.patient-content p{
-    color: var(--color-primary);
-} */
+.btn-book {
+  width: 12rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding: 7px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary-variant);
+  transition: var(--transition);
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btn-book:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 1024px) {
+  .patient-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .btn-book {
+    font-size: 0.9rem;
+    padding: 7px;
+  }
+  .patient-wrap {
+    height: 190px;
+  }
+  .doctor-icon-container {
+    height: 190px;
+  }
+  .doctor-icon {
+    font-size: 50px;
+    margin: 4rem;
+  }
+  .doctor-name {
+    font-size: 0.7rem;
+  }
+  .doctor-location {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .patient-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .btn-book {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .patient-wrap {
+    height: 175px;
+  }
+  .doctor-icon-container {
+    height: 175px;
+  }
+  .doctor-icon {
+    font-size: 50px;
+    margin: 4rem;
+  }
+  .doctor-name {
+    font-size: 0.6rem;
+  }
+  .doctor-location {
+    font-size: 0.7rem;
+  }
+}

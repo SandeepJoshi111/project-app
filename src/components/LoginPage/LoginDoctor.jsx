@@ -26,13 +26,12 @@ const LoginDoctor = ({ onLogin }) => {
 
       console.log("user", user);
       console.log("name", name);
-      navigate("/patient");
+      navigate("/doctor");
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
     }
   };
-
 
   // function handleLogin() {
   //   signInWithEmailAndPassword(auth, email, password)
@@ -48,7 +47,6 @@ const LoginDoctor = ({ onLogin }) => {
   //     });
   // }
 
-
   const handleLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -58,10 +56,10 @@ const LoginDoctor = ({ onLogin }) => {
       );
       const user = userCredential.user;
       console.log("user", user);
-      navigate("/patient");
+      navigate("/doctor");
     } catch (error) {
       const errorMessage = error.message;
-            setError(errorMessage);
+      setError(errorMessage);
     }
   };
   return (
