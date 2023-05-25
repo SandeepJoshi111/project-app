@@ -6,55 +6,74 @@ const Modal = ({ toggleModal }) => {
     <div className="modal">
       <div className="overlay">
         <div className="modal-content">
-          <form class="form">
-            <p class="title">Book an Appointment </p>
+          <form className="form">
+            <p className="title">Book an Appointment </p>
 
-            <div class="names">
+            <div className="names">
               <label>
                 <input
-                  required=""
                   placeholder="First Name"
                   type="text"
-                  class="input"
+                  className="input"
+                  required
                 />
               </label>
 
               <label>
                 <input
-                  required=""
                   placeholder="Last Name"
                   type="text"
-                  class="input"
+                  className="input"
+                  required
                 />
               </label>
             </div>
-            <label>
-              <input
-                required=""
-                placeholder="Phone Number"
-                type="password"
-                class="input"
-              />
-            </label>
+            <div className="dates">
+              <label>
+                <input
+                  placeholder="Date"
+                  type="date"
+                  className="input"
+                  required
+                />
+              </label>
 
-            <label>
-              <input
-                required=""
-                placeholder="Email"
-                type="email"
-                class="input"
-              />
-            </label>
+              <label>
+                <input
+                  placeholder="Time"
+                  type="time"
+                  className="input"
+                  required
+                />
+              </label>
+            </div>
 
-            <label>
-              <input
-                required=""
-                placeholder="Message"
-                type="password"
-                class="input"
-              />
-            </label>
-            <button class="btn-modal">Submit</button>
+            <div className="creadential">
+              <label>
+                <input
+                  placeholder="Phone Number"
+                  type="number"
+                  className="input"
+                  id="phone"
+                  required
+                />
+              </label>
+              <label>
+                <select id="age" required>
+                  <option value="">Select Age</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                </select>
+              </label>
+            </div>
+            <div className="message">
+              <label>
+                <textarea placeholder="Message" className="input" />
+              </label>
+            </div>
+
+            <button className="btn-modal">Submit</button>
           </form>
           <RxCross1 className="close-modal" onClick={toggleModal} />
         </div>

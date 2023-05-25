@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  margin-top: -6rem;
+  margin-top: -5rem;
 }
 @keyframes clip-path {
   0% {
@@ -40,7 +40,7 @@
 }
 .home-image img {
   margin-top: 2rem;
-  width: 700px;
+  width: 600px;
 }
 .home-quote {
   font-size: 30px;

@@ -26,9 +26,9 @@ function Header() {
   return (
     <MainLayouts>
       <div className="container header-container">
-        <marquee className="home-marquee">
+        {/* <marquee className="home-marquee">
           हेल्थ केयर नेपालबाट अपोइन्टमेन्ट बुक गर्दा १०% छुट पाउनुहोस्।
-        </marquee>
+        </marquee> */}
         <div className="header-content" style={{ clipPath }}>
           <div className="home-image">
             <img src={HOMEDOC} alt="" />
