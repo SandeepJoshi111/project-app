@@ -89,22 +89,22 @@
 }
 
 .home:hover #home {
-  top: -10%;
+  top: -30%;
   visibility: visible;
   opacity: 1;
 }
 .services:hover #services {
-  top: -10%;
+  top: -30%;
   visibility: visible;
   opacity: 1;
 }
 .hospital:hover #hospital {
-  top: -10%;
+  top: -30%;
   visibility: visible;
   opacity: 1;
 }
 .emergency:hover #emergency {
-  top: -10%;
+  top: -30%;
   visibility: visible;
   opacity: 1;
 }

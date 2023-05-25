@@ -6,6 +6,8 @@ import "./header.css";
 import HOMEDOC from "../../assets/undraw_medicine_b-1-ol.svg";
 import MainLayouts from "../../layouts/MainLayouts";
 import emailjs from "emailjs-com";
+import { Link } from "react-router-dom";
+import LOGO from "../../assets/HCN-removebg-preview.png";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
@@ -57,8 +59,41 @@ function Header() {
         <section className="about-container" id="about">
           <h1 className="home-title">About Us</h1>
           <div className="about-content">
-            <div className="left-about">Why Health Care Nepal?</div>
-            <div className="right-about">This is the reason</div>
+            <div className="left-about">
+              <div className="about-us">
+                <h4>Why Health Care Nepal?</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Cupiditate soluta laudantium aperiam natus explicabo dolore
+                  dolores quas architecto. Quam quia voluptatibus temporibus,
+                  facere laudantium corporis nesciunt repudiandae aliquid sint
+                  suscipit nulla aperiam saepe illo vero quod excepturi rerum
+                  labore id.
+                </p>
+              </div>
+            </div>
+            <div className="seperator-about"></div>
+            <div className="right-about">
+              <div className="right-about-content">
+                <div className="about-user">
+                  <h4>Cosult With Doctor</h4>
+                  <span>Talk to a doctor regarding your health issue.</span>
+                </div>
+
+                <Link to="/patient">
+                  <button className="btn-home">View all</button>
+                </Link>
+              </div>
+              <div className="right-about-content">
+                <div className="about-user">
+                  <h4>Check Report</h4>
+                  <span>Check Report of your Patient</span>
+                </div>
+                <Link to="/doctor">
+                  <button className="btn-home">View Report</button>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -83,7 +118,27 @@ function Header() {
           </form>
         </section>
 
-        <footer className="footer-container" id="footer"></footer>
+        <footer>
+          {/* <div className="logo">
+            <img src={LOGO} alt="" />
+          </div> */}
+
+          <ul className="permalinks">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+
+          <div className="footer-copyright">
+            <small>&copy; Designed by Dristi Gurung and Sandeep Joshi .</small>
+          </div>
+        </footer>
       </div>
     </MainLayouts>
   );

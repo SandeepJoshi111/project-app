@@ -104,33 +104,59 @@
 }
 .home-title {
   font-size: 30px;
+  color: var(--color-accent);
 }
 
 /* About Section */
 #about {
-  height: 50vh;
+  height: 60vh;
   background: rgba(0, 128, 128, 0.4);
   font-size: 40px;
 }
 
 .about-content {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 48% 0% 50%;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .left-about {
   font-size: 25px;
 }
+
+.about-us {
+  text-align: justify;
+  margin-left: 5rem;
+}
+.seperator-about {
+  width: 1px;
+  background: var(--color-gray);
+  height: 100%;
+}
+
 .right-about {
   font-size: 25px;
+}
+.right-about-content {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5rem;
+  margin-bottom: 5rem;
+}
+.about-user {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.about-user span {
+  font-size: 1rem;
 }
 
 /* Contact Section */
 #contact {
   height: fit-content;
   font-size: 40px;
-
   margin: 0 auto;
   background: rgba(0, 128, 128, 0.4);
   display: flex;
@@ -159,9 +185,40 @@ textarea {
 }
 
 /* Footer */
-#footer {
+footer {
   height: 50vh;
   background: var(--color-accent);
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+footer a {
+  color: var(--color-black);
+}
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.permalinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto 3rem;
+  margin-top: 2rem;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.footer-copyright {
+  margin-bottom: 4rem;
+  color: var(--color-bg);
+  font-size: 1.1rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -183,15 +240,43 @@ textarea {
     font-size: 10px;
     color: var(--color-gray);
   }
-  #about {
-    height: 50vh;
-  }
   form {
     width: 50%;
   }
   .btn-home {
     width: 8rem;
     font-size: 0.9rem;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-about {
+    font-size: 20px;
+  }
+  .about-us {
+    text-align: justify;
+    margin: 0 3rem;
+  }
+  .seperator-about {
+    min-width: 87%;
+    background: var(--color-gray);
+    height: 1px;
+    margin: 0 3rem;
+  }
+
+  .right-about {
+    font-size: 20px;
+  }
+  .right-about-content {
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+  }
+  p {
+    font-size: 1rem;
   }
 }
 
@@ -218,14 +303,53 @@ textarea {
     font-size: 10px;
     color: var(--color-gray);
   }
-  #about {
-    height: 50vh;
-  }
+
   form {
     width: 70%;
   }
   .btn-home {
     width: 6rem;
+    font-size: 0.7rem;
+  }
+  .permalinks {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-about {
+    font-size: 20px;
+  }
+  .about-us {
+    text-align: justify;
+    margin: 0 3rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  .about-us p {
+    font-size: 0.8rem;
+  }
+  .seperator-about {
+    min-width: 87%;
+    background: var(--color-gray);
+    height: 1px;
+    margin: 0 3rem;
+  }
+
+  .right-about {
+    font-size: 20px;
+  }
+  .right-about-content {
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+  }
+  .about-user span {
     font-size: 0.8rem;
   }
 }

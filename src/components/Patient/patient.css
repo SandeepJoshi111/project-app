@@ -8,6 +8,10 @@
 .patient-container h1 {
   font-size: 1.2rem;
 }
+.patient-title {
+  text-align: center;
+  font-size: 2rem;
+}
 
 .patient-wrap {
   margin-top: 10px;
@@ -43,11 +47,13 @@
 }
 .doctor-name {
   font-size: 0.8rem;
+  color: var(--color-primary);
 }
-.doctor-location {
+.doctor-speciality {
   display: flex;
   align-items: center;
   font-size: 1rem;
+  color: var(--color-accent);
 }
 
 .btn-book {
@@ -92,6 +98,10 @@
     font-size: 0.9rem;
     padding: 7px;
   }
+  .btn-pay {
+    font-size: 0.9rem;
+    padding: 7px;
+  }
   .patient-wrap {
     height: 190px;
   }
@@ -115,6 +125,10 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .btn-book {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .btn-pay {
     font-size: 0.8rem;
     padding: 5px;
   }
