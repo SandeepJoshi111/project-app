@@ -7,8 +7,14 @@ import MainLayouts from "../layouts/MainLayouts";
 import { FaUserMd } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
+import Modal from "../components/Modal/Modal";
 
 function Doctor() {
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
   return (
     <MainLayouts>
       <div className="contaienr patient-container">
@@ -29,7 +35,9 @@ function Doctor() {
               </div>
               <div className="buttons">
                 <div className="book-an-appointment">
-                  <button className="btn-book">Book an Appointment</button>
+                  <button className="btn-book" onClick={toggleModal}>
+                    Book an Appointment
+                  </button>
                 </div>
                 <div className="payment">
                   <button className="btn-pay">Payments</button>
@@ -38,6 +46,8 @@ function Doctor() {
             </div>
           </div>
         </div>
+
+        {modal && <Modal toggleModal={toggleModal} />}
       </div>
     </MainLayouts>
   );
