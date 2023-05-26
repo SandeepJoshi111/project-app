@@ -1,53 +1,86 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
 import "../components/Doctor/doctor.css";
 import MainLayouts from "../layouts/MainLayouts";
 import { FaPrayingHands } from "react-icons/fa";
+import UseAuth from "../hooks/UseAuth";
 
 function Doctor() {
+  const currentUser = UseAuth();
+
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    // Fetch appointments data from Firebase
-    const fetchAppointments = async () => {
-      const db = firebase.firestore();
-      const user = firebase.auth().currentUser;
-
-      if (user) {
-        const doctorId = user.uid;
+    if (currentUser) {
+      // Fetch appointments data from Firebase
+      const fetchAppointments = async () => {
+        const db = firebase.firestore();
         const appointmentsRef = db.collection("appointments");
-        const query = appointmentsRef.where("doctorId", "==", doctorId);
+        const query = appointmentsRef.where(
+          "doctorEmail",
+          "==",
+          currentUser.email
+        );
 
         const snapshot = await query.get();
         const appointmentData = snapshot.docs.map((doc) => doc.data());
         setAppointments(appointmentData);
-      }
-    };
+      };
 
-    fetchAppointments();
-  }, []);
+      fetchAppointments();
+    }
+  }, [currentUser]);
+
   return (
     <MainLayouts>
       <div className="container doctor-container">
-      <h2 className="doctor-title">Appointments</h2>
-        {appointments.length === 0 ? (
-          <div className="no-appointments">
-            <FaPrayingHands className="praying-hands-icon" />
-            <p>No appointments available.</p>
-          </div>
-        ) : (
-          <ul className="appointment-list">
-            {appointments.map((appointment, index) => (
-              <li key={index} className="appointment-item">
-                <p>Patient: {appointment.patientName}</p>
-                <p>Date: {appointment.date}</p>
-               
-              </li>
-            ))}
-          </ul>
-        )}
+        <h2 className="doctor-title">Appointments</h2>
+        <div className="appointment-container">
+          {appointments.length === 0 ? (
+            <div className="no-appointments">
+              {/* <FaPrayingHands className="praying-hands-icon" /> */}
+              <p>No appointments available.</p>
+            </div>
+          ) : (
+            <div className="appointment-list">
+              {appointments.map((appointment, index) => (
+                <div key={index} className="doctor-grid">
+                  <div className="doctor-wrap">
+                    <div className="patient-content">
+                      <p>
+                        Patient:{" "}
+                        <span>
+                          {appointment.firstName} {appointment.lastName}
+                        </span>
+                      </p>
+                      <p>
+                        Age: <span>{appointment.age}</span>
+                      </p>
+                      <p>
+                        Number: <span>{appointment.number}</span>
+                      </p>
+                      <p>
+                        Date: <span>{appointment.date}</span>
+                      </p>
+                      <p>
+                        Time: <span>{appointment.time}</span>
+                      </p>
+                      <p>
+                        Message: <span>{appointment.message}</span>
+                      </p>
+                      <div className="patient-footer">
+                        <button className="btn-patient">Accept</button>
+                        <button className="btn-patient">Reject</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </MainLayouts>
   );

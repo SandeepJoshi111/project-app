@@ -34,7 +34,7 @@ function Doctor() {
   return (
     <MainLayouts>
       <h2 className="patient-title">Online Registered Doctors</h2>
-      <div className="contaienr patient-container">
+      <div className="container patient-container">
         {doctors.map((doctor, index) => (
           <div key={index} className="patient-grid">
             <div className="patient-wrap">
