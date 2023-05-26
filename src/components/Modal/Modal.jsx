@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "./modal.css";
 import { RxCross1 } from "react-icons/rx";
-const Modal = ({ toggleModal }) => {
+const Modal = ({ toggleModal, doctorEmail }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -22,7 +22,11 @@ const Modal = ({ toggleModal }) => {
       const db = firebase.firestore();
 
       // Add the appointment data to the "appointments" collection
-      await db.collection("appointments").add({ ...formData });
+      await db
+        .collection("appointments")
+        .add({ ...formData, 
+          doctorEmail: doctorEmail,
+        });
 
       // Clear the form
       setFormData({
@@ -35,6 +39,7 @@ const Modal = ({ toggleModal }) => {
         message: "",
       });
 
+      alert("Appointed successfully");
       console.log("Appointment data stored successfully!");
     } catch (error) {
       console.error("Error storing appointment data:", error);

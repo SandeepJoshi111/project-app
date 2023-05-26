@@ -11,6 +11,7 @@ import Modal from "../components/Modal/Modal";
 
 function Doctor() {
   const [doctors, setDoctors] = useState([]);
+  const [doctorEmail, setDoctorEmail] = useState("");
 
   useEffect(() => {
     // Fetch data from Firebase collection
@@ -26,8 +27,9 @@ function Doctor() {
   }, []);
   const [modal, setModal] = useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = (email) => {
     setModal(!modal);
+    setDoctorEmail(email);
   };
   return (
     <MainLayouts>
@@ -53,7 +55,10 @@ function Doctor() {
                 </div>
                 <div className="buttons">
                   <div className="book-an-appointment">
-                    <button className="btn-book" onClick={toggleModal}>
+                    <button
+                      className="btn-book"
+                      onClick={() => toggleModal(doctor.email)}
+                    >
                       Book an Appointment
                     </button>
                   </div>
@@ -65,7 +70,7 @@ function Doctor() {
             </div>
           </div>
         ))}
-        {modal && <Modal toggleModal={toggleModal} />}
+        {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       </div>
     </MainLayouts>
   );
