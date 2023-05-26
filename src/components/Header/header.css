@@ -173,13 +173,13 @@ form {
   width: 40%;
 }
 
-input,
+.contact-input,
 textarea {
   width: 100%;
   padding: 1.5rem;
   border-radius: 0.5rem;
   background: transparent;
-  border: 2px solid var(--color-accent);
+  border: 1px solid var(--color-accent);
   resize: none;
   color: var(--color-black);
 }

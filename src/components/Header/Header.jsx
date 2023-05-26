@@ -105,12 +105,20 @@ function Header() {
               name="name"
               placeholder="Your Full Name"
               required
+              className="contact-input"
             />
-            <input type="email" name="email" placeholder="Email" required />
+            <input
+              className="contact-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
             <textarea
               name="message"
               rows="7"
               placeholder="Your Message"
+              className="contact-input"
             ></textarea>
             <button type="submit" className="btn-home">
               Send Message
