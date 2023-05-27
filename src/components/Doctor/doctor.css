@@ -24,7 +24,6 @@
   padding: 2rem;
   word-wrap: normal;
   border-radius: 10px;
-  background: var(--color-white);
   box-shadow: 2px 2px 2px 2px var(--color-secondary);
   position: relative;
   transform: scale(1);
