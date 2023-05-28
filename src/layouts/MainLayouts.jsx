@@ -8,8 +8,8 @@ import Header from "../components/Header/Header";
 const MainLayouts = ({ children }) => {
   return (
     <div>
+      <NavBar />
 
-   
       <motion.div
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}
@@ -17,7 +17,6 @@ const MainLayouts = ({ children }) => {
       >
         {children}
       </motion.div>
-
     </div>
   );
 };

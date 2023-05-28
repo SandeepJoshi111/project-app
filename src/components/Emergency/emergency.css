@@ -96,7 +96,7 @@ marquee {
     grid-template-columns: repeat(2, 1fr);
   }
   .img-wrap {
-    width: 20rem;
+    width: 22rem;
   }
   .emergency-province {
     gap: 1rem;
@@ -121,7 +121,7 @@ marquee {
     place-items: center;
   }
   .img-wrap {
-    width: 20rem;
+    width: 22rem;
   }
   .emergency-province {
     flex-direction: column;

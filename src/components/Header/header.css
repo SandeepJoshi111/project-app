@@ -107,6 +107,14 @@
   background: var(--color-secondary);
   color: var(--color-black);
 }
+
+.disabled {
+  background: var(--color-gray);
+}
+.disabled:hover {
+  background: var(--color-gray);
+  color: var(--color-white);
+}
 .home-title {
   font-size: 30px;
   color: var(--color-accent);

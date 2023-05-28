@@ -9,9 +9,33 @@ import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import LOGO from "../../assets/HCN-removebg-preview.png";
 import KHALTI from "../../assets/khalti.png";
+import UseAuth from "../../hooks/UseAuth";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
+  const currentUser = UseAuth();
+
+  const [isDoctor, setIsDoctor] = useState(false);
+
+  useEffect(() => {
+    if (currentUser && currentUser.email) {
+      const db = firebase.firestore();
+      const doctorsCollection = db.collection("doctor");
+      // Query the "doctor" collection for the user's email
+      doctorsCollection
+        .where("email", "==", currentUser.email)
+        .get()
+        .then((querySnapshot) => {
+          if (!querySnapshot.empty) {
+            // User exists in the "doctor" collection
+            setIsDoctor(true);
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting doctor data:", error);
+        });
+    }
+  }, [currentUser]);
 
   const form = useRef();
   const sendEmail = (e) => {
@@ -23,9 +47,9 @@ function Header() {
       form.current,
       "EACVzdlFnYh2JfrHc"
     );
-
     e.target.reset();
   };
+
   return (
     <MainLayouts>
       <div className="container header-container">
@@ -80,19 +104,34 @@ function Header() {
                   <h4>Cosult With Doctor</h4>
                   <span>Talk to a doctor regarding your health issue.</span>
                 </div>
-
-                <Link to="/patient">
-                  <button className="btn-home">View all</button>
-                </Link>
+                {currentUser && isDoctor ? (
+                  <Link to="/patient">
+                    <button className="btn-home disabled" disabled>
+                      View all
+                    </button>
+                  </Link>
+                ) : (
+                  <Link to={currentUser ? "/patient" : "/login"}>
+                    <button className="btn-home">View all</button>
+                  </Link>
+                )}
               </div>
               <div className="right-about-content">
                 <div className="about-user">
                   <h4>Check Report</h4>
                   <span>Check Report of your Patient</span>
                 </div>
-                <Link to="/doctor">
-                  <button className="btn-home">View Report</button>
-                </Link>
+                {currentUser && !isDoctor ? (
+                  <Link to="/doctor">
+                    <button className="btn-home disabled" disabled>
+                      View Report
+                    </button>
+                  </Link>
+                ) : (
+                  <Link to={currentUser ? "/doctor" : "/logindoctor"}>
+                    <button className="btn-home">View Report</button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

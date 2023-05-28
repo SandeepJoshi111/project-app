@@ -21,7 +21,6 @@ root.render(
   <>
     <Router>
       <Suspense fallback={<Spinner />}>
-        <NavBar />
         <Routes>
           <Route exact path="/" element={<App />}></Route>
           <Route path="/services" element={<Services />}></Route>
@@ -33,7 +32,7 @@ root.render(
           <Route path="/signupdoctor" element={<SignUpDoctor />}></Route>
           <Route path="/patient" element={<Patient />}></Route>
           <Route path="/doctor" element={<Doctor />}></Route>
-          {/* <Route path="/payments" element={<Payment />}></Route> */}
+          <Route path="/payments" element={<Payment />}></Route>
         </Routes>
       </Suspense>
     </Router>

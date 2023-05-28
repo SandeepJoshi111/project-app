@@ -152,3 +152,18 @@ select {
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 600px) {
+  .modal-title {
+    font-size: 20px;
+  }
+  .modal-content {
+    max-width: 350px;
+  }
+  .form {
+    width: 325px;
+  }
+}

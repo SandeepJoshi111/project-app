@@ -15,7 +15,7 @@
 
 .patient-wrap {
   margin-top: 10px;
-  height: 200px;
+  height: max-content;
   display: flex;
   align-items: center;
   word-wrap: normal;
@@ -77,7 +77,7 @@
   width: 12rem;
   font-size: 1rem;
   border-radius: 1rem;
-  padding: 7px;
+  padding: 7px 10px;
   border: 1px solid transparent;
   transition: var(--transition);
   cursor: pointer;
@@ -93,6 +93,9 @@
 @media screen and (max-width: 1024px) {
   .patient-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .patient-title {
+    font-size: 1.5rem;
   }
   .btn-book {
     font-size: 0.9rem;
@@ -123,14 +126,20 @@
 @media screen and (max-width: 600px) {
   .patient-container {
     grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+  .patient-title {
+    font-size: 1.2rem;
   }
   .btn-book {
+    width: 9rem;
     font-size: 0.8rem;
     padding: 5px;
   }
   .btn-pay {
+    width: 9rem;
     font-size: 0.8rem;
-    padding: 5px;
+    padding: 5px 20px;
   }
   .patient-wrap {
     height: 175px;
