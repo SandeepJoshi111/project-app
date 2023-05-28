@@ -34,23 +34,6 @@ const Login = ({ onLogin }) => {
     }
   };
 
-  // function handleLogin() {
-  //   signInWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       navigate("/patient");
-  //       alert("Loggin In");
-  //       setIsLoggedIn(true);
-  //       setUserType('patient');
-  //       onLogin('patient');
-  //     })
-  //     .catch((error) => {
-  //       const errorMessage = error.message;
-  //       setError(errorMessage);
-  //     });
-  // }
-
   const handleLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(

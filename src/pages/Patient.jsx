@@ -5,12 +5,11 @@ import "firebase/compat/auth";
 import "../components/Patient/patient.css";
 import MainLayouts from "../layouts/MainLayouts";
 import { FaUserMd } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { MdLocationPin } from "react-icons/md";
 import Modal from "../components/Modal/Modal";
 import { Link } from "react-router-dom";
 import KhaltiCheckout from "khalti-checkout-web";
 import config from "../components/Payment/PaymentConfig";
+import { firestore } from "../firebase/Firebase";
 
 function Doctor() {
   const [doctors, setDoctors] = useState([]);
@@ -20,8 +19,7 @@ function Doctor() {
   useEffect(() => {
     // Fetch data from Firebase collection
     const fetchData = async () => {
-      const db = firebase.firestore();
-      const collectionRef = db.collection("doctor");
+      const collectionRef = firestore.collection("doctor");
       const snapshot = await collectionRef.get();
       const doctorData = snapshot.docs.map((doc) => doc.data());
       setDoctors(doctorData);

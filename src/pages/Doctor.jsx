@@ -6,6 +6,7 @@ import "../components/Doctor/doctor.css";
 import MainLayouts from "../layouts/MainLayouts";
 import { FaPrayingHands } from "react-icons/fa";
 import UseAuth from "../hooks/UseAuth";
+import { firestore } from "../firebase/Firebase";
 
 function Doctor() {
   const currentUser = UseAuth();
@@ -16,8 +17,7 @@ function Doctor() {
     if (currentUser) {
       // Fetch appointments data from Firebase
       const fetchAppointments = async () => {
-        const db = firebase.firestore();
-        const appointmentsRef = db.collection("appointments");
+        const appointmentsRef = firestore.collection("appointments");
         const query = appointmentsRef.where(
           "doctorEmail",
           "==",

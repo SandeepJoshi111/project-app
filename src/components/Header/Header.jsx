@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import LOGO from "../../assets/HCN-removebg-preview.png";
 import KHALTI from "../../assets/khalti.png";
 import UseAuth from "../../hooks/UseAuth";
+import { firestore } from "../../firebase/Firebase";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
@@ -19,8 +20,7 @@ function Header() {
 
   useEffect(() => {
     if (currentUser && currentUser.email) {
-      const db = firebase.firestore();
-      const doctorsCollection = db.collection("doctor");
+      const doctorsCollection = firestore.collection("doctor");
       // Query the "doctor" collection for the user's email
       doctorsCollection
         .where("email", "==", currentUser.email)
@@ -101,7 +101,7 @@ function Header() {
             <div className="right-about">
               <div className="right-about-content">
                 <div className="about-user">
-                  <h4>Cosult With Doctor</h4>
+                  <h4>Consult With Doctor</h4>
                   <span>Talk to a doctor regarding your health issue.</span>
                 </div>
                 {currentUser && isDoctor ? (
