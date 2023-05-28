@@ -18,7 +18,7 @@ body {
   margin-top: 10px;
   min-width: 20rem;
   height: fit-content;
-  min-height: 15rem;
+  min-height: 13rem;
   display: flex;
   padding: 1rem;
   word-wrap: break-word;
@@ -39,10 +39,10 @@ body {
 .emergency-logo {
   display: flex;
   margin-top: 1rem;
-  font-size: 70px;
+  font-size: 50px;
 }
 .emergency-content h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--color-primary);
 }
 .emergency-content p {
@@ -112,7 +112,7 @@ marquee {
     width: 80%;
   }
   .emergency-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .emergency-content p {
     font-size: 0.9rem;

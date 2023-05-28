@@ -6,40 +6,38 @@ import { BsFillCalendar2CheckFill } from "react-icons/bs";
 import { RiLoginBoxFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 const Services = () => {
-  const [clipPath, setClipPath] = useState('initial');
   return (
     <MainLayouts>
-      <div className="container services-container">
-        <div className="services-grid" style={{ clipPath }}>
-          <Link to="/login">
-            <div className="services-wrap">
-              <div className="services-logo">
-                <RiLoginBoxFill size={90} />
-              </div>
-              <div className="services-content">
-                <h1>Logging In</h1>
-                <p>Create a account and log in</p>
-              </div>
-            </div>
-          </Link>
-
-          <div className="services-wrap">
-            <div className="services-logo">
-              <BsFillChatDotsFill size={90} />
-            </div>
+      <div class="container services-container">
+        <h1 className="services-title">Services</h1>
+        <div class="services-grid">
+          <div class="services-wrap">
+            <RiLoginBoxFill className="services-logo" />
             <div className="services-content">
-              <h1>Live Chat Session</h1>
-              <p>Have a live chat with preferred counsellor</p>
+              <h2>Log In</h2>
+              <span>Easy Login</span>
+            </div>
+          </div>
+          <div class="services-wrap">
+            <BsFillCalendar2CheckFill className="services-logo" />
+            <div className="services-content">
+              <h2>Book an Appointment</h2>
+              <span>Booking an appiontment</span>
+            </div>
+          </div>
+          <div class="services-wrap">
+            <BsFillChatDotsFill className="services-logo" />
+            <div className="services-content">
+              <h2>Live Text</h2>
+              <span>Have a Live Chat with your preferred Doctor</span>
             </div>
           </div>
 
-          <div className="services-wrap">
-            <div className="services-logo">
-              <BsFillCalendar2CheckFill size={90} />
-            </div>
+          <div class="services-wrap">
+            <BsFillChatDotsFill className="services-logo" />
             <div className="services-content">
-              <h1>Book an Appointment</h1>
-              <p>Book an appointment for physical of mental treatment</p>
+              <h2>App Development</h2>
+              <span>Hello</span>
             </div>
           </div>
         </div>

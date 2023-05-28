@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import LOGO from "../../assets/HCN-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
 import "./nav.css";
-import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
 import Login from "../LoginPage/Login";
@@ -10,8 +9,6 @@ import { AiFillHome } from "react-icons/ai";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
-import { FaUserAlt } from "react-icons/fa";
-import { FaUserMd } from "react-icons/fa";
 import UseAuth from "../../hooks/UseAuth";
 import { auth } from "../../firebase/Firebase";
 import { signOut } from "firebase/auth";

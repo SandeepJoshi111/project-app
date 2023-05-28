@@ -16,7 +16,7 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1> B & B Hospital Pvt. Ltd</h1>
@@ -32,12 +32,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Shree Birendra Hospital </h1>
                 <p>Chhauni, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -49,12 +48,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Bir Hospital</h1>
                 <p>Tundikhel, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -66,12 +64,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Nepal Police Hospital</h1>
                 <p>Maharajgunj, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -83,12 +80,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Civil Service Hospital</h1>
                 <p>Minbhawan, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -100,12 +96,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Dhulikhel Hospital</h1>
                 <p>Kavre, Nepal </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -117,12 +112,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>KMC Hospital</h1>
                 <p>Sinamangal, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -134,12 +128,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>KIST Medical College</h1>
                 <p>Imadol, Lalitpur </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -151,12 +144,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Om Hospital & Research Centre (P.) Ltd</h1>
                 <p>Chabahil, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -171,12 +163,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>Patan Hospital</h1>
                 <p>Lagankhel, Lalitpur </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>
@@ -188,12 +179,11 @@ const Hospital = () => {
               animate={{ scale: 1 }}
             >
               <div className="hospital-logo">
-                <FaHospitalAlt size={70} />
+                <FaHospitalAlt />
               </div>
               <div className="hospital-content">
                 <h1>T. U. Teaching Hospital</h1>
                 <p>Maharajgunj, Kathmandu </p>
-                <p>Phone</p>
               </div>
             </motion.div>
           </a>

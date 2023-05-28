@@ -9,7 +9,7 @@ const MainLayouts = ({ children }) => {
   return (
     <div>
 
-      <NavBar/>
+   
       <motion.div
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1 }}

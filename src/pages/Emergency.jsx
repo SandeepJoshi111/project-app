@@ -5,13 +5,7 @@ import { FaAmbulance } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import { motion } from "framer-motion";
-import KOSHI from "../assets/1. koshi.png";
-import MADHESH from "../assets/2. madhesh.png";
-import BAGMATI from "../assets/3. bagmati.png";
-import GANDAKI from "../assets/4. gandaki.png";
-import LUMBINI from "../assets/5. lumbini.png";
-import KARNALI from "../assets/6. karnali.png";
-import SUDURPASHCHIM from "../assets/7. Sudurpashchim.png";
+
 const Emergency = () => {
   const [selectedProvince, setSelectedProvince] = useState("default");
 

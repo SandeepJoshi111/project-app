@@ -8,10 +8,14 @@ import { FaUserMd } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import Modal from "../components/Modal/Modal";
+import { Link } from "react-router-dom";
+import KhaltiCheckout from "khalti-checkout-web";
+import config from "../components/Payment/PaymentConfig";
 
 function Doctor() {
   const [doctors, setDoctors] = useState([]);
   const [doctorEmail, setDoctorEmail] = useState("");
+  let checkout = new KhaltiCheckout(config);
 
   useEffect(() => {
     // Fetch data from Firebase collection
@@ -63,7 +67,12 @@ function Doctor() {
                     </button>
                   </div>
                   <div className="payment">
-                    <button className="btn-pay">Payments</button>
+                    <button
+                      className="btn-pay"
+                      onClick={() => checkout.show({ amount: 20000 })}
+                    >
+                      Payments
+                    </button>
                   </div>
                 </div>
               </div>
