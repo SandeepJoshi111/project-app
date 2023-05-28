@@ -45,6 +45,11 @@
 .home-quote {
   font-size: 30px;
 }
+.home-name {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background-clip: text;
+  color: transparent;
+}
 .home-quote h4 {
   font-size: 30px;
   color: red;

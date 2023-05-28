@@ -38,7 +38,8 @@ function Header() {
           <div className="home-content">
             <div className="home-quote">
               <h1>
-                Welcome to <br /> Health Care Nepal
+                Welcome to <br />{" "}
+                <span className="home-name"> Health Care Nepal</span>
               </h1>
               <h4>Consult Online</h4>
               <div class="home-separator">तपाईकै लागी</div>
