@@ -1,6 +1,7 @@
 .hospital-container {
   width: var(--container-lg);
   text-align: center;
+  height: 105vh;
 }
 .hospital-grid {
   margin: 0 auto;
@@ -54,6 +55,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .hospital-container {
+    height: auto;
+  }
   .hospital-grid {
     grid-template-columns: repeat(1, 1fr);
   }

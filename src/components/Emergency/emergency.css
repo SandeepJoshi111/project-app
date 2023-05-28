@@ -1,10 +1,6 @@
-body {
-  overflow-x: hidden;
-}
-
 .emergency-container {
   width: var(--container-lg);
-  height: 100vh;
+  height: 105vh;
   text-align: center;
 }
 .img-grid {

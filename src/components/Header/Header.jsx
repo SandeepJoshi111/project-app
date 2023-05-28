@@ -8,6 +8,7 @@ import MainLayouts from "../../layouts/MainLayouts";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import LOGO from "../../assets/HCN-removebg-preview.png";
+import KHALTI from "../../assets/khalti.png";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
@@ -64,12 +65,11 @@ function Header() {
               <div className="about-us">
                 <h4>Why Health Care Nepal?</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Cupiditate soluta laudantium aperiam natus explicabo dolore
-                  dolores quas architecto. Quam quia voluptatibus temporibus,
-                  facere laudantium corporis nesciunt repudiandae aliquid sint
-                  suscipit nulla aperiam saepe illo vero quod excepturi rerum
-                  labore id.
+                  Health Care Nepal (HCN) is an online health platform where you
+                  can connect with your preferred doctor and have a live session
+                  with them. Nepal's first online mental healthcare service
+                  providing website aimed to make healthcare services easy, fast
+                  and affordable.
                 </p>
               </div>
             </div>
@@ -132,7 +132,7 @@ function Header() {
             <img src={LOGO} alt="" />
           </div> */}
 
-          <ul className="permalinks">
+          <div className="permalinks">
             <li>
               <a href="#">Home</a>
             </li>
@@ -140,10 +140,13 @@ function Header() {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="#contact">Contact Us</a>
             </li>
-          </ul>
-
+          </div>
+          <div className="footer-payment">
+            <h2>We accept Payment with </h2>
+            <img src={KHALTI} alt="Khalti-Image" />
+          </div>
           <div className="footer-copyright">
             <small>&copy; Designed by Dristi Gurung and Sandeep Joshi .</small>
           </div>
