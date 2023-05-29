@@ -162,7 +162,7 @@ function Header() {
           </div>
           <div className="contact-content">
             <div className="contact-right">
-              <p>Fill up the form to contact us</p>
+              <p>Fill up the form to contact</p>
               <a href="">
                 <BsFillTelephoneFill /> <p>9818119950</p>
               </a>
