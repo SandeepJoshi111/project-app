@@ -186,19 +186,22 @@
   justify-content: center;
   align-items: center;
 }
-.contact-divider {
+/* .contact-divider {
   display: grid;
   grid-template-columns: 30% 70%;
-}
+} */
 
+.heatbeat-content {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
 .heartbeat {
   height: 400px;
   width: 540px;
-  position: absolute;
-  top: 0%;
-  left: -10%;
   filter: drop-shadow(0 0 25px #00867e);
   margin-left: 5rem;
+  margin-top: -19rem;
 }
 .heartbeat .pathdraw {
   stroke: #00867e;
@@ -214,11 +217,6 @@
     opacity: 0;
   }
 }
-.heatbeat-content {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-}
 .contact-content {
   box-shadow: 2px 12px 2px 2px var(--color-secondary);
   border-radius: 10px;
@@ -226,7 +224,7 @@
   padding: 2rem;
   display: grid;
   grid-template-columns: 40% 0% 60%;
-  margin: 2rem 5rem 0 0;
+  margin: 1rem 10rem;
   background-image: url(../../assets/wave.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -241,7 +239,7 @@
 .contact-right p {
   font-size: 1.2rem;
   color: var(--color-black);
-  justify-self: start;
+  align-self: center;
   font-weight: 600;
 }
 .contact-right a {
@@ -249,7 +247,7 @@
   gap: 1rem;
   margin: 1.6rem;
   font-size: 1.2rem;
-  align-self: flex-start;
+  align-self: center;
   justify-content: center;
   align-items: center;
   color: var(--color-accent);
@@ -258,7 +256,7 @@
 
 .social-media {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   color: var(--color-accent);
   gap: 1rem;
 }
@@ -369,9 +367,7 @@ footer {
     font-size: 10px;
     color: var(--color-gray);
   }
-  form {
-    width: 50%;
-  }
+
   .btn-home {
     width: 8rem;
     font-size: 0.9rem;
@@ -411,9 +407,9 @@ footer {
   .contact-divider {
     grid-template-columns: 100%;
   }
-  .heartbeat {
+  /* .heartbeat {
     display: none;
-  }
+  } */
   .contact-content {
     margin: 2rem 5rem;
   }
@@ -425,10 +421,12 @@ footer {
     font-size: 1rem;
     font-weight: 600;
     word-wrap: break-word;
+    align-self: center;
   }
   .contact-right a {
     margin: 2rem 0;
     font-size: 1.2rem;
+    align-self: center;
   }
   .social-media {
     gap: 2rem;
@@ -524,7 +522,8 @@ footer {
     font-size: 0.8rem;
   }
   .heartbeat {
-    display: none;
+    display: flex;
+    margin-left: 1rem;
   }
   .contact-content {
     margin: 1rem 3rem;
@@ -545,7 +544,6 @@ footer {
   .contact-right a {
     margin: 1rem 0;
     font-size: 1rem;
-
     align-self: center;
   }
   .social-media {
