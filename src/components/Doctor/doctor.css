@@ -1,6 +1,9 @@
 .doctor-title {
   text-align: center;
   font-size: 2rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background-clip: text;
+  color: transparent;
 }
 .no-appointments {
   display: grid;

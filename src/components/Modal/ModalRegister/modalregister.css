@@ -36,7 +36,7 @@
 
 .close-modal-signup {
   position: absolute;
-  color: var(--color-white);
+  color: var(--color-accent);
   font-weight: 600;
   font-size: 1rem;
   display: flex;

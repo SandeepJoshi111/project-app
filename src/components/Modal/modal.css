@@ -29,7 +29,7 @@
 
 .close-modal {
   position: absolute;
-  color: var(--color-secondary);
+  color: var(--color-accent);
   font-weight: 900;
   font-size: 2rem;
   top: 10px;

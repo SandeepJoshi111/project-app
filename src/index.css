@@ -35,6 +35,9 @@
   --container-md: 86%;
   --container-sm: 80%;
 }
+/* body {
+  background-image: url(./assets/bg.svg);
+} */
 html {
   scroll-behavior: smooth;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LOGO from "../../assets/HCN-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
 import "./nav.css";
@@ -10,7 +10,7 @@ import { MdMiscellaneousServices } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
 import UseAuth from "../../hooks/UseAuth";
-import { auth } from "../../firebase/Firebase";
+import { auth, firestore } from "../../firebase/Firebase";
 import { signOut } from "firebase/auth";
 import ModalLogout from "../Modal/ModalLogout/ModalLogout";
 
@@ -25,6 +25,26 @@ const NavBar = () => {
     await signOut(auth);
     toggleModalLogout();
   };
+  // const [isDoctor, setIsDoctor] = useState(false);
+
+  // useEffect(() => {
+  //   if (currentUser && currentUser.email) {
+  //     const doctorsCollection = firestore.collection("doctor");
+  //     // Query the "doctor" collection for the user's email
+  //     doctorsCollection
+  //       .where("email", "==", currentUser.email)
+  //       .get()
+  //       .then((querySnapshot) => {
+  //         if (!querySnapshot.empty) {
+  //           // User exists in the "doctor" collection
+  //           setIsDoctor(true);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log("Error getting doctor data:", error);
+  //       });
+  //   }
+  // }, [currentUser]);
 
   const navLinkStyle = ({ isActive, isPending }) => {
     return {
@@ -79,9 +99,8 @@ const NavBar = () => {
 
           {currentUser ? (
             <li className="logout">
-              {/* <div>Namaste</div> */}
               <div className="name-content">
-                <span className="namaste">Namaste</span>{" "}
+                <span className="namaste">Namaste</span>
                 {currentUser.displayName}
               </div>
               <button className="btn btn-hover" onClick={handleLogout}>

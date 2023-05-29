@@ -16,6 +16,9 @@
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: 600;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background-clip: text;
+  color: transparent;
 }
 .services-wrap {
   background-color: transparent;

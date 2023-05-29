@@ -11,6 +11,10 @@ import LOGO from "../../assets/HCN-removebg-preview.png";
 import KHALTI from "../../assets/khalti.png";
 import UseAuth from "../../hooks/UseAuth";
 import { firestore } from "../../firebase/Firebase";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdLocationPin } from "react-icons/md";
+import { BsFacebook } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
@@ -118,18 +122,18 @@ function Header() {
               </div>
               <div className="right-about-content">
                 <div className="about-user">
-                  <h4>Check Report</h4>
-                  <span>Check Report of your Patient</span>
+                  <h4>View Appointment</h4>
+                  <span>View who booked an appointment?</span>
                 </div>
                 {currentUser && !isDoctor ? (
                   <Link to="/doctor">
                     <button className="btn-home disabled" disabled>
-                      View Report
+                      View all
                     </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/doctor" : "/logindoctor"}>
-                    <button className="btn-home">View Report</button>
+                    <button className="btn-home">View all</button>
                   </Link>
                 )}
               </div>
@@ -139,31 +143,71 @@ function Header() {
 
         <section className="contact-container" id="contact">
           <h1 className="home-title">Contact Us</h1>
-          <form ref={form} onSubmit={sendEmail}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Full Name"
-              required
-              className="contact-input"
-            />
-            <input
-              className="contact-input"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-            <textarea
-              name="message"
-              rows="7"
-              placeholder="Your Message"
-              className="contact-input"
-            ></textarea>
-            <button type="submit" className="btn-home">
-              Send Message
-            </button>
-          </form>
+          <div className="contact-divider">
+            <div className="heatbeat-content">
+              <svg
+                className="heartbeat"
+                width="800"
+                height="600"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g class="pathdraw" id="Layer_1">
+                  <title>Pulse Heart</title>
+                  <path
+                    id="svg_1"
+                    d="m162.5,299.2l142.5,-0.2l8,-23l11,23l34,0l14,-109l14,226l12,-118l30,0l5,-15l10,0l7,-16l10,31l155,0"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div className="contact-content">
+              <div className="contact-right">
+                <p>Fill up the form to contact us</p>
+                <a href="">
+                  <BsFillTelephoneFill /> <p>9818119950</p>
+                </a>
+                <a href="">
+                  <MdLocationPin /> <p>Kathmandu,Nepal</p>
+                </a>
+                <div className="social-media">
+                  <a href="">
+                    <BsFacebook />
+                  </a>
+                  <a href="">
+                    <BsGithub />
+                  </a>
+                </div>
+              </div>
+              <div className="seperator-about"></div>
+              <div className="contact-left">
+                <form ref={form} onSubmit={sendEmail}>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Full Name"
+                    required
+                    className="contact-input"
+                  />
+                  <input
+                    className="contact-input"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    rows="7"
+                    placeholder="Your Message"
+                    className="contact-input"
+                  ></textarea>
+                  <button type="submit" className="btn-home">
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </section>
 
         <footer>
