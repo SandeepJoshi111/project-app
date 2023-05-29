@@ -12,8 +12,10 @@ import { FaAmbulance } from "react-icons/fa";
 import UseAuth from "../../hooks/UseAuth";
 import { auth } from "../../firebase/Firebase";
 import { signOut } from "firebase/auth";
+import ModalLogout from "../Modal/ModalLogout/ModalLogout";
 
 const NavBar = () => {
+  const [modal, setModal] = useState(false);
   // TO RETRIEVE DATA FROM FIREBASE
   const currentUser = UseAuth();
   const [showLogin, setShowLogin] = useState(false);
@@ -21,19 +23,22 @@ const NavBar = () => {
   // SIGN OUT
   const handleLogout = async () => {
     await signOut(auth);
-    alert("Logged Out");
+    toggleModalLogout();
   };
 
-  const navLinkStyle = ({ isActive }) => {
+  const navLinkStyle = ({ isActive, isPending }) => {
     return {
-      background: isActive ? "teal" : "transparent",
+      background: isActive ? "var(--color-primary-variant)" : "transparent",
       padding: "10px",
       borderRadius: "50%",
       color: isActive ? "white" : "black",
-      transition: "all 400ms ease",
+
+      transition: "all 400ms ease-out",
     };
   };
-
+  const toggleModalLogout = () => {
+    setModal(!modal);
+  };
   return (
     <div className="container nav-container">
       <div className="nav-content">
@@ -102,6 +107,7 @@ const NavBar = () => {
           )}
         </div>
       </div>
+      {modal && <ModalLogout toggleModalLogout={toggleModalLogout} />}
     </div>
   );
 };

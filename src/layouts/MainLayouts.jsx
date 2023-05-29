@@ -1,9 +1,6 @@
-import React, { memo, useState } from "react";
+import React from "react";
 import NavBar from "../components/NavBar/NavBar";
 import { motion } from "framer-motion";
-import Login from "../components/LoginPage/Login";
-import LoginDoctor from "../components/LoginPage/LoginDoctor";
-import Header from "../components/Header/Header";
 
 const MainLayouts = ({ children }) => {
   return (

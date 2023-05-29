@@ -25,6 +25,7 @@
   position: relative;
   transform: scale(1);
   transition: var(--transition);
+  z-index: 0;
 }
 .doctor-icon {
   display: flex;

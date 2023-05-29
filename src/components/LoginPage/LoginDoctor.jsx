@@ -10,12 +10,15 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
 import GoogleButton from "react-google-button";
+import ModalLoginDoctor from "../Modal/ModalLogin/ModalLoginDoctor";
 
 const LoginDoctor = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [modal, setModal] = useState(false);
+  const isFormValid = email && password;
 
   const signInWithGoogle = async () => {
     try {
@@ -33,20 +36,6 @@ const LoginDoctor = ({ onLogin }) => {
     }
   };
 
-  // function handleLogin() {
-  //   signInWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       navigate("/doctor");
-  //       alert("Loggin In");
-  //     })
-  //     .catch((error) => {
-  //       const errorMessage = error.message;
-  //       setError(errorMessage);
-  //     });
-  // }
-
   const handleLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -56,11 +45,14 @@ const LoginDoctor = ({ onLogin }) => {
       );
       const user = userCredential.user;
       console.log("user", user);
-      navigate("/doctor");
+      toggleModalLogin();
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
     }
+  };
+  const toggleModalLogin = () => {
+    setModal(!modal);
   };
   return (
     <div className="container login-container">
@@ -112,7 +104,12 @@ const LoginDoctor = ({ onLogin }) => {
 
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
-          <button className="btn" onClick={handleLogin}>
+
+          <button
+            disabled={!isFormValid}
+            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
+            onClick={handleLogin}
+          >
             Log In
           </button>
         </div>
@@ -130,6 +127,7 @@ const LoginDoctor = ({ onLogin }) => {
           </div>
         </div>
       </motion.div>
+      {modal && <ModalLoginDoctor toggleModalLogin={toggleModalLogin} />}
     </div>
   );
 };

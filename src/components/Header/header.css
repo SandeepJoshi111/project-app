@@ -111,6 +111,7 @@
 .disabled {
   background: var(--color-gray);
   cursor: default;
+  border: none;
 }
 .disabled:hover {
   background: var(--color-gray);

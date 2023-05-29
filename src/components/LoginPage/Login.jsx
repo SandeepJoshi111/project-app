@@ -10,13 +10,15 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { color, motion } from "framer-motion";
 import { GoogleButton } from "react-google-button";
+import ModalLogin from "../Modal/ModalLogin/ModalLogin";
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-
+  const [modal, setModal] = useState(false);
+  const isFormValid = email && password;
 
   const signInWithGoogle = async () => {
     try {
@@ -27,7 +29,7 @@ const Login = ({ onLogin }) => {
 
       console.log("user", user);
       console.log("name", name);
-      navigate('/patient')
+      navigate("/patient");
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
@@ -43,11 +45,15 @@ const Login = ({ onLogin }) => {
       );
       const user = userCredential.user;
       console.log("user", user);
-      navigate("/patient");
+      toggleModalLogin();
     } catch (error) {
       const errorMessage = error.message;
-            setError(errorMessage);
+      setError(errorMessage);
     }
+  };
+
+  const toggleModalLogin = () => {
+    setModal(!modal);
   };
 
   return (
@@ -99,7 +105,11 @@ const Login = ({ onLogin }) => {
         />
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
-          <button className="btn" onClick={handleLogin}>
+          <button
+            disabled={!isFormValid}
+            onClick={handleLogin}
+            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
+          >
             Log In
           </button>
         </div>
@@ -117,6 +127,7 @@ const Login = ({ onLogin }) => {
           </div>
         </div>
       </motion.div>
+      {modal && <ModalLogin toggleModalLogin={toggleModalLogin} />}
     </div>
   );
 };

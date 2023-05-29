@@ -9,6 +9,8 @@ import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
+import "../Modal/ModalRegister/modalregister.css";
+import ModalRegisterDoctor from "../Modal/ModalRegister/ModalRegisterDoctor";
 
 const SignUpDoctor = () => {
   const navigate = useNavigate();
@@ -19,6 +21,8 @@ const SignUpDoctor = () => {
   const [password, setPassword] = useState("");
   const [speciality, setSpeciality] = useState("");
   const [error, setError] = useState(null);
+  const [modal, setModal] = useState(false);
+  const isFormValid = firstName && lastName && email && password && speciality;
 
   const handleSubmission = () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -36,8 +40,7 @@ const SignUpDoctor = () => {
           })
           .then(() => {
             console.log("Doctor added with ID: ", user.uid);
-            navigate("/logindoctor");
-            alert("Successfully Registered as a Doctor");
+            toggleModalRegister(); //Opening modal
           })
           .catch((error) => {
             console.error("Error adding doctor details: ", error);
@@ -47,6 +50,10 @@ const SignUpDoctor = () => {
         setError(error.message);
         console.error("Error creating user: ", error);
       });
+  };
+
+  const toggleModalRegister = () => {
+    setModal(!modal);
   };
   return (
     <div className="container signup-container">
@@ -121,7 +128,11 @@ const SignUpDoctor = () => {
 
         <div className="btn-footer">
           {error && <p>{error}</p>}
-          <button onClick={handleSubmission} className="btn btn-primary">
+          <button
+            disabled={!isFormValid}
+            onClick={handleSubmission}
+            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
+          >
             Sign Up
           </button>
           <div>
@@ -132,6 +143,9 @@ const SignUpDoctor = () => {
           </div>
         </div>
       </motion.div>
+      {modal && (
+        <ModalRegisterDoctor toggleModalRegister={toggleModalRegister} />
+      )}
     </div>
   );
 };

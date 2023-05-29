@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
 import "../components/Patient/patient.css";
 import MainLayouts from "../layouts/MainLayouts";
 import { FaUserMd } from "react-icons/fa";
 import Modal from "../components/Modal/Modal";
-import { Link } from "react-router-dom";
 import KhaltiCheckout from "khalti-checkout-web";
 import config from "../components/Payment/PaymentConfig";
 import { firestore } from "../firebase/Firebase";

@@ -8,7 +8,8 @@ import "firebase/firestore";
 import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
+import ModalRegister from "../Modal/ModalRegister/ModalRegister";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [modal, setModal] = useState(false);
+  const isFormValid = firstName && lastName && email && password;
 
   const handleSubmission = () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -34,8 +37,7 @@ const SignUp = () => {
           })
           .then(() => {
             console.log("User added with ID: ", user.uid);
-            navigate("/login");
-            alert("Successfully Registered as a User");
+            toggleModalRegister(); //Opening modal
           })
           .catch((error) => {
             console.error("Error adding user details: ", error);
@@ -46,22 +48,25 @@ const SignUp = () => {
         console.error("Error creating user: ", error);
       });
   };
+
+  const toggleModalRegister = () => {
+    setModal(!modal);
+  };
   return (
     <div className="container signup-container">
-      <motion.div className="signup-box"
-      initial={{opacity:0.1}}
-      animate={{opacity:1}}
-  
+      <motion.div
+        className="signup-box"
+        initial={{ opacity: 0.1 }}
+        animate={{ opacity: 1 }}
       >
-        
         <div className="register-form">
-          <Link className="user active" to='/signup'>
+          <Link className="user active" to="/signup">
             <div>
               <FaUserAlt />
             </div>
             User
           </Link>
-          <Link className="doctor" to='/signupdoctor' id="doctor-icon">
+          <Link className="doctor" to="/signupdoctor" id="doctor-icon">
             <div>
               <FaUserMd />
             </div>
@@ -69,19 +74,19 @@ const SignUp = () => {
           </Link>
         </div>
 
-
         <div className="backsignup">
           <Link to="/">
             <RxCross1 />
           </Link>
         </div>
-        
+
         <label>First Name</label>
         <input
           type="text"
           placeholder="First Name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
+          required
         />
 
         <label>Last Name</label>
@@ -90,6 +95,7 @@ const SignUp = () => {
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
+          required
         />
 
         <label>Email</label>
@@ -100,6 +106,7 @@ const SignUp = () => {
           placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <label>New Password</label>
         <input
@@ -109,11 +116,17 @@ const SignUp = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
         <div className="btn-footer">
           {error && <p>{error}</p>}
-          <button onClick={handleSubmission} className="btn btn-primary">
+
+          <button
+            disabled={!isFormValid}
+            onClick={handleSubmission}
+            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
+          >
             Sign Up
           </button>
           <div>
@@ -124,6 +137,7 @@ const SignUp = () => {
           </div>
         </div>
       </motion.div>
+      {modal && <ModalRegister toggleModalRegister={toggleModalRegister} />}
     </div>
   );
 };

@@ -24,9 +24,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
       // Add the appointment data to the "appointments" collection
       await db
         .collection("appointments")
-        .add({ ...formData, 
-          doctorEmail: doctorEmail,
-        });
+        .add({ ...formData, doctorEmail: doctorEmail });
 
       // Clear the form
       setFormData({
@@ -123,20 +121,17 @@ const Modal = ({ toggleModal, doctorEmail }) => {
                 />
               </label>
               <label>
-                <select
+                <input
+                  placeholder="Enter Age"
+                  type="text"
                   id="age"
-                  name="age"
+                  className="input"
                   value={formData.age}
                   onChange={(e) =>
                     setFormData({ ...formData, age: e.target.value })
                   }
                   required
-                >
-                  <option value="">Select Age</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                </select>
+                />
               </label>
             </div>
             <div className="message">
