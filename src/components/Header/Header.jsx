@@ -206,10 +206,6 @@ function Header() {
         </section>
 
         <footer>
-          {/* <div className="logo">
-            <img src={LOGO} alt="" />
-          </div> */}
-
           <div className="permalinks">
             <li>
               <a href="#">Home</a>
@@ -224,6 +220,16 @@ function Header() {
           <div className="footer-payment">
             <h2>We accept Payment with </h2>
             <img src={KHALTI} alt="Khalti-Image" />
+          </div>
+
+          <img className="footer-logo" src={LOGO} alt="" />
+          <div className="footer-social-media">
+            <a href="">
+              <BsFacebook />
+            </a>
+            <a href="">
+              <BsGithub />
+            </a>
           </div>
           <div className="footer-copyright">
             <small>&copy; Designed by Dristi Gurung and Sandeep Joshi .</small>
