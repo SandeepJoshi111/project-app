@@ -339,6 +339,25 @@ footer {
   font-weight: 600;
 }
 
+.footer-logo {
+  width: 200px;
+  height: 200px;
+  margin-top: -4rem;
+}
+.footer-social-media {
+  font-size: 2rem;
+  gap: 2rem;
+  display: flex;
+  margin-top: -4rem;
+  justify-content: center;
+}
+.footer-social-media a {
+  color: var(--color-secondary);
+  transition: var(--transition);
+}
+.footer-social-media a:hover {
+  color: var(--color-black);
+}
 .footer-copyright {
   color: var(--color-bg);
   font-size: 1.1rem;
@@ -560,5 +579,17 @@ footer {
   }
   form {
     width: 100%;
+  }
+  .footer-logo {
+    width: 150px;
+    height: 150px;
+    margin-top: -3rem;
+  }
+  .footer-social-media {
+    font-size: 2rem;
+    gap: 2rem;
+    display: flex;
+    margin-top: -3rem;
+    justify-content: center;
   }
 }
