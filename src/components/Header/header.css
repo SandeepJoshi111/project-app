@@ -221,9 +221,9 @@
   }
 }
 .contact-content {
-  box-shadow: 2px 12px 2px 2px var(--color-secondary);
+  box-shadow: 2px -1px 2px 2px var(--color-secondary);
   border-radius: 10px;
-  background: rgba(0, 128, 128, 0.2);
+  background: var(--color-white);
   padding: 2rem;
   display: grid;
   grid-template-columns: 40% 0% 60%;
@@ -264,7 +264,7 @@
   gap: 1rem;
 }
 .social-media a {
-  font-size: 3rem;
+  font-size: 2.5rem;
   transition: var(--transition);
 }
 .social-media a:hover {
@@ -306,17 +306,32 @@ footer {
   border-radius: 3rem 3rem 0 0;
   box-shadow: -5px -15.5px 10px -8px var(--color-accent);
 }
+.footer-quote {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+.seperator-footer {
+  width: 100%;
+  background: var(--color-secondary);
+  height: 1px;
+  margin: 2rem 0;
+}
 
 .footer-payment h2 {
   font-size: 1.5rem;
   color: var(--color-secondary);
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 .footer-payment img {
   width: 100px;
   background: var(--color-white);
   border: 1px solid var(--color-accent);
   border-radius: 10px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .permalinks {
@@ -325,7 +340,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 0 0 1rem;
+  margin: 1rem;
   list-style-type: none;
   font-size: 1.2rem;
 }
@@ -339,16 +354,16 @@ footer {
   font-weight: 600;
 }
 
-.footer-logo {
-  width: 200px;
-  height: 200px;
-  margin-top: -4rem;
-}
+/* .footer-logo {
+  width: 150px;
+  height: 150px;
+  margin-top: -3.5rem;
+} */
 .footer-social-media {
   font-size: 2rem;
   gap: 2rem;
   display: flex;
-  margin-top: -4rem;
+  margin-top: 1rem;
   justify-content: center;
 }
 .footer-social-media a {
@@ -359,7 +374,7 @@ footer {
   color: var(--color-black);
 }
 .footer-copyright {
-  color: var(--color-bg);
+  color: var(--color-black);
   font-size: 1.1rem;
   position: absolute;
   bottom: 6rem;
@@ -580,16 +595,18 @@ footer {
   form {
     width: 100%;
   }
-  .footer-logo {
+  /* .footer-logo {
     width: 150px;
     height: 150px;
     margin-top: -3rem;
-  }
+  } */
   .footer-social-media {
     font-size: 2rem;
     gap: 2rem;
     display: flex;
-    margin-top: -3rem;
-    justify-content: center;
+    margin-top: 1rem;
+  }
+  .footer-quote {
+    font-size: 1.3rem;
   }
 }

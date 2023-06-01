@@ -8,7 +8,7 @@ import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
-import { color, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import { GoogleButton } from "react-google-button";
 import ModalLogin from "../Modal/ModalLogin/ModalLogin";
 

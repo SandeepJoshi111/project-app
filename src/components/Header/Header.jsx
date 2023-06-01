@@ -162,6 +162,9 @@ function Header() {
                 <BsFillTelephoneFill /> <p>9818119950</p>
               </a>
               <a href="">
+                <BsFillTelephoneFill /> <p>9840556101</p>
+              </a>
+              <a href="">
                 <MdLocationPin /> <p>Kathmandu,Nepal</p>
               </a>
               <div className="social-media">
@@ -206,33 +209,43 @@ function Header() {
         </section>
 
         <footer>
-          <div className="permalinks">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact Us</a>
-            </li>
+          <div className="footer-quote">
+            "Seeking help is a sign of strength"
           </div>
-          <div className="footer-payment">
-            <h2>We accept Payment with </h2>
-            <img src={KHALTI} alt="Khalti-Image" />
-          </div>
-
-          <img className="footer-logo" src={LOGO} alt="" />
-          <div className="footer-social-media">
-            <a href="">
-              <BsFacebook />
-            </a>
-            <a href="">
-              <BsGithub />
-            </a>
+          <div className="seperator-footer"></div>
+          <div className="footer-grid ">
+            <div className="footer-payment">
+              <h2>We accept Payment with </h2>
+              <img src={KHALTI} alt="Khalti-Image" />
+            </div>
+            <div className="footer-content">
+              <div className="permalinks">
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact Us</a>
+                </li>
+              </div>
+              {/* <img className="footer-logo" src={LOGO} alt="" /> */}
+              <div className="footer-social-media">
+                <a href="">
+                  <BsFacebook />
+                </a>
+                <a href="">
+                  <BsGithub />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="footer-copyright">
-            <small>&copy; Designed by Dristi Gurung and Sandeep Joshi .</small>
+            <small>
+              All rights reserved &copy; <br /> Designed by Dristi Gurung and
+              Sandeep Joshi .
+            </small>
           </div>
         </footer>
       </div>
