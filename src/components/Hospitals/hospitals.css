@@ -48,6 +48,12 @@
   font-weight: 600;
   transition: var(--transition);
 }
+.hospital-content a {
+  color: var(--color-accent);
+}
+.hospital-content a:hover {
+  color: var(--color-primary);
+}
 @media screen and (max-width: 1024px) {
   .hospital-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -101,10 +101,10 @@ marquee {
 }
 @keyframes ambulance {
   from {
-    transform: translateX(-200%);
+    transform: translateX(200%);
   }
   to {
-    transform: translateX(200%);
+    transform: translateX(-200%);
   }
 }
 
@@ -201,14 +201,14 @@ marquee {
   .ambulance {
     width: 300px;
     height: 300px;
-    animation: ambulance 6s infinite linear;
+    animation: ambulance 5s infinite linear;
   }
   @keyframes ambulance {
     from {
-      transform: translateX(-200%);
+      transform: translateX(150%);
     }
     to {
-      transform: translateX(200%);
+      transform: translateX(-150%);
     }
   }
 }
