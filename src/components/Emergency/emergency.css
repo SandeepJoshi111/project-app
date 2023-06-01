@@ -94,6 +94,62 @@ marquee {
   color: var(--color-accent);
 }
 
+.ambulance {
+  width: 400px;
+  height: 400px;
+  animation: ambulance 7s infinite linear;
+}
+@keyframes ambulance {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+#right-wheel,
+#left-wheel {
+  animation: wheel 1s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#body {
+  animation: body 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+
+@keyframes body {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(15deg);
+  }
+}
+#light {
+  animation: light 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+@keyframes light {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(15deg);
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .img-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -141,5 +197,18 @@ marquee {
   }
   .emergency-content p {
     font-size: 0.8rem;
+  }
+  .ambulance {
+    width: 300px;
+    height: 300px;
+    animation: ambulance 6s infinite linear;
+  }
+  @keyframes ambulance {
+    from {
+      transform: translateX(-200%);
+    }
+    to {
+      transform: translateX(200%);
+    }
   }
 }

@@ -12,6 +12,13 @@
   margin-top: 2rem;
   gap: 1rem;
 }
+.services-grid-bottom {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  margin-top: 2rem;
+  gap: 1rem;
+}
 .services-title {
   margin-top: 1rem;
   font-size: 2rem;
@@ -19,6 +26,23 @@
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   background-clip: text;
   color: transparent;
+}
+.services-wrap-bottom {
+  background-color: transparent;
+  transform: scale(1);
+  padding: 20px;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 2px 7px var(--color-primary);
+  transition: var(--transition);
+  color: var(--color-primary);
+  position: relative;
 }
 .services-wrap {
   background-color: transparent;
