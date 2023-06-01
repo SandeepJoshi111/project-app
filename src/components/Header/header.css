@@ -166,8 +166,9 @@
 .about-user {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: self-start;
 }
+
 .about-user span {
   font-size: 1rem;
 }
@@ -554,6 +555,9 @@ footer {
     margin-right: 3rem;
     margin-bottom: 3rem;
     margin-left: 3rem;
+  }
+  .about-user {
+    align-items: center;
   }
   .about-user span {
     font-size: 0.8rem;

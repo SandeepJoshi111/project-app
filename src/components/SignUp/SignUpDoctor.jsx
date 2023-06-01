@@ -127,7 +127,7 @@ const SignUpDoctor = () => {
         />
 
         <div className="btn-footer">
-          {error && <p>{error}</p>}
+          {error ? <p>{error}</p> : null}
           <button
             disabled={!isFormValid}
             onClick={handleSubmission}

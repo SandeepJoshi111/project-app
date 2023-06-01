@@ -46,9 +46,9 @@ const NavBar = () => {
   //   }
   // }, [currentUser]);
 
-  const navLinkStyle = ({ isActive, isPending }) => {
+  const navLinkStyle = ({ isActive }) => {
     return {
-      background: isActive ? "var(--color-primary-variant)" : "transparent",
+      background: isActive ? "var(--color-primary)" : "transparent",
       padding: "10px",
       borderRadius: "50%",
       color: isActive ? "white" : "black",

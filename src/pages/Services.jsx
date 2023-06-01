@@ -4,6 +4,11 @@ import "../components/Services/services.css";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { BsFillCalendar2CheckFill } from "react-icons/bs";
 import { RiLoginBoxFill } from "react-icons/ri";
+import { MdOutlinePayments } from "react-icons/md";
+import { MdContactPhone } from "react-icons/md";
+import { FaHospitalAlt } from "react-icons/fa";
+import { FaAmbulance } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 const Services = () => {
   return (
@@ -15,29 +20,53 @@ const Services = () => {
             <RiLoginBoxFill className="services-logo" />
             <div className="services-content">
               <h2>Log In</h2>
-              <span>Easy Login</span>
+              <span>One step closer to your online therapy</span>
             </div>
           </div>
           <div class="services-wrap">
             <BsFillCalendar2CheckFill className="services-logo" />
             <div className="services-content">
               <h2>Book an Appointment</h2>
-              <span>Booking an appiontment</span>
+              <span>Save time, book your appointment online</span>
             </div>
           </div>
           <div class="services-wrap">
             <BsFillChatDotsFill className="services-logo" />
             <div className="services-content">
               <h2>Live Text</h2>
-              <span>Have a Live Chat with your preferred Doctor</span>
+              <span>Text-based therapy when you need it</span>
             </div>
           </div>
 
           <div class="services-wrap">
-            <BsFillChatDotsFill className="services-logo" />
+            <MdOutlinePayments className="services-logo" />
             <div className="services-content">
-              <h2>App Development</h2>
-              <span>Hello</span>
+              <h2>Payment</h2>
+              <span>
+                Effortless payments for a hassle-free experience through Khalti
+              </span>
+            </div>
+          </div>
+
+          <div class="services-wrap">
+            <FaAmbulance className="services-logo" />
+            <div className="services-content">
+              <h2>Ambulance</h2>
+              <span>Rapid response, saving lives</span>
+            </div>
+          </div>
+          <div class="services-wrap">
+            <FaHospitalAlt className="services-logo" />
+            <div className="services-content">
+              <h2>Hospital</h2>
+              <span>Compassionate care at your service</span>
+            </div>
+          </div>
+          <div class="services-wrap">
+            <MdContactPhone className="services-logo" />
+            <div className="services-content">
+              <h2>Contact</h2>
+              <span>We're just a click away</span>
             </div>
           </div>
         </div>

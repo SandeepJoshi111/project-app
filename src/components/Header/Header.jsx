@@ -171,7 +171,10 @@ function Header() {
                 <a href="">
                   <BsFacebook />
                 </a>
-                <a href="">
+                <a
+                  href="https://github.com/SandeepJoshi111/project-app"
+                  target="_blank"
+                >
                   <BsGithub />
                 </a>
               </div>
@@ -209,9 +212,7 @@ function Header() {
         </section>
 
         <footer>
-          <div className="footer-quote">
-            "Seeking help is a sign of strength"
-          </div>
+          <div className="footer-quote">"Online resources, offline impact"</div>
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
             <div className="footer-payment">
@@ -235,7 +236,10 @@ function Header() {
                 <a href="">
                   <BsFacebook />
                 </a>
-                <a href="">
+                <a
+                  href="https://github.com/SandeepJoshi111/project-app"
+                  target="_blank"
+                >
                   <BsGithub />
                 </a>
               </div>
