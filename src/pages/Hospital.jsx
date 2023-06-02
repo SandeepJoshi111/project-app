@@ -254,6 +254,169 @@ const Hospital = () => {
               </div>
             </motion.div>
           </a>
+
+          <a href="https://www.bpkihs.edu/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>B.P. Koirala Institute of Health Sciences</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/B.+P.+Koirala+Institute+of+Health+Sciences+College+of+Dental+Surgery/@26.8129065,87.2725582,17z/data=!3m1!4b1!4m6!3m5!1s0x39ef41a61120aaab:0x9c8fb03ebdc219d7!8m2!3d26.8129065!4d87.2725582!16s%2Fg%2F11bw8dyqhd?entry=ttu"
+                  target="_blank"
+                >
+                  Dharan{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+
+          <a
+            href="https://www.pahs.gov.np/?fbclid=IwAR0mjB_OtnEgJO-Y7bZ9crCX92NpwuiFerOQP6U5UDFNxcQpYoxuPcMnkTw"
+            target="_blank"
+          >
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>Western Regional Hospital</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/Western+Regional+Hospital+Helipad/@28.2125332,83.9989764,17z/data=!3m1!4b1!4m6!3m5!1s0x3995953255f1e03f:0xf755f36dd927e3f6!8m2!3d28.2125332!4d83.9989764!16s%2Fg%2F11g1mwc9mv?entry=ttu"
+                  target="_blank"
+                >
+                  Pokhara{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+
+          <a href="http://rahs.edu.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>Rapti Academy of Health Sciences</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/Rapti+Academy+of+Health+Sciences+Ghorahi/@28.0375078,82.4921895,17z/data=!3m1!4b1!4m6!3m5!1s0x399794667277ba21:0x15217e658f5110d3!8m2!3d28.0375078!4d82.4921895!16s%2Fg%2F11byypy0qc?entry=ttu"
+                  target="_blank"
+                >
+                  Dang{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+
+          <a href="https://www.lphospital.gov.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>Lumbini Provincial Hospital</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/Lumbini+Province+Hospital/@27.6978265,83.4641515,17z/data=!3m1!4b1!4m6!3m5!1s0x3996868a80185519:0xbad4eeb3b7798ee5!8m2!3d27.6978265!4d83.4641515!16s%2Fm%2F0124x_hc?entry=ttu"
+                  target="_blank"
+                >
+                  Butwal{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+
+          <a href="https://kahs.edu.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>Karnali Academy of Health Sciences</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/Karnali+Academy+of+Health+Sciences/@29.2834778,82.1828536,17z/data=!3m1!4b1!4m6!3m5!1s0x39a32c9d4392cbb3:0x7c18ccab0c0c274b!8m2!3d29.2834778!4d82.1828536!16s%2Fg%2F1thhhxx6?entry=ttu"
+                  target="_blank"
+                >
+                  Jumla{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+
+          <a href="https://www.baitadihospital.gov.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>Baitadi District Hospital</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/District+Hospital+Baitadi/@29.5580158,80.4003168,14z/data=!4m10!1m2!2m1!1sBaitadi+District+Hospital!3m6!1s0x39a138e70d96b11b:0x3f1273a1aae6e3bb!8m2!3d29.5595206!4d80.4179866!15sChlCYWl0YWRpIERpc3RyaWN0IEhvc3BpdGFskgEIaG9zcGl0YWzgAQA!16s%2Fg%2F11bx2l8d37?entry=ttu"
+                  target="_blank"
+                >
+                  Baitadi{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+
+          <a href="https://www.nartc.gov.np/" target="_blank">
+            <motion.div
+              className="hospital-wrap"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+            >
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>National Ayurveda Research and Training Center</h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/search/National+Ayurveda+Research+and+Training+Center/@27.6767561,85.288667,17z/data=!3m1!4b1?entry=ttu"
+                  target="_blank"
+                >
+                  Kirtipur{" "}
+                </a>
+              </div>
+            </motion.div>
+          </a>
+        </div>
+        <div className="hospital-note">
+          Please note that this list includes a mix of central, regional,
+          provincial, and district level governmental hospitals. There are many
+          more governmental hospitals in Nepal, but these are some notable ones
+          across different regions of the country.
         </div>
       </div>
     </MainLayouts>

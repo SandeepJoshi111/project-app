@@ -1,7 +1,7 @@
 .hospital-container {
   width: var(--container-lg);
   text-align: center;
-  height: 105vh;
+  height: 100%;
 }
 .hospital-grid {
   margin: 0 auto;
@@ -53,6 +53,12 @@
 }
 .hospital-content a:hover {
   color: var(--color-primary);
+}
+
+.hospital-note {
+  font-size: 1rem;
+  text-align: justify;
+  margin: 2rem auto 6rem auto;
 }
 @media screen and (max-width: 1024px) {
   .hospital-grid {

@@ -355,11 +355,6 @@ footer {
   font-weight: 600;
 }
 
-/* .footer-logo {
-  width: 150px;
-  height: 150px;
-  margin-top: -3.5rem;
-} */
 .footer-social-media {
   font-size: 2rem;
   gap: 2rem;
@@ -445,9 +440,7 @@ footer {
   .contact-divider {
     grid-template-columns: 100%;
   }
-  /* .heartbeat {
-    display: none;
-  } */
+
   .contact-content {
     margin: 2rem 5rem;
   }
@@ -599,11 +592,7 @@ footer {
   form {
     width: 100%;
   }
-  /* .footer-logo {
-    width: 150px;
-    height: 150px;
-    margin-top: -3rem;
-  } */
+
   .footer-social-media {
     font-size: 2rem;
     gap: 2rem;
@@ -612,5 +601,8 @@ footer {
   }
   .footer-quote {
     font-size: 1.3rem;
+  }
+  .seperator-footer {
+    margin: 1rem 0;
   }
 }

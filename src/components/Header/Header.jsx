@@ -158,13 +158,13 @@ function Header() {
           <div className="contact-content">
             <div className="contact-right">
               <p>Fill up the form to contact</p>
-              <a href="">
+              <a href="tel:9818119950">
                 <BsFillTelephoneFill /> <p>9818119950</p>
               </a>
-              <a href="">
+              <a href="tel:9840556101">
                 <BsFillTelephoneFill /> <p>9840556101</p>
               </a>
-              <a href="">
+              <a href="https://www.google.com/maps/place/Pashupatinath+Temple/@27.710512,85.3462376,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb191aaaaaaaab:0x424c7d0a60df9091!8m2!3d27.710512!4d85.3488125!16zL20vMGNzX2hz?entry=ttu">
                 <MdLocationPin /> <p>Kathmandu,Nepal</p>
               </a>
               <div className="social-media">
@@ -231,7 +231,7 @@ function Header() {
                   <a href="#contact">Contact Us</a>
                 </li>
               </div>
-              {/* <img className="footer-logo" src={LOGO} alt="" /> */}
+
               <div className="footer-social-media">
                 <a href="">
                   <BsFacebook />

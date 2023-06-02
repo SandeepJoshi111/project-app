@@ -48,27 +48,25 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-grid-bottom">
-            <div class="services-wrap-bottom">
-              <FaAmbulance className="services-logo" />
-              <div className="services-content">
-                <h2>Ambulance</h2>
-                <span>Rapid response, saving lives</span>
-              </div>
+          <div class="services-wrap">
+            <FaAmbulance className="services-logo" />
+            <div className="services-content">
+              <h2>Ambulance</h2>
+              <span>Rapid response, saving lives</span>
             </div>
-            <div class="services-wrap-bottom">
-              <FaHospitalAlt className="services-logo" />
-              <div className="services-content">
-                <h2>Hospital</h2>
-                <span>Compassionate care at your service</span>
-              </div>
+          </div>
+          <div class="services-wrap">
+            <FaHospitalAlt className="services-logo" />
+            <div className="services-content">
+              <h2>Hospital</h2>
+              <span>Compassionate care at your service</span>
             </div>
-            <div class="services-wrap-bottom">
-              <MdContactPhone className="services-logo" />
-              <div className="services-content">
-                <h2>Contact</h2>
-                <span>We're just a click away</span>
-              </div>
+          </div>
+          <div class="services-wrap">
+            <MdContactPhone className="services-logo" />
+            <div className="services-content">
+              <h2>Contact</h2>
+              <span>We're just a click away</span>
             </div>
           </div>
         </div>
