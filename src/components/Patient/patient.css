@@ -1,9 +1,6 @@
 .patient-container {
   width: var(--container-lg);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
 }
 .patient-container h1 {
   font-size: 1.2rem;
@@ -15,7 +12,11 @@
   background-clip: text;
   color: transparent;
 }
-
+.patient-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
 .patient-wrap {
   margin-top: 10px;
   height: max-content;
@@ -28,7 +29,7 @@
   position: relative;
   transform: scale(1);
   transition: var(--transition);
-  z-index: 0;
+  z-index: 1;
 }
 .doctor-icon {
   display: flex;

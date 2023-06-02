@@ -18,7 +18,6 @@ const LoginDoctor = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
-  const isFormValid = email && password;
 
   const signInWithGoogle = async () => {
     try {
@@ -105,11 +104,7 @@ const LoginDoctor = ({ onLogin }) => {
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
 
-          <button
-            disabled={!isFormValid}
-            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
-            onClick={handleLogin}
-          >
+          <button className="btn btn-primary" onClick={handleLogin}>
             Log In
           </button>
         </div>

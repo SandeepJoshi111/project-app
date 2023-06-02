@@ -8,7 +8,7 @@ import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { GoogleButton } from "react-google-button";
 import ModalLogin from "../Modal/ModalLogin/ModalLogin";
 
@@ -18,7 +18,6 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
-  const isFormValid = email && password;
 
   const signInWithGoogle = async () => {
     try {
@@ -105,11 +104,7 @@ const Login = ({ onLogin }) => {
         />
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
-          <button
-            disabled={!isFormValid}
-            onClick={handleLogin}
-            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
-          >
+          <button onClick={handleLogin} className="btn btn-primary">
             Log In
           </button>
         </div>

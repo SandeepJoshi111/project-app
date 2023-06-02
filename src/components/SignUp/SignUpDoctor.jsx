@@ -22,7 +22,7 @@ const SignUpDoctor = () => {
   const [speciality, setSpeciality] = useState("");
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
-  const isFormValid = firstName && lastName && email && password && speciality;
+  // const isFormValid = firstName && lastName && email && password && speciality;
 
   const handleSubmission = () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -128,11 +128,7 @@ const SignUpDoctor = () => {
 
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
-          <button
-            disabled={!isFormValid}
-            onClick={handleSubmission}
-            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
-          >
+          <button onClick={handleSubmission} className="btn btn-primary">
             Sign Up
           </button>
           <div>

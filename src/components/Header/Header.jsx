@@ -212,7 +212,10 @@ function Header() {
         </section>
 
         <footer>
-          <div className="footer-quote">"Online resources, offline impact"</div>
+          {/* <div className="footer-quote">"Online resources, offline impact"</div> */}
+          <div className="footer-quote">
+            "A safe space for your mental health"
+          </div>
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
             <div className="footer-payment">

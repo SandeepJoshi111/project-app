@@ -120,13 +120,9 @@ const SignUp = () => {
         />
 
         <div className="btn-footer">
-        {error ? <p>{error}</p> : null}
+          {error ? <p>{error}</p> : null}
 
-          <button
-            disabled={!isFormValid}
-            onClick={handleSubmission}
-            className={`btn btn-primary ${!isFormValid ? "disabled" : ""}`}
-          >
+          <button onClick={handleSubmission} className="btn btn-primary">
             Sign Up
           </button>
           <div>
