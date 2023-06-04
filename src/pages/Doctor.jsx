@@ -25,7 +25,13 @@ function Doctor() {
         );
 
         const snapshot = await query.get();
-        const appointmentData = snapshot.docs.map((doc) => doc.data());
+        const appointmentData = snapshot.docs.map((doc) => {
+          const data = doc.data();
+          return {
+            ...data,
+            id: doc.id,
+          };
+        });
         setAppointments(appointmentData);
       };
 
@@ -42,8 +48,41 @@ function Doctor() {
       message: "Your appointment has been accepted.",
       timestamp: new Date(),
     };
-    alert(newMessage);
+    alert("Accepted");
     await messagesRef.add(newMessage);
+
+    // Update the state to remove the deleted appointment
+    setAppointments((prevAppointments) =>
+      prevAppointments.filter(
+        (prevAppointment) => prevAppointment.id !== appointment.id
+      )
+    );
+    // Delete the accepted appointment
+    const appointmentsRef = firestore.collection("appointments");
+    await appointmentsRef.doc(appointment.id).delete();
+  };
+  const handleReject = async (appointment) => {
+    // Send a message to the patient
+    const messagesRef = firestore.collection("messages");
+    const newMessage = {
+      sender: currentUser.email, // or any identifier for the doctor
+      receiver: appointment.patientEmail, // or any identifier for the patient
+      message: "Sorry! The schedule is pack.",
+      timestamp: new Date(),
+    };
+    alert("Rejected");
+    await messagesRef.add(newMessage);
+
+    // Delete the accepted appointment
+    const appointmentsRef = firestore.collection("appointments");
+    await appointmentsRef.doc(appointment.id).delete();
+
+    // Update the state to remove the deleted appointment
+    setAppointments((prevAppointments) =>
+      prevAppointments.filter(
+        (prevAppointment) => prevAppointment.id !== appointment.id
+      )
+    );
   };
 
   return (
@@ -90,7 +129,12 @@ function Doctor() {
                         >
                           Accept
                         </button>
-                        <button className="btn-patient">Reject</button>
+                        <button
+                          className="btn-patient"
+                          onClick={() => handleReject(appointment)}
+                        >
+                          Reject
+                        </button>
                       </div>
                     </div>
                   </div>
