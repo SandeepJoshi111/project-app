@@ -9,7 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
-import ModalRegister from "../Modal/ModalRegister/ModalRegister";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -20,7 +20,6 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
-  const isFormValid = firstName && lastName && email && password;
 
   const handleSubmission = () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -34,10 +33,11 @@ const SignUp = () => {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            uid: user.uid,
           })
           .then(() => {
             console.log("User added with ID: ", user.uid);
-            toggleModalRegister(); //Opening modal
+            toggleModalLayout(); //Opening modal
           })
           .catch((error) => {
             console.error("Error adding user details: ", error);
@@ -49,7 +49,7 @@ const SignUp = () => {
       });
   };
 
-  const toggleModalRegister = () => {
+  const toggleModalLayout = () => {
     setModal(!modal);
   };
   return (
@@ -133,7 +133,12 @@ const SignUp = () => {
           </div>
         </div>
       </motion.div>
-      {modal && <ModalRegister toggleModalRegister={toggleModalRegister} />}
+      {modal && (
+        <ModalLayout
+          toggleModalLayout={toggleModalLayout}
+          title="SUCCESSFULL REGISTERED AS A PATIENT"
+        />
+      )}
     </div>
   );
 };

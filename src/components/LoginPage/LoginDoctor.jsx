@@ -10,7 +10,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
 import GoogleButton from "react-google-button";
-import ModalLoginDoctor from "../Modal/ModalLogin/ModalLoginDoctor";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const LoginDoctor = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ const LoginDoctor = ({ onLogin }) => {
       console.log("user", user);
       console.log("name", name);
       navigate("/doctor");
+      toggleModalLayout();
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
@@ -44,13 +45,13 @@ const LoginDoctor = ({ onLogin }) => {
       );
       const user = userCredential.user;
       console.log("user", user);
-      toggleModalLogin();
+      toggleModalLayout();
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
     }
   };
-  const toggleModalLogin = () => {
+  const toggleModalLayout = () => {
     setModal(!modal);
   };
   return (
@@ -122,7 +123,12 @@ const LoginDoctor = ({ onLogin }) => {
           </div>
         </div>
       </motion.div>
-      {modal && <ModalLoginDoctor toggleModalLogin={toggleModalLogin} />}
+      {modal && (
+        <ModalLayout
+          toggleModalLayout={toggleModalLayout}
+          title="Logged In as a Doctor"
+        />
+      )}
     </div>
   );
 };

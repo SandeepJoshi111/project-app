@@ -12,7 +12,8 @@ import { FaAmbulance } from "react-icons/fa";
 import UseAuth from "../../hooks/UseAuth";
 import { auth, firestore } from "../../firebase/Firebase";
 import { signOut } from "firebase/auth";
-import ModalLogout from "../Modal/ModalLogout/ModalLogout";
+
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const NavBar = () => {
   const [modal, setModal] = useState(false);
@@ -23,7 +24,7 @@ const NavBar = () => {
   // SIGN OUT
   const handleLogout = async () => {
     await signOut(auth);
-    toggleModalLogout();
+    toggleModalLayout();
   };
   // const [isDoctor, setIsDoctor] = useState(false);
 
@@ -56,7 +57,7 @@ const NavBar = () => {
       transition: "all 400ms ease-out",
     };
   };
-  const toggleModalLogout = () => {
+  const toggleModalLayout = () => {
     setModal(!modal);
   };
   return (
@@ -126,7 +127,9 @@ const NavBar = () => {
           )}
         </div>
       </div>
-      {modal && <ModalLogout toggleModalLogout={toggleModalLogout} />}
+      {modal && (
+        <ModalLayout toggleModalLayout={toggleModalLayout} title="Logged Out" />
+      )}
     </div>
   );
 };

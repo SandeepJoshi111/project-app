@@ -4,10 +4,12 @@ import "firebase/compat/auth";
 import "../components/Patient/patient.css";
 import MainLayouts from "../layouts/MainLayouts";
 import { FaUserMd } from "react-icons/fa";
+import { BiMessageAltDots } from "react-icons/bi";
 import Modal from "../components/Modal/Modal";
 import KhaltiCheckout from "khalti-checkout-web";
 import config from "../components/Payment/PaymentConfig";
 import { firestore } from "../firebase/Firebase";
+import TextModal from "../components/Message/TextModal";
 
 function Doctor() {
   const [doctors, setDoctors] = useState([]);
@@ -26,15 +28,19 @@ function Doctor() {
     fetchData();
   }, []);
   const [modal, setModal] = useState(false);
+  const [textmodal, setTextModal] = useState(false);
 
   const toggleModal = (email) => {
     setModal(!modal);
     setDoctorEmail(email);
   };
+  const toggleTextModal = () => {
+    setTextModal(!textmodal);
+  };
   return (
     <MainLayouts>
-      <h2 className="patient-title">Online Registered Doctors</h2>
       <div className="container patient-container">
+        <h2 className="patient-title">Online Registered Doctors</h2>
         {doctors.map((doctor, index) => (
           <div key={index} className="patient-grid">
             <div className="patient-wrap">
@@ -77,6 +83,10 @@ function Doctor() {
         ))}
         {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       </div>
+      <button className="bubble" onClick={toggleTextModal}>
+        <BiMessageAltDots />
+        {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
+      </button>
     </MainLayouts>
   );
 }

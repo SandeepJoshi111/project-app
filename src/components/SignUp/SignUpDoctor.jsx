@@ -9,8 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
-import "../Modal/ModalRegister/modalregister.css";
-import ModalRegisterDoctor from "../Modal/ModalRegister/ModalRegisterDoctor";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const SignUpDoctor = () => {
   const navigate = useNavigate();
@@ -37,10 +36,11 @@ const SignUpDoctor = () => {
             lastName: lastName,
             email: email,
             speciality: speciality,
+            uid: user.uid,
           })
           .then(() => {
             console.log("Doctor added with ID: ", user.uid);
-            toggleModalRegister(); //Opening modal
+            toggleModalLayout(); //Opening modal
           })
           .catch((error) => {
             console.error("Error adding doctor details: ", error);
@@ -52,7 +52,7 @@ const SignUpDoctor = () => {
       });
   };
 
-  const toggleModalRegister = () => {
+  const toggleModalLayout = () => {
     setModal(!modal);
   };
   return (
@@ -140,7 +140,10 @@ const SignUpDoctor = () => {
         </div>
       </motion.div>
       {modal && (
-        <ModalRegisterDoctor toggleModalRegister={toggleModalRegister} />
+        <ModalLayout
+          toggleModalLayout={toggleModalLayout}
+          title="SUCCESSFULLY REGISTERED AS A DOCTOR"
+        />
       )}
     </div>
   );

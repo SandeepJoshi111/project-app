@@ -33,6 +33,19 @@ function Doctor() {
     }
   }, [currentUser]);
 
+  const handleAccept = async (appointment) => {
+    // Send a message to the patient
+    const messagesRef = firestore.collection("messages");
+    const newMessage = {
+      sender: currentUser.email, // or any identifier for the doctor
+      receiver: appointment.patientEmail, // or any identifier for the patient
+      message: "Your appointment has been accepted.",
+      timestamp: new Date(),
+    };
+    alert(newMessage);
+    await messagesRef.add(newMessage);
+  };
+
   return (
     <MainLayouts>
       <div className="container doctor-container">
@@ -71,7 +84,12 @@ function Doctor() {
                         Message: <span>{appointment.message}</span>
                       </p>
                       <div className="patient-footer">
-                        <button className="btn-patient">Accept</button>
+                        <button
+                          className="btn-patient"
+                          onClick={() => handleAccept(appointment)}
+                        >
+                          Accept
+                        </button>
                         <button className="btn-patient">Reject</button>
                       </div>
                     </div>

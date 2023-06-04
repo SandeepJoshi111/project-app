@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "./modal.css";
 import { RxCross1 } from "react-icons/rx";
+import UseAuth from "../../hooks/UseAuth";
 const Modal = ({ toggleModal, doctorEmail }) => {
+  const currentUser = UseAuth();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -22,9 +24,11 @@ const Modal = ({ toggleModal, doctorEmail }) => {
       const db = firebase.firestore();
 
       // Add the appointment data to the "appointments" collection
-      await db
-        .collection("appointments")
-        .add({ ...formData, doctorEmail: doctorEmail });
+      await db.collection("appointments").add({
+        ...formData,
+        doctorEmail: doctorEmail,
+        patientEmail: currentUser.email,
+      });
 
       // Clear the form
       setFormData({
