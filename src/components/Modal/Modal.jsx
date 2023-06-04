@@ -4,8 +4,10 @@ import "firebase/firestore";
 import "./modal.css";
 import { RxCross1 } from "react-icons/rx";
 import UseAuth from "../../hooks/UseAuth";
+import ModalLayout from "./ModalLayout/ModalLayout";
 const Modal = ({ toggleModal, doctorEmail }) => {
   const currentUser = UseAuth();
+  const [modal, setModal] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -41,11 +43,14 @@ const Modal = ({ toggleModal, doctorEmail }) => {
         message: "",
       });
 
-      alert("Appointed successfully");
+      toggleModalLayout();
       console.log("Appointment data stored successfully!");
     } catch (error) {
       console.error("Error storing appointment data:", error);
     }
+  };
+  const toggleModalLayout = () => {
+    setModal(!modal);
   };
 
   return (
@@ -159,6 +164,13 @@ const Modal = ({ toggleModal, doctorEmail }) => {
           <RxCross1 className="close-modal" onClick={toggleModal} />
         </div>
       </div>
+      {modal && (
+        <ModalLayout
+          toggleModalLayout={toggleModalLayout}
+          title="Successfully booked an appointment"
+          userType="appointment"
+        />
+      )}
     </div>
   );
 };

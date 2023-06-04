@@ -2,12 +2,23 @@ import React from "react";
 import "./modallayout.css";
 import { useNavigate } from "react-router-dom";
 
-const ModalLayout = ({ toggleModalLayout, title }) => {
+const ModalLayout = ({ toggleModalLayout, title, userType }) => {
   const navigate = useNavigate();
 
   const handleCloseModal = () => {
     toggleModalLayout(); // Close the modal
-    navigate("/"); // Navigate to /home
+
+    if (userType === "patient") {
+      navigate("/patient");
+    } else if (userType === "doctor") {
+      navigate("/doctor");
+    } else if (userType === "login") {
+      navigate("/login");
+    } else if (userType === "logindoctor") {
+      navigate("/logindoctor");
+    } else {
+      navigate("/"); // Navigate to /home as a fallback
+    }
   };
   return (
     <div className="modal-layout">

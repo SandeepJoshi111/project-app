@@ -28,8 +28,8 @@ const Login = ({ onLogin }) => {
 
       console.log("user", user);
       console.log("name", name);
-      toggleModalLayout();
       navigate("/patient");
+      toggleModalLayout();
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
@@ -127,6 +127,7 @@ const Login = ({ onLogin }) => {
         <ModalLayout
           toggleModalLayout={toggleModalLayout}
           title="Logged In as a Patient"
+          userType="patient"
         />
       )}
     </div>

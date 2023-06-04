@@ -137,6 +137,7 @@ const SignUp = () => {
         <ModalLayout
           toggleModalLayout={toggleModalLayout}
           title="SUCCESSFULL REGISTERED AS A PATIENT"
+          userType="login"
         />
       )}
     </div>

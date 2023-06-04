@@ -127,6 +127,7 @@ const LoginDoctor = ({ onLogin }) => {
         <ModalLayout
           toggleModalLayout={toggleModalLayout}
           title="Logged In as a Doctor"
+          userType="doctor"
         />
       )}
     </div>

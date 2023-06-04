@@ -128,7 +128,7 @@ const NavBar = () => {
         </div>
       </div>
       {modal && (
-        <ModalLayout toggleModalLayout={toggleModalLayout} title="Logged Out" />
+        <ModalLayout toggleModalLayout={toggleModalLayout} title="Logged Out" userType="loggout"/>
       )}
     </div>
   );
