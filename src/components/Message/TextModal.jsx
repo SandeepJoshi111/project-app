@@ -14,19 +14,36 @@ const TextModal = () => {
         // Access the Firebase Firestore instance
         const db = firebase.firestore();
 
-        // Fetch the messages for the current user or any other relevant condition
+        // Fetch all messages for the current user or any other relevant condition
         const query = db
           .collection("messages")
-          .where("receiver", "==", currentUser.email);
+          .where("receiver", "==", currentUser.email)
+          .orderBy(firebase.firestore.FieldPath.documentId())
+          .limitToLast(1);
+
         const snapshot = await query.get();
 
-        // Convert the snapshot data into an array of message objects
-        const messageData = snapshot.docs.map((doc) => doc.data());
+        if (!snapshot.empty) {
+          const messageDoc = snapshot.docs[0];
 
-        // Update the messages state
-        setMessages(messageData);
+          // Convert the message document data into an object
+          const messageData = messageDoc.data();
+
+          // Update the messages state with the most recent message
+          setMessages([messageData]);
+
+          // Delete all other messages except the most recent one
+          snapshot.docs.forEach((doc) => {
+            if (doc.id !== messageDoc.id) {
+              db.collection("messages").doc(doc.id).delete();
+            }
+          });
+        } else {
+          // No messages available
+          setMessages([]);
+        }
       } catch (error) {
-        console.error("Error fetching messages:", error);
+        console.error("Error fetching and deleting messages:", error);
       }
     };
 
