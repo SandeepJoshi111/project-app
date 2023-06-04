@@ -506,11 +506,11 @@ footer {
     flex-direction: column;
     gap: 0.7rem;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .footer-payment h2 {
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .footer-copyright {
     bottom: 4rem;
@@ -594,15 +594,15 @@ footer {
   }
 
   .footer-social-media {
-    font-size: 2rem;
+    font-size: 1.7rem;
     gap: 2rem;
     display: flex;
     margin-top: 1rem;
   }
   .footer-quote {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .seperator-footer {
-    margin: 1rem 0;
+    margin: 0.7rem 0;
   }
 }
