@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./textmodal.css";
-import { useNavigate } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 
-const TextModal = ({ toggleTextModal }) => {
-  const navigate = useNavigate();
+const TextModal = () => {
   const currentUser = UseAuth();
 
   const [messages, setMessages] = useState([]);
@@ -34,10 +32,7 @@ const TextModal = ({ toggleTextModal }) => {
 
     fetchMessages();
   }, [currentUser.email]);
-  // const handleCloseModal = () => {
-  //   toggleTextModal(); // Close the modal
-  //   navigate("/login"); // Navigate to /login
-  // };
+
   return (
     <div className="modal-text">
       <div className="message-list">

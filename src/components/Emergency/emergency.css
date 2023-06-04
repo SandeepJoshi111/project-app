@@ -101,10 +101,10 @@ marquee {
   animation: ambulance 7s infinite linear;
 }
 @keyframes ambulance {
-  from {
+  0% {
     transform: translateX(200%);
   }
-  to {
+  100% {
     transform: translateX(-200%);
   }
 }

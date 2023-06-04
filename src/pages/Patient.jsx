@@ -11,7 +11,7 @@ import config from "../components/Payment/PaymentConfig";
 import { firestore } from "../firebase/Firebase";
 import TextModal from "../components/Message/TextModal";
 
-function Doctor() {
+function Patient() {
   const [doctors, setDoctors] = useState([]);
   const [doctorEmail, setDoctorEmail] = useState("");
   let checkout = new KhaltiCheckout(config);
@@ -37,6 +37,7 @@ function Doctor() {
   const toggleTextModal = () => {
     setTextModal(!textmodal);
   };
+
   return (
     <MainLayouts>
       <div className="container patient-container">
@@ -91,4 +92,4 @@ function Doctor() {
   );
 }
 
-export default Doctor;
+export default Patient;
