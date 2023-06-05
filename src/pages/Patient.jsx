@@ -48,11 +48,9 @@ function Patient() {
         >
           Online Registered Doctors
         </motion.h2>
-        {doctors.map((doctor, index) => (
-          <div key={index} className="patient-grid">
-            <div
-              className="patient-wrap"
-            >
+        <div className="patient-grid">
+          {doctors.map((doctor, index) => (
+            <div key={index} className="patient-wrap">
               <div className="doctor-icon-container">
                 <div className="doctor-icon">
                   <FaUserMd />
@@ -88,8 +86,8 @@ function Patient() {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       </div>
       <button className="bubble" onClick={toggleTextModal}>

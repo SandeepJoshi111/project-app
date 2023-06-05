@@ -39,7 +39,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  place-items: center;
 }
 .patient-wrap {
   margin-top: 10px;
@@ -120,7 +119,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .patient-container {
+  .patient-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .patient-title {
@@ -153,8 +152,9 @@
 }
 
 @media screen and (max-width: 600px) {
-  .patient-container {
+  .patient-grid {
     grid-template-columns: repeat(1, 1fr);
+    place-items: center;
   }
   .patient-title {
     font-size: 1.2rem;
