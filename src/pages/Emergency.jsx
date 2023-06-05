@@ -16,20 +16,8 @@ const Emergency = () => {
     <MainLayouts>
       <div className="container emergency-container">
         <marquee>FOR EMERGENCY: CALL 102</marquee>
-        <motion.h1
-          className="emergency-title"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
-          List of Ambulance in 7 provience
-        </motion.h1>
-        <motion.div
-          className="emergency-dropdown"
-          initial={{ x: -1000 }}
-          animate={{ x: 0 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
+        <h1 className="emergency-title">List of Ambulance in 7 provience</h1>
+        <div className="emergency-dropdown">
           <select id="emergency-province" onChange={handleProvinceChange}>
             <option value="default">Select Province</option>
             <option value="province-1">Province 1 (Koshi)</option>
@@ -40,7 +28,7 @@ const Emergency = () => {
             <option value="province-6">Province 6 (Karnali)</option>
             <option value="province-7">Province 7 (Sudurpashchim)</option>
           </select>
-        </motion.div>
+        </div>
         {selectedProvince === "default" && (
           <svg
             className="ambulance"
@@ -151,7 +139,7 @@ const Emergency = () => {
             <div className="img-grid">
               <motion.div
                 className="img-wrap"
-                initial={{ scale: 0 }}
+                initial={{ scale: 0.1 }}
                 animate={{ scale: 1 }}
               >
                 <div className="emergency-logo">

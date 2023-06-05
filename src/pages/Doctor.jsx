@@ -7,7 +7,6 @@ import MainLayouts from "../layouts/MainLayouts";
 import { FaPrayingHands } from "react-icons/fa";
 import UseAuth from "../hooks/UseAuth";
 import { firestore } from "../firebase/Firebase";
-import { motion } from "framer-motion";
 
 function Doctor() {
   const currentUser = UseAuth();
@@ -89,20 +88,8 @@ function Doctor() {
   return (
     <MainLayouts>
       <div className="container doctor-container">
-        <motion.h2
-          className="doctor-title"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
-          Appointments
-        </motion.h2>
-        <motion.div
-          className="appointment-container"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
+        <h2 className="doctor-title">Appointments</h2>
+        <div className="appointment-container">
           {appointments.length === 0 ? (
             <div className="no-appointments">
               {/* <FaPrayingHands className="praying-hands-icon" /> */}
@@ -112,11 +99,7 @@ function Doctor() {
             <div className="appointment-list">
               {appointments.map((appointment, index) => (
                 <div key={index} className="doctor-grid">
-                  <motion.div
-                    className="doctor-wrap"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                  >
+                  <div className="doctor-wrap">
                     <div className="patient-content">
                       <p>
                         Patient:{" "}
@@ -154,12 +137,12 @@ function Doctor() {
                         </button>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               ))}
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
     </MainLayouts>
   );

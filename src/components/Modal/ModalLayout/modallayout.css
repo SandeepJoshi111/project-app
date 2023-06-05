@@ -16,8 +16,9 @@
 }
 .modal-content-layout {
   position: absolute;
-  inset: 0;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: var(--color-white);
   background-image: url(../../../assets/large-triangles.svg);
   background-size: cover;

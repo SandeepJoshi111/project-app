@@ -5,8 +5,6 @@ import "./modal.css";
 import { RxCross1 } from "react-icons/rx";
 import UseAuth from "../../hooks/UseAuth";
 import ModalLayout from "./ModalLayout/ModalLayout";
-import { motion } from "framer-motion";
-
 const Modal = ({ toggleModal, doctorEmail }) => {
   const currentUser = UseAuth();
   const [modal, setModal] = useState(false);
@@ -58,12 +56,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
   return (
     <div className="modal">
       <div className="overlay">
-        <motion.div
-          className="modal-content"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 50 }}
-        >
+        <div className="modal-content">
           <form className="form" onSubmit={handleSubmit}>
             <p className="modal-title">Book an Appointment </p>
 
@@ -163,12 +156,13 @@ const Modal = ({ toggleModal, doctorEmail }) => {
                 />
               </label>
             </div>
+
             <button className="btn-modal" type="submit">
               Submit
             </button>
-            <RxCross1 className="close-modal" onClick={toggleModal} />
           </form>
-        </motion.div>
+          <RxCross1 className="close-modal" onClick={toggleModal} />
+        </div>
       </div>
       {modal && (
         <ModalLayout

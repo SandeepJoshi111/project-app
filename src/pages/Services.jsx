@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Services/services.css";
 import { BsFillChatDotsFill } from "react-icons/bs";
@@ -8,62 +8,37 @@ import { MdOutlinePayments } from "react-icons/md";
 import { MdContactPhone } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
-import { motion } from "framer-motion";
 
+import { Link } from "react-router-dom";
 const Services = () => {
   return (
     <MainLayouts>
       <div class="container services-container">
-        <motion.h1
-          className="services-title"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
-          Services
-        </motion.h1>
+        <h1 className="services-title">Services</h1>
         <div class="services-grid">
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          <div class="services-wrap">
             <RiLoginBoxFill className="services-logo" />
             <div className="services-content">
               <h2>Log In</h2>
               <span>One step closer to your online therapy</span>
             </div>
-          </motion.div>
-
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          </div>
+          <div class="services-wrap">
             <BsFillCalendar2CheckFill className="services-logo" />
             <div className="services-content">
               <h2>Book an Appointment</h2>
               <span>Save time, book your appointment online</span>
             </div>
-          </motion.div>
-
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          </div>
+          <div class="services-wrap">
             <BsFillChatDotsFill className="services-logo" />
             <div className="services-content">
               <h2>Live Text</h2>
               <span>Text-based therapy when you need it</span>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          <div class="services-wrap">
             <MdOutlinePayments className="services-logo" />
             <div className="services-content">
               <h2>Payment</h2>
@@ -71,42 +46,29 @@ const Services = () => {
                 Effortless payments for a hassle-free experience through Khalti
               </span>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          <div class="services-wrap">
             <FaAmbulance className="services-logo" />
             <div className="services-content">
               <h2>Ambulance</h2>
               <span>Rapid response, saving lives</span>
             </div>
-          </motion.div>
-
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          </div>
+          <div class="services-wrap">
             <FaHospitalAlt className="services-logo" />
             <div className="services-content">
               <h2>Hospital</h2>
               <span>Compassionate care at your service</span>
             </div>
-          </motion.div>
-          <motion.div
-            class="services-wrap"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          >
+          </div>
+          <div class="services-wrap">
             <MdContactPhone className="services-logo" />
             <div className="services-content">
               <h2>Contact</h2>
               <span>We're just a click away</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </MainLayouts>

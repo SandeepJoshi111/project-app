@@ -3,7 +3,6 @@ import "./textmodal.css";
 import UseAuth from "../../hooks/UseAuth";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
-import { motion } from "framer-motion";
 
 const TextModal = () => {
   const currentUser = UseAuth();
@@ -52,7 +51,7 @@ const TextModal = () => {
   }, [currentUser.email]);
 
   return (
-    <motion.div className="modal-text" initial={{ x: 30 }} animate={{ x: 0 }}>
+    <div className="modal-text">
       <div className="message-list">
         <h4>Messages:</h4>
         {messages.length === 0 ? (
@@ -69,7 +68,7 @@ const TextModal = () => {
           </ul>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

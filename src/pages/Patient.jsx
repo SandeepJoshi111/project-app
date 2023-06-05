@@ -10,7 +10,6 @@ import KhaltiCheckout from "khalti-checkout-web";
 import config from "../components/Payment/PaymentConfig";
 import { firestore } from "../firebase/Firebase";
 import TextModal from "../components/Message/TextModal";
-import { motion } from "framer-motion";
 
 function Patient() {
   const [doctors, setDoctors] = useState([]);
@@ -42,21 +41,10 @@ function Patient() {
   return (
     <MainLayouts>
       <div className="container patient-container">
-        <motion.h2
-          className="patient-title"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
-          Online Registered Doctors
-        </motion.h2>
+        <h2 className="patient-title">Online Registered Doctors</h2>
         {doctors.map((doctor, index) => (
           <div key={index} className="patient-grid">
-            <motion.div
-              className="patient-wrap"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="patient-wrap">
               <div className="doctor-icon-container">
                 <div className="doctor-icon">
                   <FaUserMd />
@@ -91,15 +79,15 @@ function Patient() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         ))}
+        {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       </div>
-      {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
-      <motion.div className="bubble" onClick={toggleTextModal}>
+      <button className="bubble" onClick={toggleTextModal}>
         <BiMessageAltDots />
         {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
-      </motion.div>
+      </button>
     </MainLayouts>
   );
 }
