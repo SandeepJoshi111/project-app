@@ -7,7 +7,6 @@ import HOMEDOC from "../../assets/undraw_medicine_b-1-ol.svg";
 import MainLayouts from "../../layouts/MainLayouts";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
-import LOGO from "../../assets/HCN-removebg-preview.png";
 import KHALTI from "../../assets/khalti.png";
 import UseAuth from "../../hooks/UseAuth";
 import { firestore } from "../../firebase/Firebase";
@@ -15,6 +14,8 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import { BsFacebook } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
@@ -23,6 +24,8 @@ function Header() {
   const [isDoctor, setIsDoctor] = useState(false);
 
   useEffect(() => {
+    AOS.init({ duration: 2000 });
+
     if (currentUser && currentUser.email) {
       const doctorsCollection = firestore.collection("doctor");
       // Query the "doctor" collection for the user's email
@@ -87,11 +90,13 @@ function Header() {
         </div>
 
         <section className="about-container" id="about">
-          <h1 className="home-title">About Us</h1>
+          <h1 className="home-title" data-aos="zoom-in-up">
+            About Us
+          </h1>
           <div className="about-content">
             <div className="left-about">
-              <div className="about-us">
-                <h4>Why Health Care Nepal?</h4>
+              <div className="about-us" data-aos="fade-left">
+                <h4 data-aos="fade-left">Why Health Care Nepal?</h4>
                 <p>
                   Health Care Nepal (HCN) is an online health platform where you
                   can connect with your preferred doctor and have a live session
@@ -104,36 +109,48 @@ function Header() {
             <div className="seperator-about"></div>
             <div className="right-about">
               <div className="right-about-content">
-                <div className="about-user">
+                <div className="about-user" data-aos="fade-right">
                   <h4>Consult With Doctor</h4>
                   <span>Talk to a doctor regarding your health issue.</span>
                 </div>
                 {currentUser && isDoctor ? (
                   <Link to="/patient">
-                    <button className="btn-home disabled" disabled>
+                    <button
+                      className="btn-home disabled"
+                      disabled
+                      data-aos="zoom-in-up"
+                    >
                       View all
                     </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/patient" : "/login"}>
-                    <button className="btn-home">View all</button>
+                    <button className="btn-home" data-aos="zoom-in-up">
+                      View all
+                    </button>
                   </Link>
                 )}
               </div>
               <div className="right-about-content">
-                <div className="about-user">
+                <div className="about-user" data-aos="fade-right">
                   <h4>View Appointment</h4>
                   <span>View who booked an appointment?</span>
                 </div>
                 {currentUser && !isDoctor ? (
                   <Link to="/doctor">
-                    <button className="btn-home disabled" disabled>
+                    <button
+                      className="btn-home disabled"
+                      disabled
+                      data-aos="zoom-in-up"
+                    >
                       View all
                     </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/doctor" : "/logindoctor"}>
-                    <button className="btn-home">View all</button>
+                    <button className="btn-home" data-aos="zoom-in-up">
+                      View all
+                    </button>
                   </Link>
                 )}
               </div>
@@ -142,9 +159,11 @@ function Header() {
         </section>
 
         <section className="contact-container" id="contact">
-          <h1 className="home-title">Contact Us</h1>
+          <h1 className="home-title" data-aos="zoom-in-up">
+            Contact Us
+          </h1>
           {/* <div className="contact-divider"> */}
-          <div className="heatbeat-content">
+          <div className="heatbeat-content" data-aos="zoom-in-up">
             <svg className="heartbeat" x="0px" y="0px" viewBox="0 0 298 53.9">
               <path
                 class="pathdraw"
@@ -155,8 +174,8 @@ function Header() {
               />
             </svg>
           </div>
-          <div className="contact-content">
-            <div className="contact-right">
+          <div className="contact-content " data-aos="zoom-in-up">
+            <div className="contact-right" data-aos="fade-left">
               <p>Fill up the form to contact</p>
               <a href="tel:9818119950">
                 <BsFillTelephoneFill /> <p>9818119950</p>
@@ -180,7 +199,7 @@ function Header() {
               </div>
             </div>
             <div className="seperator-about"></div>
-            <div className="contact-left">
+            <div className="contact-left" data-aos="fade-right">
               <form ref={form} onSubmit={sendEmail}>
                 <input
                   type="text"
@@ -202,7 +221,11 @@ function Header() {
                   placeholder="Your Message"
                   className="contact-input"
                 ></textarea>
-                <button type="submit" className="btn-home">
+                <button
+                  type="submit"
+                  className="btn-home"
+                  data-aos="zoom-in-up"
+                >
                   Send Message
                 </button>
               </form>
@@ -211,18 +234,18 @@ function Header() {
           </div>
         </section>
 
-        <footer>
+        <footer data-aos="fade-up">
           {/* <div className="footer-quote">"Online resources, offline impact"</div> */}
-          <div className="footer-quote">
+          <div className="footer-quote" data-aos="zoom-in-up">
             "A safe space for your mental health"
           </div>
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
-            <div className="footer-payment">
+            <div className="footer-payment" data-aos="fade-right">
               <h2>We accept Payment with </h2>
               <img src={KHALTI} alt="Khalti-Image" />
             </div>
-            <div className="footer-content">
+            <div className="footer-content" data-aos="fade-left">
               <div className="permalinks">
                 <li>
                   <a href="#">Home</a>
@@ -249,7 +272,7 @@ function Header() {
             </div>
           </div>
           <div className="footer-copyright">
-            <small>
+            <small data-aos="zoom-in-up">
               All rights reserved &copy; <br /> Designed by Dristi Gurung and
               Sandeep Joshi .
             </small>

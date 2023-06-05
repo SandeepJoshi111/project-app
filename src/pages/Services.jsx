@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Services/services.css";
 import { BsFillChatDotsFill } from "react-icons/bs";
@@ -9,12 +9,14 @@ import { MdContactPhone } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
+
 const Services = () => {
   return (
     <MainLayouts>
       <div class="container services-container">
-        <h1 className="services-title">Services</h1>
+        <h1 className="services-title" >
+          Services
+        </h1>
         <div class="services-grid">
           <div class="services-wrap">
             <RiLoginBoxFill className="services-logo" />
