@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
 import "./header.css";
-import HOMEDOC from "../../assets/undraw_medicine_b-1-ol.svg";
+import HOMEDOC from "../../assets/SVGFINAL.svg";
 import MainLayouts from "../../layouts/MainLayouts";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
@@ -15,13 +15,16 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import { BsFacebook } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
   const currentUser = UseAuth();
 
   const [isDoctor, setIsDoctor] = useState(false);
-
+  useEffect(() => {
+    AOS.init({ duraction: 2000 });
+  }, []);
   useEffect(() => {
     if (currentUser && currentUser.email) {
       const doctorsCollection = firestore.collection("doctor");
@@ -155,7 +158,7 @@ function Header() {
               />
             </svg>
           </div>
-          <div className="contact-content">
+          <div className="contact-content" data-aos="zoom-in-up">
             <div className="contact-right">
               <p>Fill up the form to contact</p>
               <a href="tel:9818119950">
@@ -212,10 +215,8 @@ function Header() {
         </section>
 
         <footer>
-          {/* <div className="footer-quote">"Online resources, offline impact"</div> */}
-          <div className="footer-quote">
-            "A safe space for your mental health"
-          </div>
+          <div className="footer-quote">"Online resources, offline impact"</div>
+
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
             <div className="footer-payment">

@@ -42,8 +42,8 @@
   align-items: center;
 }
 .home-image img {
-  margin-top: 2rem;
-  width: 600px;
+  width: 800px;
+
 }
 .home-quote {
   font-size: 30px;
@@ -482,11 +482,11 @@ footer {
     font-size: 15px;
   }
   .home-image img {
-    width: 225px;
+    width: 300px;
     margin-top: 1rem;
   }
   .home-quote {
-    margin-top: -13rem;
+    margin-top: -16rem;
     font-size: 18px;
   }
   .home-quote h4 {

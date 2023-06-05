@@ -24,17 +24,12 @@ const ModalLayout = ({ toggleModalLayout, title, userType }) => {
   return (
     <div className="modal-layout">
       <div className="overlay-layout">
-        <motion.div
-          className="modal-content-layout"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
-        >
+        <div className="modal-content-layout">
           <p className="modal-title-layout">{title}</p>
           <button className="close-modal-layout" onClick={handleCloseModal}>
             Close
           </button>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

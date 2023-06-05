@@ -42,7 +42,7 @@
 
 .services-wrap:hover {
   background: rgba(0, 128, 128, 0.2);
-  transform: scale(1.05);
+  transform: scale(1.1) !important;
   color: var(--color-accent);
 }
 

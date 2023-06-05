@@ -99,13 +99,13 @@ marquee {
   width: 400px;
   height: 400px;
   animation: ambulance 7s infinite linear;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 @keyframes ambulance {
-  0% {
+  from {
     transform: translateX(200%);
   }
-  100% {
+  to {
     transform: translateX(-200%);
   }
 }

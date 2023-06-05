@@ -91,9 +91,9 @@ function Doctor() {
       <div className="container doctor-container">
         <motion.h2
           className="doctor-title"
-          initial={{ scale: 0 }}
+          initial={{ scale: 0.1 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
+          transition={{ type: "spring", bounce: 0.2 }}
         >
           Appointments
         </motion.h2>
@@ -101,9 +101,8 @@ function Doctor() {
           {appointments.length === 0 ? (
             <motion.div
               className="no-appointments"
-              initial={{ scale: 0 }}
+              initial={{ scale: 0.1 }}
               animate={{ scale: 1 }}
-              transition={{ type: "spring", bounce: 0.2, duration: 2 }}
             >
               {/* <FaPrayingHands className="praying-hands-icon" /> */}
               <p>No appointments available.</p>
@@ -112,10 +111,9 @@ function Doctor() {
             <div className="appointment-list">
               {appointments.map((appointment, index) => (
                 <div key={index} className="doctor-grid">
-                  <motion.div
+                  <div
                     className="doctor-wrap"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
+        
                   >
                     <div className="patient-content">
                       <p>
@@ -154,7 +152,7 @@ function Doctor() {
                         </button>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               ))}
             </div>

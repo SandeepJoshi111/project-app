@@ -57,12 +57,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
   return (
     <div className="modal">
       <div className="overlay">
-        <motion.div
-          className="modal-content"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
-        >
+        <div className="modal-content">
           <form className="form" onSubmit={handleSubmit}>
             <p className="modal-title">Book an Appointment </p>
 
@@ -168,7 +163,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
             </button>
             <RxCross1 className="close-modal" onClick={toggleModal} />
           </form>
-        </motion.div>
+        </div>
       </div>
       {modal && (
         <ModalLayout

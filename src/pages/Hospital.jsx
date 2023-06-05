@@ -1,28 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Hospitals/hospitals.css";
 import { FaHospitalAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Hospital = () => {
+  useEffect(() => {
+    AOS.init({ duraction: 1000 });
+  }, []);
   return (
     <MainLayouts>
       <div className="container hospital-container">
         <motion.div
           className="hospital-title"
-          initial={{ scale: 0 }}
+          initial={{ scale: 0.1 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
         >
           List Of Government Hospitals
         </motion.div>
         <div className="hospital-grid">
           <a href="https://www.bbhospital.com.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -36,15 +36,11 @@ const Hospital = () => {
                   Gwarko, Kathmandu{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://birendrahospital.nepalarmy.mil.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -58,15 +54,11 @@ const Hospital = () => {
                   Chhauni, Kathmandu
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://birhospital.org.np/np" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -80,15 +72,11 @@ const Hospital = () => {
                   Tundikhel, Kathmandu
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://nph.nepalpolice.gov.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -102,15 +90,11 @@ const Hospital = () => {
                   Maharajgunj, Kathmandu{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://csh.gov.np/ne" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -124,15 +108,11 @@ const Hospital = () => {
                   Minbhawan, Kathmandu{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://dhulikhelhospital.org/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -146,15 +126,11 @@ const Hospital = () => {
                   Kavre, Nepal{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://kmc.edu.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -168,15 +144,11 @@ const Hospital = () => {
                   Sinamangal, Kathmandu{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://birendrahospital.nepalarmy.mil.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -190,15 +162,11 @@ const Hospital = () => {
                   Imadol, Lalitpur{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="http://www.omhospitalnepal.com/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -212,18 +180,14 @@ const Hospital = () => {
                   Chabahil, Kathmandu{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a
             href="https://www.pahs.edu.np/pahs-community/hospital/"
             target="_blank"
           >
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -237,15 +201,11 @@ const Hospital = () => {
                   Lagankhel, Lalitpur{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="http://www.tuth.org.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -259,15 +219,11 @@ const Hospital = () => {
                   Maharajgunj, Kathmandu{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://www.bpkihs.edu/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -281,18 +237,14 @@ const Hospital = () => {
                   Dharan{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a
             href="https://www.pahs.gov.np/?fbclid=IwAR0mjB_OtnEgJO-Y7bZ9crCX92NpwuiFerOQP6U5UDFNxcQpYoxuPcMnkTw"
             target="_blank"
           >
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -306,15 +258,11 @@ const Hospital = () => {
                   Pokhara{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="http://rahs.edu.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -328,15 +276,11 @@ const Hospital = () => {
                   Dang{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://www.lphospital.gov.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -350,15 +294,11 @@ const Hospital = () => {
                   Butwal{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://kahs.edu.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -372,15 +312,11 @@ const Hospital = () => {
                   Jumla{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://www.baitadihospital.gov.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -394,15 +330,11 @@ const Hospital = () => {
                   Baitadi{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
 
           <a href="https://www.nartc.gov.np/" target="_blank">
-            <motion.div
-              className="hospital-wrap"
-              initial={{ scale: 0.1 }}
-              animate={{ scale: 1 }}
-            >
+            <div className="hospital-wrap" data-aos="zoom-in-up">
               <div className="hospital-logo">
                 <FaHospitalAlt />
               </div>
@@ -416,7 +348,7 @@ const Hospital = () => {
                   Kirtipur{" "}
                 </a>
               </div>
-            </motion.div>
+            </div>
           </a>
         </div>
         <div className="hospital-note">

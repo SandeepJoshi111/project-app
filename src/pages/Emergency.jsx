@@ -15,12 +15,11 @@ const Emergency = () => {
   return (
     <MainLayouts>
       <div className="container emergency-container">
-        <marquee>FOR EMERGENCY: CALL 102</marquee>
+        <marquee> FOR EMERGENCY: CALL 102</marquee>
         <motion.h1
           className="emergency-title"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
         >
           List of Ambulance in 7 provience
         </motion.h1>
@@ -28,7 +27,6 @@ const Emergency = () => {
           className="emergency-dropdown"
           initial={{ x: 200 }}
           animate={{ x: 0 }}
-          transition={{ type: "spring", bounce: 0.28, duration: 2 }}
         >
           <select id="emergency-province" onChange={handleProvinceChange}>
             <option value="default">Select Province</option>

@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const Services = () => {
   const animate = {
-    offscreen: { scale: 0 },
+    offscreen: { scale: 0.1 },
     onscreen: {
       scale: 1,
     },
@@ -24,7 +24,6 @@ const Services = () => {
           className="services-title"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
         >
           Services
         </motion.h1>

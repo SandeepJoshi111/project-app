@@ -43,19 +43,15 @@ function Patient() {
       <div className="container patient-container">
         <motion.h2
           className="patient-title"
-          initial={{ scale: 0 }}
+          initial={{ scale: 0.1 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
         >
           Online Registered Doctors
         </motion.h2>
         {doctors.map((doctor, index) => (
           <div key={index} className="patient-grid">
-            <motion.div
+            <div
               className="patient-wrap"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", bounce: 0.2, duration: 2 }}
             >
               <div className="doctor-icon-container">
                 <div className="doctor-icon">
@@ -91,7 +87,7 @@ function Patient() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         ))}
         {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
