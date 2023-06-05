@@ -26,7 +26,7 @@ const Emergency = () => {
         </motion.h1>
         <motion.div
           className="emergency-dropdown"
-          initial={{ x: -200 }}
+          initial={{ x: 200 }}
           animate={{ x: 0 }}
           transition={{ type: "spring", bounce: 0.28, duration: 2 }}
         >

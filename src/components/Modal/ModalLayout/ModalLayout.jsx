@@ -1,6 +1,7 @@
 import React from "react";
 import "./modallayout.css";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ModalLayout = ({ toggleModalLayout, title, userType }) => {
   const navigate = useNavigate();
@@ -23,12 +24,17 @@ const ModalLayout = ({ toggleModalLayout, title, userType }) => {
   return (
     <div className="modal-layout">
       <div className="overlay-layout">
-        <div className="modal-content-layout">
+        <motion.div
+          className="modal-content-layout"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
+        >
           <p className="modal-title-layout">{title}</p>
           <button className="close-modal-layout" onClick={handleCloseModal}>
             Close
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
