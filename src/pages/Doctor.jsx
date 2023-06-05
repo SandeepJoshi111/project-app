@@ -7,6 +7,7 @@ import MainLayouts from "../layouts/MainLayouts";
 import { FaPrayingHands } from "react-icons/fa";
 import UseAuth from "../hooks/UseAuth";
 import { firestore } from "../firebase/Firebase";
+import { motion } from "framer-motion";
 
 function Doctor() {
   const currentUser = UseAuth();
@@ -88,18 +89,34 @@ function Doctor() {
   return (
     <MainLayouts>
       <div className="container doctor-container">
-        <h2 className="doctor-title">Appointments</h2>
+        <motion.h2
+          className="doctor-title"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
+        >
+          Appointments
+        </motion.h2>
         <div className="appointment-container">
           {appointments.length === 0 ? (
-            <div className="no-appointments">
+            <motion.div
+              className="no-appointments"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", bounce: 0.2, duration: 2 }}
+            >
               {/* <FaPrayingHands className="praying-hands-icon" /> */}
               <p>No appointments available.</p>
-            </div>
+            </motion.div>
           ) : (
             <div className="appointment-list">
               {appointments.map((appointment, index) => (
                 <div key={index} className="doctor-grid">
-                  <div className="doctor-wrap">
+                  <motion.div
+                    className="doctor-wrap"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                  >
                     <div className="patient-content">
                       <p>
                         Patient:{" "}
@@ -137,7 +154,7 @@ function Doctor() {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               ))}
             </div>

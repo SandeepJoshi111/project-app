@@ -15,7 +15,6 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import { BsFacebook } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
-import { animate, motion } from "framer-motion";
 
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
@@ -55,36 +54,6 @@ function Header() {
     e.target.reset();
   };
 
-  const titleAnimate = {
-    offscreen: { scale: 0 },
-    onscreen: {
-      scale: 1,
-      transition: { type: "spring", bounce: 0.2, duration: 2 },
-    },
-  };
-
-  const leftAnimate = {
-    offscreen: { x: -200 },
-    onscreen: {
-      x: 0,
-      transition: { duration: 2 },
-    },
-  };
-  const rightAnimate = {
-    offscreen: { x: 200 },
-    onscreen: {
-      x: 0,
-      transition: { duration: 2 },
-    },
-  };
-
-  const topAnimate = {
-    offscreen: { y: 100 },
-    onscreen: {
-      y: 0,
-      transition: { duration: 2 },
-    },
-  };
   return (
     <MainLayouts>
       <div className="container header-container">
@@ -92,20 +61,10 @@ function Header() {
           हेल्थ केयर नेपालबाट अपोइन्टमेन्ट बुक गर्दा १०% छुट पाउनुहोस्।
         </marquee> */}
         <div className="header-content" style={{ clipPath }}>
-          <motion.div
-            className="home-image"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={leftAnimate}
-          >
+          <div className="home-image">
             <img src={HOMEDOC} alt="" />
-          </motion.div>
-          <motion.div
-            className="home-content"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={rightAnimate}
-          >
+          </div>
+          <div className="home-content">
             <div className="home-quote">
               <h1>
                 Welcome to <br />{" "}
@@ -124,25 +83,13 @@ function Header() {
                 <button className="btn-home">Contact Us</button>
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <section className="about-container" id="about">
-          <motion.h1
-            className="home-title"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={titleAnimate}
-          >
-            About Us
-          </motion.h1>
+          <h1 className="home-title">About Us</h1>
           <div className="about-content">
-            <motion.div
-              className="left-about"
-              initial={"offscreen"}
-              whileInView={"onscreen"}
-              variants={leftAnimate}
-            >
+            <div className="left-about">
               <div className="about-us">
                 <h4>Why Health Care Nepal?</h4>
                 <p>
@@ -153,14 +100,9 @@ function Header() {
                   and affordable.
                 </p>
               </div>
-            </motion.div>
+            </div>
             <div className="seperator-about"></div>
-            <motion.div
-              className="right-about"
-              initial={"offscreen"}
-              whileInView={"onscreen"}
-              variants={rightAnimate}
-            >
+            <div className="right-about">
               <div className="right-about-content">
                 <div className="about-user">
                   <h4>Consult With Doctor</h4>
@@ -168,26 +110,13 @@ function Header() {
                 </div>
                 {currentUser && isDoctor ? (
                   <Link to="/patient">
-                    <motion.button
-                      className="btn-home disabled"
-                      disabled
-                      initial={"offscreen"}
-                      whileInView={"onscreen"}
-                      variants={topAnimate}
-                    >
+                    <button className="btn-home disabled" disabled>
                       View all
-                    </motion.button>
+                    </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/patient" : "/login"}>
-                    <motion.button
-                      className="btn-home"
-                      initial={"offscreen"}
-                      whileInView={"onscreen"}
-                      variants={topAnimate}
-                    >
-                      View all
-                    </motion.button>
+                    <button className="btn-home">View all</button>
                   </Link>
                 )}
               </div>
@@ -198,49 +127,24 @@ function Header() {
                 </div>
                 {currentUser && !isDoctor ? (
                   <Link to="/doctor">
-                    <motion.button
-                      className="btn-home disabled"
-                      disabled
-                      initial={"offscreen"}
-                      whileInView={"onscreen"}
-                      variants={topAnimate}
-                    >
+                    <button className="btn-home disabled" disabled>
                       View all
-                    </motion.button>
+                    </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/doctor" : "/logindoctor"}>
-                    <motion.button
-                      className="btn-home"
-                      initial={"offscreen"}
-                      whileInView={"onscreen"}
-                      variants={topAnimate}
-                    >
-                      View all
-                    </motion.button>
+                    <button className="btn-home">View all</button>
                   </Link>
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         <section className="contact-container" id="contact">
-          <motion.h1
-            className="home-title"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={titleAnimate}
-          >
-            Contact Us
-          </motion.h1>
+          <h1 className="home-title">Contact Us</h1>
           {/* <div className="contact-divider"> */}
-          <motion.div
-            className="heatbeat-content"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={topAnimate}
-          >
+          <div className="heatbeat-content">
             <svg className="heartbeat" x="0px" y="0px" viewBox="0 0 298 53.9">
               <path
                 class="pathdraw"
@@ -250,19 +154,9 @@ function Header() {
                        l-2.3,4.8H0.5"
               />
             </svg>
-          </motion.div>
-          <motion.div
-            className="contact-content"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={topAnimate}
-          >
-            <motion.div
-              className="contact-right"
-              initial={"offscreen"}
-              whileInView={"onscreen"}
-              variants={leftAnimate}
-            >
+          </div>
+          <div className="contact-content">
+            <div className="contact-right">
               <p>Fill up the form to contact</p>
               <a href="tel:9818119950">
                 <BsFillTelephoneFill /> <p>9818119950</p>
@@ -284,14 +178,9 @@ function Header() {
                   <BsGithub />
                 </a>
               </div>
-            </motion.div>
+            </div>
             <div className="seperator-about"></div>
-            <motion.div
-              className="contact-left"
-              initial={"offscreen"}
-              whileInView={"onscreen"}
-              variants={rightAnimate}
-            >
+            <div className="contact-left">
               <form ref={form} onSubmit={sendEmail}>
                 <input
                   type="text"
@@ -313,48 +202,27 @@ function Header() {
                   placeholder="Your Message"
                   className="contact-input"
                 ></textarea>
-                <motion.button
-                  type="submit"
-                  className="btn-home"
-                  initial={"offscreen"}
-                  whileInView={"onscreen"}
-                  variants={topAnimate}
-                >
+                <button type="submit" className="btn-home">
                   Send Message
-                </motion.button>
+                </button>
               </form>
-            </motion.div>
+            </div>
             {/* </div> */}
-          </motion.div>
+          </div>
         </section>
 
         <footer>
           {/* <div className="footer-quote">"Online resources, offline impact"</div> */}
-          <motion.div
-            className="footer-quote"
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            variants={topAnimate}
-          >
+          <div className="footer-quote">
             "A safe space for your mental health"
-          </motion.div>
+          </div>
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
-            <motion.div
-              className="footer-payment"
-              initial={"offscreen"}
-              whileInView={"onscreen"}
-              variants={leftAnimate}
-            >
+            <div className="footer-payment">
               <h2>We accept Payment with </h2>
               <img src={KHALTI} alt="Khalti-Image" />
-            </motion.div>
-            <motion.div
-              className="footer-content"
-              initial={"offscreen"}
-              whileInView={"onscreen"}
-              variants={rightAnimate}
-            >
+            </div>
+            <div className="footer-content">
               <div className="permalinks">
                 <li>
                   <a href="#">Home</a>
@@ -378,14 +246,14 @@ function Header() {
                   <BsGithub />
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
-          <motion.div className="footer-copyright">
+          <div className="footer-copyright">
             <small>
               All rights reserved &copy; <br /> Designed by Dristi Gurung and
               Sandeep Joshi .
             </small>
-          </motion.div>
+          </div>
         </footer>
       </div>
     </MainLayouts>

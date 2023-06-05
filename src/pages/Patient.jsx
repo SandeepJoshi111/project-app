@@ -10,7 +10,7 @@ import KhaltiCheckout from "khalti-checkout-web";
 import config from "../components/Payment/PaymentConfig";
 import { firestore } from "../firebase/Firebase";
 import TextModal from "../components/Message/TextModal";
-
+import { motion } from "framer-motion";
 function Patient() {
   const [doctors, setDoctors] = useState([]);
   const [doctorEmail, setDoctorEmail] = useState("");
@@ -41,10 +41,22 @@ function Patient() {
   return (
     <MainLayouts>
       <div className="container patient-container">
-        <h2 className="patient-title">Online Registered Doctors</h2>
+        <motion.h2
+          className="patient-title"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", bounce: 0.2, duration: 2 }}
+        >
+          Online Registered Doctors
+        </motion.h2>
         {doctors.map((doctor, index) => (
           <div key={index} className="patient-grid">
-            <div className="patient-wrap">
+            <motion.div
+              className="patient-wrap"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", bounce: 0.2, duration: 2 }}
+            >
               <div className="doctor-icon-container">
                 <div className="doctor-icon">
                   <FaUserMd />
@@ -79,7 +91,7 @@ function Patient() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
         {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
