@@ -29,7 +29,6 @@ const Login = ({ onLogin }) => {
       console.log("user", user);
       console.log("name", name);
       navigate("/patient");
-      toggleModalLayout();
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);

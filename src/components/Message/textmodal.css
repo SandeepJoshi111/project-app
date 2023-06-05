@@ -1,17 +1,31 @@
 .modal-text {
   position: fixed;
-  bottom: 2rem;
-  right: 6rem;
-  background: var(--color-white);
+  bottom: 4rem;
+  right: 7rem;
+  background: var(--color-accent);
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 10px 10px 0 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   width: 400px;
-  color: var(--color-accent);
+  color: var(--color-black);
   text-align: left;
   transition: var(--transition);
+  z-index: 2;
+}
+
+.modal-text:before {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+  border-bottom-right-radius: 50%;
+  transform: rotate(90deg);
+  /* background: #000; */
+  box-shadow: 0 20px 0 0 var(--color-accent);
 }
 
 .message-list li {
@@ -40,6 +54,7 @@
   .modal-text {
     width: 300px;
     right: 5rem;
+    bottom: 3rem;
   }
   .message-list h4 {
     font-size: 1.2rem;

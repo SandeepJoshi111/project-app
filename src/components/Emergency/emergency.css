@@ -99,6 +99,7 @@ marquee {
   width: 400px;
   height: 400px;
   animation: ambulance 7s infinite linear;
+  overflow: hidden;
 }
 @keyframes ambulance {
   0% {
@@ -117,10 +118,10 @@ marquee {
 }
 
 @keyframes wheel {
-  from {
+  0% {
     transform: rotateZ(0deg);
   }
-  to {
+  100% {
     transform: rotateZ(360deg);
   }
 }
@@ -131,10 +132,10 @@ marquee {
 }
 
 @keyframes body {
-  from {
+  0% {
     transform: rotateX(0deg);
   }
-  to {
+  100% {
     transform: rotateX(15deg);
   }
 }
@@ -143,10 +144,10 @@ marquee {
   transform-origin: bottom;
 }
 @keyframes light {
-  from {
+  0% {
     transform: rotateX(0deg);
   }
-  to {
+  100% {
     transform: rotateX(15deg);
   }
 }

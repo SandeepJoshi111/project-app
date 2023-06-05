@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
 }
 
 .overlay {
@@ -24,7 +24,6 @@
   border-radius: 10px;
   width: max-content;
   height: max-content;
-  z-index: -1;
 }
 
 .close-modal {
@@ -112,6 +111,9 @@
 .form label {
   position: relative;
 }
+textarea {
+  resize: none;
+}
 .input,
 select {
   width: 100%;
@@ -163,9 +165,9 @@ select {
     font-size: 20px;
   }
   .modal-content {
-    max-width: 350px;
+    max-width: 370px;
   }
   .form {
-    width: 315px;
+    width: 325px;
   }
 }
