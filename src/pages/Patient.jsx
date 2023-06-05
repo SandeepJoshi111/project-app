@@ -42,13 +42,20 @@ function Patient() {
   return (
     <MainLayouts>
       <div className="container patient-container">
-        <h2 className="patient-title">Online Registered Doctors</h2>
+        <motion.h2
+          className="patient-title"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 100 }}
+        >
+          Online Registered Doctors
+        </motion.h2>
         {doctors.map((doctor, index) => (
           <div key={index} className="patient-grid">
             <motion.div
               className="patient-wrap"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
             >
               <div className="doctor-icon-container">
                 <div className="doctor-icon">
@@ -87,8 +94,8 @@ function Patient() {
             </motion.div>
           </div>
         ))}
-        {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       </div>
+      {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       <motion.div className="bubble" onClick={toggleTextModal}>
         <BiMessageAltDots />
         {textmodal && <TextModal toggleTextModal={toggleTextModal} />}

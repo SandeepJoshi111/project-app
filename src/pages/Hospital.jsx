@@ -8,7 +8,14 @@ const Hospital = () => {
   return (
     <MainLayouts>
       <div className="container hospital-container">
-        <div className="hospital-title">List Of Government Hospitals</div>
+        <motion.div
+          className="hospital-title"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 100 }}
+        >
+          List Of Government Hospitals
+        </motion.div>
         <div className="hospital-grid">
           <a href="https://www.bbhospital.com.np/" target="_blank">
             <motion.div

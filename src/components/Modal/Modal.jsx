@@ -62,7 +62,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
           className="modal-content"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 200 }}
+          transition={{ type: "spring", stiffness: 50 }}
         >
           <form className="form" onSubmit={handleSubmit}>
             <p className="modal-title">Book an Appointment </p>

@@ -52,12 +52,7 @@ const TextModal = () => {
   }, [currentUser.email]);
 
   return (
-    <motion.div
-      className="modal-text"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      exit={{ scale: 0 }}
-    >
+    <motion.div className="modal-text" initial={{ x: 30 }} animate={{ x: 0 }}>
       <div className="message-list">
         <h4>Messages:</h4>
         {messages.length === 0 ? (
