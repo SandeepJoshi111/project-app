@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./textmodal.css";
 import UseAuth from "../../hooks/UseAuth";
+import "./textmodal.css";
+
+// ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 

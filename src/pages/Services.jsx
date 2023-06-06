@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Services/services.css";
+
+// ----------ICONS----------
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { BsFillCalendar2CheckFill } from "react-icons/bs";
 import { RiLoginBoxFill } from "react-icons/ri";
@@ -8,8 +10,11 @@ import { MdOutlinePayments } from "react-icons/md";
 import { MdContactPhone } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
+// Priorly defining animation for onscreen and offscreen
 const Services = () => {
   const animate = {
     offscreen: { scale: 0.1 },
@@ -17,6 +22,7 @@ const Services = () => {
       scale: 1,
     },
   };
+
   return (
     <MainLayouts>
       <div class="container services-container">

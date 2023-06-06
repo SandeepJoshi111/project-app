@@ -1,38 +1,50 @@
 import React, { useEffect, useState } from "react";
-import firebase from "firebase/compat/app";
+import MainLayouts from "../layouts/MainLayouts";
+import "../components/Doctor/doctor.css";
+
+// ----------FIREBASE----------
+import { firestore } from "../firebase/Firebase";
 import "firebase/firestore";
 import "firebase/compat/auth";
-import "../components/Doctor/doctor.css";
-import MainLayouts from "../layouts/MainLayouts";
-import { FaPrayingHands } from "react-icons/fa";
 import UseAuth from "../hooks/UseAuth";
-import { firestore } from "../firebase/Firebase";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Doctor() {
   const currentUser = UseAuth();
 
   const [appointments, setAppointments] = useState([]);
-
+  useEffect(() => {
+    AOS.init({ duraction: 2000 });
+  }, []);
   useEffect(() => {
     if (currentUser) {
       // Fetch appointments data from Firebase
       const fetchAppointments = async () => {
         const appointmentsRef = firestore.collection("appointments");
+        // if email are same then store on query
         const query = appointmentsRef.where(
           "doctorEmail",
           "==",
           currentUser.email
         );
 
-        const snapshot = await query.get();
+        // Executes query and retrieves snapshot of the document that match the query
+        const snapshot = await query.get(); // get is used to fetch the document that match the query
+
+        //doc property contain array of snapshot
+        // map create a new object that includes document data and its id
         const appointmentData = snapshot.docs.map((doc) => {
           const data = doc.data();
           return {
-            ...data,
+            ...data, // spread operator is used to include all existing properties if the data
             id: doc.id,
           };
         });
+        // this is so we can extract all the required info from the document
         setAppointments(appointmentData);
       };
 
@@ -40,8 +52,8 @@ function Doctor() {
     }
   }, [currentUser]);
 
+  // Send a message to the patient if accept is clicked by the doctor
   const handleAccept = async (appointment) => {
-    // Send a message to the patient
     const messagesRef = firestore.collection("messages");
     const newMessage = {
       sender: currentUser.email, // or any identifier for the doctor
@@ -62,8 +74,9 @@ function Doctor() {
     const appointmentsRef = firestore.collection("appointments");
     await appointmentsRef.doc(appointment.id).delete();
   };
+
+  // Send a message to the patient when reject is clicked
   const handleReject = async (appointment) => {
-    // Send a message to the patient
     const messagesRef = firestore.collection("messages");
     const newMessage = {
       sender: currentUser.email, // or any identifier for the doctor
@@ -105,14 +118,13 @@ function Doctor() {
               animate={{ scale: 1 }}
               transition={{ type: "spring" }}
             >
-              {/* <FaPrayingHands className="praying-hands-icon" /> */}
               <p>No appointments available.</p>
             </motion.div>
           ) : (
             <div className="appointment-list">
               {appointments.map((appointment, index) => (
                 <div key={index} className="doctor-grid">
-                  <div className="doctor-wrap">
+                  <div className="doctor-wrap" data-aos="zoom-in-up">
                     <div className="patient-content">
                       <p>
                         Patient:{" "}

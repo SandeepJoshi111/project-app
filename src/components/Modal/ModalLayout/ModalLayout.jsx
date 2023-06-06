@@ -1,7 +1,6 @@
 import React from "react";
-import "./modallayout.css";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import "./modallayout.css";
 
 const ModalLayout = ({ toggleModalLayout, title, userType }) => {
   const navigate = useNavigate();
@@ -25,7 +24,8 @@ const ModalLayout = ({ toggleModalLayout, title, userType }) => {
     <div className="modal-layout">
       <div className="overlay-layout">
         <div className="modal-content-layout">
-          <p className="modal-title-layout">{title}</p>
+          <p className="modal-title-layout">{title}</p>{" "}
+          {/* The title is passed from other components and displayed over here*/}
           <button className="close-modal-layout" onClick={handleCloseModal}>
             Close
           </button>

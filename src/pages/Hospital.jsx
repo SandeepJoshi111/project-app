@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Hospitals/hospitals.css";
+
+// ----------ICONS----------
 import { FaHospitalAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 const Hospital = () => {
   useEffect(() => {
     AOS.init({ duraction: 1000 });

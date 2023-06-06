@@ -1,23 +1,40 @@
 import { useEffect, useState } from "react";
+import MainLayouts from "../layouts/MainLayouts";
+import TextModal from "../components/Message/TextModal";
+import Modal from "../components/Modal/Modal";
+
+// ----------PAYMENT----------
+import KhaltiCheckout from "khalti-checkout-web";
+import config from "../components/Payment/PaymentConfig";
+
+// ----------FIREBASE----------
 import "firebase/firestore";
 import "firebase/compat/auth";
 import "../components/Patient/patient.css";
-import MainLayouts from "../layouts/MainLayouts";
+import { firestore } from "../firebase/Firebase";
+
+// ----------ICONS----------
 import { FaUserMd } from "react-icons/fa";
 import { BiMessageAltDots } from "react-icons/bi";
-import Modal from "../components/Modal/Modal";
-import KhaltiCheckout from "khalti-checkout-web";
-import config from "../components/Payment/PaymentConfig";
-import { firestore } from "../firebase/Firebase";
-import TextModal from "../components/Message/TextModal";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function Patient() {
   const [doctors, setDoctors] = useState([]);
   const [doctorEmail, setDoctorEmail] = useState("");
+  const [modal, setModal] = useState(false);
+  const [textmodal, setTextModal] = useState(false);
   let checkout = new KhaltiCheckout(config);
 
   useEffect(() => {
-    // Fetch data from Firebase collection
+    AOS.init({ duraction: 2000 });
+  }, []);
+
+  useEffect(() => {
+    // Fetch data from Firebase collection name doctor
     const fetchData = async () => {
       const collectionRef = firestore.collection("doctor");
       const snapshot = await collectionRef.get();
@@ -27,13 +44,12 @@ function Patient() {
 
     fetchData();
   }, []);
-  const [modal, setModal] = useState(false);
-  const [textmodal, setTextModal] = useState(false);
 
   const toggleModal = (email) => {
     setModal(!modal);
     setDoctorEmail(email);
   };
+
   const toggleTextModal = () => {
     setTextModal(!textmodal);
   };
@@ -51,7 +67,7 @@ function Patient() {
         </motion.h2>
         <div className="patient-grid">
           {doctors.map((doctor, index) => (
-            <div key={index} className="patient-wrap">
+            <div key={index} className="patient-wrap" data-aos="zoom-in-up">
               <div className="doctor-icon-container">
                 <div className="doctor-icon">
                   <FaUserMd />
@@ -89,6 +105,7 @@ function Patient() {
             </div>
           ))}
         </div>
+        {/* passing toggleModal and doctorEmail to Modal Component */}
         {modal && <Modal toggleModal={toggleModal} doctorEmail={doctorEmail} />}
       </div>
       <button className="bubble" onClick={toggleTextModal}>

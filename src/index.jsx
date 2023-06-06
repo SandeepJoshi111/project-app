@@ -1,8 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./index.css";
+
+// ----------LAZY LOADING----------
 const App = lazy(() => import("./App"));
 const Services = lazy(() => import("./pages/Services"));
 const Hospital = lazy(() => import("./pages/Hospital"));

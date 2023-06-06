@@ -1,52 +1,39 @@
-import React, { useEffect, useState } from "react";
-import LOGO from "../../assets/HCN-removebg-preview.png";
+import React, { useState } from "react";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
+import Login from "../LoginPage/Login";
+import UseAuth from "../../hooks/UseAuth";
 import { Link, NavLink } from "react-router-dom";
 import "./nav.css";
+
+// ----------FIREBASE----------
+import { auth } from "../../firebase/Firebase";
 import "firebase/firestore";
 import "firebase/compat/auth";
-import Login from "../LoginPage/Login";
+import { signOut } from "firebase/auth";
+
+// ----------LOGO----------
+import LOGO from "../../assets/HCN-removebg-preview.png";
+
+// ----------ICONS----------
 import { AiFillHome } from "react-icons/ai";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaAmbulance } from "react-icons/fa";
-import UseAuth from "../../hooks/UseAuth";
-import { auth, firestore } from "../../firebase/Firebase";
-import { signOut } from "firebase/auth";
-
-import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const NavBar = () => {
   const [modal, setModal] = useState(false);
-  // TO RETRIEVE DATA FROM FIREBASE
-  const currentUser = UseAuth();
   const [showLogin, setShowLogin] = useState(false);
 
-  // SIGN OUT
+  // retrieving data of currentUser from database
+  const currentUser = UseAuth();
+
+  // sign out
   const handleLogout = async () => {
     await signOut(auth);
     toggleModalLayout();
   };
-  // const [isDoctor, setIsDoctor] = useState(false);
 
-  // useEffect(() => {
-  //   if (currentUser && currentUser.email) {
-  //     const doctorsCollection = firestore.collection("doctor");
-  //     // Query the "doctor" collection for the user's email
-  //     doctorsCollection
-  //       .where("email", "==", currentUser.email)
-  //       .get()
-  //       .then((querySnapshot) => {
-  //         if (!querySnapshot.empty) {
-  //           // User exists in the "doctor" collection
-  //           setIsDoctor(true);
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.log("Error getting doctor data:", error);
-  //       });
-  //   }
-  // }, [currentUser]);
-
+  // Styling active navbar link
   const navLinkStyle = ({ isActive }) => {
     return {
       background: isActive ? "var(--color-primary)" : "transparent",
@@ -98,6 +85,7 @@ const NavBar = () => {
             </li>
           </div>
 
+          {/*Use=ing ternary operator to check if current user is present or no if present display name and change button to logout  */}
           {currentUser ? (
             <li className="logout">
               <div className="name-content">
@@ -109,6 +97,7 @@ const NavBar = () => {
               </button>
             </li>
           ) : (
+            // If no currentUser then display button to Log in
             <li className="login">
               <Link to="/login">
                 <button className="btn" onClick={() => setShowLogin(true)}>
@@ -128,7 +117,11 @@ const NavBar = () => {
         </div>
       </div>
       {modal && (
-        <ModalLayout toggleModalLayout={toggleModalLayout} title="Logged Out" userType="loggout"/>
+        <ModalLayout
+          toggleModalLayout={toggleModalLayout}
+          title="Logged Out"
+          userType="loggout"
+        />
       )}
     </div>
   );

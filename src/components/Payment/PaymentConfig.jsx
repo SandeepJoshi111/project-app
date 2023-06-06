@@ -23,7 +23,7 @@ let config = {
 
       axios
         .post("https://khalti.com/api/v2/payment/verify/", data, config)
-        // .get(`https://meslaforum.herokuapp.com/khalti/${data.token}/${data.amount}/${myKey.secretKey}`)
+        
         .then((response) => {
           console.log(response.data);
           useNavigate("/");

@@ -1,16 +1,22 @@
 import React, { useState } from "react";
-import "./login.css";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../../firebase/Firebase";
-import { RxCross1 } from "react-icons/rx";
+import GoogleButton from "react-google-button";
+import "./login.css";
+
+// ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../../firebase/Firebase";
+
+// ----------ICONS----------
+import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
-import GoogleButton from "react-google-button";
-import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const LoginDoctor = ({ onLogin }) => {
   const navigate = useNavigate();

@@ -1,31 +1,42 @@
 import { useEffect, useRef, useState } from "react";
+import MainLayouts from "../../layouts/MainLayouts";
+import { Link } from "react-router-dom";
+import emailjs from "emailjs-com";
+import "./header.css";
+
+// ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import "firebase/compat/auth";
-import "./header.css";
+import { firestore } from "../../firebase/Firebase";
+
+// ----------IMAGES----------
 import HOMEDOC from "../../assets/SVGFINAL.svg";
-import MainLayouts from "../../layouts/MainLayouts";
-import emailjs from "emailjs-com";
-import { Link } from "react-router-dom";
-import LOGO from "../../assets/HCN-removebg-preview.png";
 import KHALTI from "../../assets/khalti.png";
 import UseAuth from "../../hooks/UseAuth";
-import { firestore } from "../../firebase/Firebase";
+
+// ----------ICONS----------
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
 import { BsFacebook } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
+
+// ----------ANIMATION----------
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 function Header() {
   const [clipPath, setClipPath] = useState("initial");
   const currentUser = UseAuth();
-
   const [isDoctor, setIsDoctor] = useState(false);
+
+  // For animation
   useEffect(() => {
     AOS.init({ duraction: 2000 });
   }, []);
+
   useEffect(() => {
+    //Checking if the user is a doctor or not
     if (currentUser && currentUser.email) {
       const doctorsCollection = firestore.collection("doctor");
       // Query the "doctor" collection for the user's email
@@ -44,6 +55,7 @@ function Header() {
     }
   }, [currentUser]);
 
+  //To send an email to our account using email.js
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -56,13 +68,10 @@ function Header() {
     );
     e.target.reset();
   };
-
   return (
     <MainLayouts>
+      {/* ----------HOME SECTION---------- */}
       <div className="container header-container">
-        {/* <marquee className="home-marquee">
-          हेल्थ केयर नेपालबाट अपोइन्टमेन्ट बुक गर्दा १०% छुट पाउनुहोस्।
-        </marquee> */}
         <div className="header-content" style={{ clipPath }}>
           <div className="home-image">
             <img src={HOMEDOC} alt="" />
@@ -88,7 +97,9 @@ function Header() {
             </div>
           </div>
         </div>
+        {/* ----------END OF HOME SECTION---------- */}
 
+        {/* ----------ABOUT SECTION---------- */}
         <section className="about-container" id="about">
           <h1 className="home-title">About Us</h1>
           <div className="about-content">
@@ -111,6 +122,8 @@ function Header() {
                   <h4>Consult With Doctor</h4>
                   <span>Talk to a doctor regarding your health issue.</span>
                 </div>
+
+                {/* Disabling button so Patient cant go to Doctor Page and vice versa */}
                 {currentUser && isDoctor ? (
                   <Link to="/patient">
                     <button className="btn-home disabled" disabled>
@@ -143,10 +156,11 @@ function Header() {
             </div>
           </div>
         </section>
+        {/* ----------END OF ABOUT SECTION---------- */}
 
+        {/* ----------CONTACT SECTION---------- */}
         <section className="contact-container" id="contact">
           <h1 className="home-title">Contact Us</h1>
-          {/* <div className="contact-divider"> */}
           <div className="heatbeat-content">
             <svg className="heartbeat" x="0px" y="0px" viewBox="0 0 298 53.9">
               <path
@@ -210,10 +224,11 @@ function Header() {
                 </button>
               </form>
             </div>
-            {/* </div> */}
           </div>
         </section>
+        {/* ----------END OF CONTACT SECTION---------- */}
 
+        {/* ----------FOOTER SECTION---------- */}
         <footer>
           <div className="footer-quote">"Online resources, offline impact"</div>
 
@@ -256,6 +271,7 @@ function Header() {
             </small>
           </div>
         </footer>
+        {/* ----------END OF FOOTER SECTION---------- */}
       </div>
     </MainLayouts>
   );

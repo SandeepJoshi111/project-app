@@ -1,5 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar/NavBar";
+
+// ----------ANIMATIOn----------
 import { motion } from "framer-motion";
 
 const MainLayouts = ({ children }) => {

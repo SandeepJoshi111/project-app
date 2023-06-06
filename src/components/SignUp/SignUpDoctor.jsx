@@ -1,19 +1,23 @@
 import React, { useState } from "react";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
+import { Link } from "react-router-dom";
 import "./signup.css";
-import { Link, useNavigate } from "react-router-dom";
+
+// ----------FIREBASE----------
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/Firebase";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
+
+// ----------ICONS----------
 import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
-import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const SignUpDoctor = () => {
-  const navigate = useNavigate();
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,13 +25,13 @@ const SignUpDoctor = () => {
   const [speciality, setSpeciality] = useState("");
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
-  // const isFormValid = firstName && lastName && email && password && speciality;
 
   const handleSubmission = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         firebase
+          // Created a collection named doctor in firebase and stored the following doctor specification
           .firestore()
           .collection("doctor")
           .doc(user.uid)
@@ -142,7 +146,7 @@ const SignUpDoctor = () => {
       {modal && (
         <ModalLayout
           toggleModalLayout={toggleModalLayout}
-          title="SUCCESSFULLY REGISTERED AS A DOCTOR"
+          title="Successfully Registered as a Doctor"
           userType="logindoctor"
         />
       )}

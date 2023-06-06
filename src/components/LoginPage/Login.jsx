@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./login.css";
+import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../../firebase/Firebase";
-import { RxCross1 } from "react-icons/rx";
+import { GoogleButton } from "react-google-button";
+import "./login.css";
+
+// ----------FIREBASE----------
 import firebase from "firebase/compat/app";
+import { auth, provider } from "../../firebase/Firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import "firebase/firestore";
+
+// ----------ICONS----------
+import { RxCross1 } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserMd } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { GoogleButton } from "react-google-button";
-import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -19,8 +23,10 @@ const Login = ({ onLogin }) => {
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
 
+  //Signing in with Google hooks
   const signInWithGoogle = async () => {
     try {
+      //Pop up appears for signin in
       const userCredential = await signInWithPopup(auth, provider);
       console.log("userCredential", userCredential);
       const user = userCredential.user;
@@ -28,13 +34,18 @@ const Login = ({ onLogin }) => {
 
       console.log("user", user);
       console.log("name", name);
+
+      //After signing in the page then navigate the user to /patient page
       navigate("/patient");
+
+      // If there is any error while signing in it is displayed in a console
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
     }
   };
 
+  // Signing in with Email and Password
   const handleLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -44,6 +55,7 @@ const Login = ({ onLogin }) => {
       );
       const user = userCredential.user;
       console.log("user", user);
+      // Toggleing a modal to display user has signed in
       toggleModalLayout();
     } catch (error) {
       const errorMessage = error.message;
@@ -90,7 +102,7 @@ const Login = ({ onLogin }) => {
           name="email"
           placeholder="E-mail"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)} // when event occer then the value in it is stored on setEmail
         />
 
         <label>Password</label>
@@ -100,7 +112,7 @@ const Login = ({ onLogin }) => {
           name="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)} // when event occer then the value in it is stored on setPassword
         />
         <div className="btn-footer">
           {error ? <p>{error}</p> : null}
@@ -123,6 +135,7 @@ const Login = ({ onLogin }) => {
         </div>
       </motion.div>
       {modal && (
+        // title and userType are passed to ModalLayout to display them in a Modal
         <ModalLayout
           toggleModalLayout={toggleModalLayout}
           title="Logged In as a Patient"

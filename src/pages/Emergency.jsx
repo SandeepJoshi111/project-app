@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import MainLayouts from "../layouts/MainLayouts";
 import "../components/Emergency/emergency.css";
+
+// ----------ICONS----------
 import { FaAmbulance } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdLocationPin } from "react-icons/md";
+
+// ----------ANIMATION----------
 import { motion } from "framer-motion";
 
 const Emergency = () => {
   const [selectedProvince, setSelectedProvince] = useState("default");
 
+  //When selected a province then take the value of it
   const handleProvinceChange = (event) => {
     setSelectedProvince(event.target.value);
   };
@@ -41,6 +46,8 @@ const Emergency = () => {
             <option value="province-7">Province 7 (Sudurpashchim)</option>
           </select>
         </motion.div>
+
+        {/* Displaying Dafault */}
         {selectedProvince === "default" && (
           <svg
             className="ambulance"
@@ -144,6 +151,7 @@ const Emergency = () => {
             </g>
           </svg>
         )}
+        {/* Displaying Province 1 */}
         {selectedProvince === "province-1" && (
           <div className="province-container">
             <h1>Province 1</h1>
@@ -262,6 +270,8 @@ const Emergency = () => {
             </div>
           </div>
         )}
+
+        {/* Displaying Province 2 */}
         {selectedProvince === "province-2" && (
           <div className="province-container">
             <h1>Province 2</h1>
@@ -292,6 +302,8 @@ const Emergency = () => {
             </div>
           </div>
         )}
+
+        {/* Displaying Province 3 */}
         {selectedProvince === "province-3" && (
           <div className="province-container">
             <h1>Province 3</h1>
@@ -344,6 +356,8 @@ const Emergency = () => {
             </div>
           </div>
         )}
+
+        {/* Displaying Province 4 */}
         {selectedProvince === "province-4" && (
           <div className="province-container">
             <h1>Province 4</h1>
@@ -418,6 +432,8 @@ const Emergency = () => {
             </div>
           </div>
         )}
+
+        {/* Displaying Province 5 */}
         {selectedProvince === "province-5" && (
           <div className="province-container">
             <h1>Province 5</h1>
@@ -470,6 +486,8 @@ const Emergency = () => {
             </div>
           </div>
         )}
+
+        {/* Displaying Province 6 */}
         {selectedProvince === "province-6" && (
           <div className="province-container">
             <h1>Province 6</h1>
@@ -500,6 +518,8 @@ const Emergency = () => {
             </div>
           </div>
         )}
+
+        {/* Displaying Province 7 */}
         {selectedProvince === "province-7" && (
           <div className="province-container">
             <h1>Province 7</h1>

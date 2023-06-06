@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
-import firebase from "firebase/compat/app";
-import "firebase/firestore";
-import "./modal.css";
-import { RxCross1 } from "react-icons/rx";
-import UseAuth from "../../hooks/UseAuth";
+import React, { useState } from "react";
 import ModalLayout from "./ModalLayout/ModalLayout";
-import { motion } from "framer-motion";
+import "./modal.css";
+
+// ----------FIREBASE----------
+import firebase from "firebase/compat/app";
+import UseAuth from "../../hooks/UseAuth";
+import "firebase/firestore";
+
+// ----------ICONS----------
+import { RxCross1 } from "react-icons/rx";
+
 const Modal = ({ toggleModal, doctorEmail }) => {
   const currentUser = UseAuth();
   const [modal, setModal] = useState(false);
   const [formData, setFormData] = useState({
+    //Create a form with the following user credential
     firstName: "",
     lastName: "",
     date: "",
@@ -29,8 +34,8 @@ const Modal = ({ toggleModal, doctorEmail }) => {
       // Add the appointment data to the "appointments" collection
       await db.collection("appointments").add({
         ...formData,
-        doctorEmail: doctorEmail,
-        patientEmail: currentUser.email,
+        doctorEmail: doctorEmail, // adding doctorEmail to the appointments collection
+        patientEmail: currentUser.email, // adding patientEmail to the appointments collection
       });
 
       // Clear the form
