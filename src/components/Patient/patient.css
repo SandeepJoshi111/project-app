@@ -3,9 +3,10 @@
   margin: 0 auto;
   position: relative;
   height: 100%;
+  margin-bottom: 6rem;
 }
 .bubble {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   right: 2rem;
   width: 70px;
@@ -20,6 +21,7 @@
   font-size: 2rem;
   transition: var(--transition);
   cursor: pointer;
+  z-index: 2;
 }
 .bubble:hover {
   background: var(--color-secondary);

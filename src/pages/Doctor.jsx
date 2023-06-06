@@ -8,15 +8,19 @@ import "firebase/firestore";
 import "firebase/compat/auth";
 import UseAuth from "../hooks/UseAuth";
 
+import { BiMessageAltDots } from "react-icons/bi";
+
 // ----------ANIMATION----------
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import TextModal from "../components/Message/TextModal";
 
 function Doctor() {
   const currentUser = UseAuth();
 
   const [appointments, setAppointments] = useState([]);
+  const [textmodal, setTextModal] = useState(false);
   useEffect(() => {
     AOS.init({ duraction: 2000 });
   }, []);
@@ -98,6 +102,9 @@ function Doctor() {
       )
     );
   };
+  const toggleTextModal = () => {
+    setTextModal(!textmodal);
+  };
 
   return (
     <MainLayouts>
@@ -169,6 +176,10 @@ function Doctor() {
           )}
         </div>
       </div>
+      <button className="bubble" onClick={toggleTextModal}>
+        <BiMessageAltDots />
+        {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
+      </button>
     </MainLayouts>
   );
 }

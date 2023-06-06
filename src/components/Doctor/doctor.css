@@ -1,3 +1,32 @@
+.doctor-container {
+  width: var(--container-lg);
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  margin-bottom: 6rem;
+}
+.bubble {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 70px;
+  height: 70px;
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 2rem;
+  transition: var(--transition);
+  cursor: pointer;
+  z-index: 2;
+}
+.bubble:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
 .doctor-title {
   text-align: center;
   font-size: 2rem;
@@ -94,5 +123,12 @@
   .btn-patient {
     font-size: 0.8rem;
     padding: 5px;
+  }
+  .bubble {
+    width: 40px;
+    height: 40px;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1.4rem;
   }
 }
