@@ -101,12 +101,14 @@ function Header() {
 
         {/* ----------ABOUT SECTION---------- */}
         <section className="about-container" id="about">
-          <h1 className="home-title">About Us</h1>
+          <h1 className="home-title" data-aos="zoom-in-up">
+            About Us
+          </h1>
           <div className="about-content">
             <div className="left-about">
               <div className="about-us">
-                <h4>Why Health Care Nepal?</h4>
-                <p>
+                <h4 data-aos="fade-up">Why Health Care Nepal?</h4>
+                <p data-aos="fade-up">
                   Health Care Nepal (HCN) is an online health platform where you
                   can connect with your preferred doctor and have a live session
                   with them. Nepal's first online mental healthcare service
@@ -119,37 +121,53 @@ function Header() {
             <div className="right-about">
               <div className="right-about-content">
                 <div className="about-user">
-                  <h4>Consult With Doctor</h4>
-                  <span>Talk to a doctor regarding your health issue.</span>
+                  <h4 data-aos="fade-up">Consult With Doctor</h4>
+                  <span data-aos="fade-up">
+                    Talk to a doctor regarding your health issue.
+                  </span>
                 </div>
 
                 {/* Disabling button so Patient cant go to Doctor Page and vice versa */}
                 {currentUser && isDoctor ? (
                   <Link to="/patient">
-                    <button className="btn-home disabled" disabled>
+                    <button
+                      className="btn-home disabled"
+                      disabled
+                      data-aos="fade-up"
+                    >
                       View all
                     </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/patient" : "/login"}>
-                    <button className="btn-home">View all</button>
+                    <button className="btn-home" data-aos="fade-up">
+                      View all
+                    </button>
                   </Link>
                 )}
               </div>
               <div className="right-about-content">
                 <div className="about-user">
-                  <h4>View Appointment</h4>
-                  <span>View who booked an appointment?</span>
+                  <h4 data-aos="fade-up"> View Appointment</h4>
+                  <span data-aos="fade-up">
+                    View who booked an appointment?
+                  </span>
                 </div>
                 {currentUser && !isDoctor ? (
                   <Link to="/doctor">
-                    <button className="btn-home disabled" disabled>
+                    <button
+                      className="btn-home disabled"
+                      disabled
+                      data-aos="fade-up"
+                    >
                       View all
                     </button>
                   </Link>
                 ) : (
                   <Link to={currentUser ? "/doctor" : "/logindoctor"}>
-                    <button className="btn-home">View all</button>
+                    <button className="btn-home" data-aos="fade-up">
+                      View all
+                    </button>
                   </Link>
                 )}
               </div>
@@ -160,8 +178,10 @@ function Header() {
 
         {/* ----------CONTACT SECTION---------- */}
         <section className="contact-container" id="contact">
-          <h1 className="home-title">Contact Us</h1>
-          <div className="heatbeat-content">
+          <h1 className="home-title" data-aos="zoom-in-up">
+            Contact Us
+          </h1>
+          <div className="heatbeat-content" data-aos="zoom-in-up">
             <svg className="heartbeat" x="0px" y="0px" viewBox="0 0 298 53.9">
               <path
                 class="pathdraw"
@@ -230,15 +250,17 @@ function Header() {
 
         {/* ----------FOOTER SECTION---------- */}
         <footer>
-          <div className="footer-quote">"Online resources, offline impact"</div>
+          <div className="footer-quote" data-aos="zoom-in-up">
+            "Online resources, offline impact"
+          </div>
 
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
-            <div className="footer-payment">
+            <div className="footer-payment" data-aos="fade-up">
               <h2>We accept Payment with </h2>
               <img src={KHALTI} alt="Khalti-Image" />
             </div>
-            <div className="footer-content">
+            <div className="footer-content" data-aos="fade-up">
               <div className="permalinks">
                 <li>
                   <a href="#">Home</a>

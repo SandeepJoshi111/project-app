@@ -33,7 +33,7 @@ const Services = () => {
           Services
         </motion.h1>
         <div class="services-grid">
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <RiLoginBoxFill className="services-logo" />
             <div className="services-content">
               <h2>Log In</h2>
@@ -41,7 +41,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <BsFillCalendar2CheckFill className="services-logo" />
             <div className="services-content">
               <h2>Book an Appointment</h2>
@@ -49,7 +49,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <BsFillChatDotsFill className="services-logo" />
             <div className="services-content">
               <h2>Live Text</h2>
@@ -57,7 +57,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <MdOutlinePayments className="services-logo" />
             <div className="services-content">
               <h2>Payment</h2>
@@ -67,7 +67,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <FaAmbulance className="services-logo" />
             <div className="services-content">
               <h2>Ambulance</h2>
@@ -75,7 +75,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <FaHospitalAlt className="services-logo" />
             <div className="services-content">
               <h2>Hospital</h2>
@@ -83,7 +83,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div class="services-wrap" data-aos="zoom-in">
+          <div class="services-wrap" data-aos="zoom-in-up">
             <MdContactPhone className="services-logo" />
             <div className="services-content">
               <h2>Contact</h2>
