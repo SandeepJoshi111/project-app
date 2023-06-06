@@ -194,23 +194,27 @@ function Header() {
           </div>
           <div className="contact-content" data-aos="zoom-in-up">
             <div className="contact-right">
-              <p>Fill up the form to contact</p>
-              <a href="tel:9818119950">
+              <p data-aos="fade-up"> Fill up the form to contact</p>
+              <a href="tel:9818119950" data-aos="fade-up">
                 <BsFillTelephoneFill /> <p>9818119950</p>
               </a>
-              <a href="tel:9840556101">
+              <a href="tel:9840556101" data-aos="fade-up">
                 <BsFillTelephoneFill /> <p>9840556101</p>
               </a>
-              <a href="https://www.google.com/maps/place/Pashupatinath+Temple/@27.710512,85.3462376,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb191aaaaaaaab:0x424c7d0a60df9091!8m2!3d27.710512!4d85.3488125!16zL20vMGNzX2hz?entry=ttu">
+              <a
+                href="https://www.google.com/maps/place/Pashupatinath+Temple/@27.710512,85.3462376,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb191aaaaaaaab:0x424c7d0a60df9091!8m2!3d27.710512!4d85.3488125!16zL20vMGNzX2hz?entry=ttu"
+                data-aos="fade-up"
+              >
                 <MdLocationPin /> <p>Kathmandu,Nepal</p>
               </a>
               <div className="social-media">
-                <a href="">
+                <a href="" data-aos="zoom-in-up">
                   <BsFacebook />
                 </a>
                 <a
                   href="https://github.com/SandeepJoshi111/project-app"
                   target="_blank"
+                  data-aos="zoom-in-up"
                 >
                   <BsGithub />
                 </a>
@@ -225,6 +229,7 @@ function Header() {
                   placeholder="Your Full Name"
                   required
                   className="contact-input"
+                  data-aos="zoom-in-up"
                 />
                 <input
                   className="contact-input"
@@ -232,14 +237,16 @@ function Header() {
                   name="email"
                   placeholder="Email"
                   required
+                  data-aos="zoom-in-up"
                 />
                 <textarea
                   name="message"
                   rows="7"
                   placeholder="Your Message"
                   className="contact-input"
+                  data-aos="zoom-in-up"
                 ></textarea>
-                <button type="submit" className="btn-home">
+                <button type="submit" className="btn-home" data-aos="fade-up">
                   Send Message
                 </button>
               </form>
@@ -249,37 +256,44 @@ function Header() {
         {/* ----------END OF CONTACT SECTION---------- */}
 
         {/* ----------FOOTER SECTION---------- */}
-        <footer>
+        <footer data-aos="fade-up">
           <div className="footer-quote" data-aos="zoom-in-up">
             "Online resources, offline impact"
           </div>
 
           <div className="seperator-footer"></div>
           <div className="footer-grid ">
-            <div className="footer-payment" data-aos="fade-up">
-              <h2>We accept Payment with </h2>
-              <img src={KHALTI} alt="Khalti-Image" />
+            <div className="footer-payment">
+              <h2 data-aos="fade-up">We accept Payment with </h2>
+              <img src={KHALTI} alt="Khalti-Image" data-aos="zoom-in-up" />
             </div>
-            <div className="footer-content" data-aos="fade-up">
+            <div className="footer-content">
               <div className="permalinks">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#" data-aos="fade-up">
+                    Home
+                  </a>
                 </li>
                 <li>
-                  <a href="#about">About</a>
+                  <a href="#about" data-aos="fade-up">
+                    About
+                  </a>
                 </li>
                 <li>
-                  <a href="#contact">Contact Us</a>
+                  <a href="#contact" data-aos="fade-up">
+                    Contact Us
+                  </a>
                 </li>
               </div>
 
               <div className="footer-social-media">
-                <a href="">
+                <a href="" data-aos="zoom-in-up">
                   <BsFacebook />
                 </a>
                 <a
                   href="https://github.com/SandeepJoshi111/project-app"
                   target="_blank"
+                  data-aos="zoom-in-up"
                 >
                   <BsGithub />
                 </a>
