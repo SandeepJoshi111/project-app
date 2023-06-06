@@ -1,8 +1,9 @@
 .emergency-container {
-  width: var(--container-lg);
+  max-width: 100vw;
   height: 100%;
   text-align: center;
   margin-bottom: 6rem;
+  overflow: hidden;
 }
 .img-grid {
   margin: 0 auto;
@@ -99,14 +100,13 @@ marquee {
   width: 400px;
   height: 400px;
   animation: ambulance 7s infinite linear;
-  overflow-x: hidden;
 }
 @keyframes ambulance {
   from {
-    transform: translateX(200%);
+    transform: translateX(1000px);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-1000px);
   }
 }
 
