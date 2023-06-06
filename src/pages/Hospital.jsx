@@ -17,6 +17,7 @@ const Hospital = () => {
           className="hospital-title"
           initial={{ scale: 0.1 }}
           animate={{ scale: 1 }}
+          transition={{ type: "spring" }}
         >
           List Of Government Hospitals
         </motion.div>

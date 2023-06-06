@@ -93,7 +93,7 @@ function Doctor() {
           className="doctor-title"
           initial={{ scale: 0.1 }}
           animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.2 }}
+          transition={{ type: "spring" }}
         >
           Appointments
         </motion.h2>
@@ -103,6 +103,7 @@ function Doctor() {
               className="no-appointments"
               initial={{ scale: 0.1 }}
               animate={{ scale: 1 }}
+              transition={{ type: "spring" }}
             >
               {/* <FaPrayingHands className="praying-hands-icon" /> */}
               <p>No appointments available.</p>
@@ -111,10 +112,7 @@ function Doctor() {
             <div className="appointment-list">
               {appointments.map((appointment, index) => (
                 <div key={index} className="doctor-grid">
-                  <div
-                    className="doctor-wrap"
-        
-                  >
+                  <div className="doctor-wrap">
                     <div className="patient-content">
                       <p>
                         Patient:{" "}

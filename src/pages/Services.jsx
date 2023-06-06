@@ -24,6 +24,7 @@ const Services = () => {
           className="services-title"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
+          transition={{ type: "spring" }}
         >
           Services
         </motion.h1>

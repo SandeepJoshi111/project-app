@@ -45,6 +45,7 @@ function Patient() {
           className="patient-title"
           initial={{ scale: 0.1 }}
           animate={{ scale: 1 }}
+          transition={{ type: "spring" }}
         >
           Online Registered Doctors
         </motion.h2>

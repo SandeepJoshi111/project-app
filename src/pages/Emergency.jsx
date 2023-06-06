@@ -20,6 +20,7 @@ const Emergency = () => {
           className="emergency-title"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
+          transition={{ type: "spring" }}
         >
           List of Ambulance in 7 provience
         </motion.h1>
@@ -27,6 +28,7 @@ const Emergency = () => {
           className="emergency-dropdown"
           initial={{ x: 200 }}
           animate={{ x: 0 }}
+          transition={{ type: "spring" }}
         >
           <select id="emergency-province" onChange={handleProvinceChange}>
             <option value="default">Select Province</option>
