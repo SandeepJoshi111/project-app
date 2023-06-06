@@ -8,11 +8,19 @@ const TextModal = () => {
   const currentUser = UseAuth();
 
   const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+
   useEffect(() => {
     const fetchMessages = async () => {
       try {
         // Access the Firebase Firestore instance
         const db = firebase.firestore();
+
+        if (!currentUser || !currentUser.email) {
+          // User not available or email not present
+          setLoading(false);
+          return;
+        }
 
         // Fetch all messages for the current user or any other relevant condition
         const query = db
@@ -20,6 +28,8 @@ const TextModal = () => {
           .where("receiver", "==", currentUser.email)
           .orderBy(firebase.firestore.FieldPath.documentId())
           .limitToLast(1);
+
+        setLoading(true);
 
         const snapshot = await query.get();
 
@@ -43,29 +53,34 @@ const TextModal = () => {
           setMessages([]);
         }
       } catch (error) {
-        console.error("Error fetching and deleting messages:", error);
+        console.log("Error fetching and deleting messages:", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or error
       }
     };
 
     fetchMessages();
-  }, [currentUser.email]);
+  }, [currentUser]);
 
   return (
     <div className="modal-text">
       <div className="message-list">
         <h4>Messages:</h4>
-        {messages.length === 0 ? (
-          <p>No messages available.</p>
+        {loading ? (
+          <p>Loading...</p>
         ) : (
-          <ul>
-            {messages.map((message, index) => (
-              <li key={index}>
-                {/* <p>Sender: {message.sender}</p> */}
-                <p>{message.message}</p>
-                {/* <p>Timestamp: {message.timestamp.toDate().toString()}</p> */}
-              </li>
-            ))}
-          </ul>
+          <>
+            {messages.length === 0 && <p>No messages available.</p>}
+            {messages.length > 0 && (
+              <ul>
+                {messages.map((message, index) => (
+                  <li key={index}>
+                    <p>{message?.message}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </>
         )}
       </div>
     </div>
