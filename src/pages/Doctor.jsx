@@ -15,12 +15,16 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import TextModal from "../components/Message/TextModal";
+import ModalLayout from "../components/Modal/ModalLayout/ModalLayout";
 
 function Doctor() {
   const currentUser = UseAuth();
 
   const [appointments, setAppointments] = useState([]);
   const [textmodal, setTextModal] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+  const [modal, setModal] = useState(false);
+
   useEffect(() => {
     AOS.init({ duraction: 2000 });
   }, []);
@@ -65,7 +69,8 @@ function Doctor() {
       message: "Your appointment has been accepted.",
       timestamp: new Date(),
     };
-    alert("Accepted");
+    setModalTitle("Appointment Accepted");
+    toggleModalLayout();
     await messagesRef.add(newMessage);
 
     // Update the state to remove the deleted appointment
@@ -88,7 +93,8 @@ function Doctor() {
       message: "Sorry! The schedule is pack.",
       timestamp: new Date(),
     };
-    alert("Rejected");
+    setModalTitle("Appointment Rejected");
+    toggleModalLayout();
     await messagesRef.add(newMessage);
 
     // Delete the accepted appointment
@@ -104,6 +110,10 @@ function Doctor() {
   };
   const toggleTextModal = () => {
     setTextModal(!textmodal);
+  };
+
+  const toggleModalLayout = () => {
+    setModal(!modal);
   };
 
   return (
@@ -180,6 +190,9 @@ function Doctor() {
         <BiMessageAltDots />
         {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
       </button>
+      {modal && (
+        <ModalLayout toggleModalLayout={toggleModalLayout} title={modalTitle} />
+      )}
     </MainLayouts>
   );
 }

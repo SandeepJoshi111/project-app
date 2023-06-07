@@ -4,6 +4,7 @@ import "./modallayout.css";
 
 const ModalLayout = ({ toggleModalLayout, title, userType }) => {
   const navigate = useNavigate();
+  
 
   const handleCloseModal = () => {
     toggleModalLayout(); // Close the modal
