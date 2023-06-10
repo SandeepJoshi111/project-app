@@ -127,9 +127,15 @@ span {
     font-size: 2rem;
     width: 4rem;
   }
+  .signup-box img {
+    width: 300px;
+  }
 }
 @media screen and (max-width: 600px) {
   .signup-box {
     width: 325px !important;
+  }
+  .signup-box img {
+    width: 250px !important;
   }
 }

@@ -147,9 +147,15 @@ span {
     font-size: 2rem;
     width: 4rem;
   }
+  .login-box img {
+    width: 300px;
+  }
 }
 @media screen and (max-width: 600px) {
   .login-box {
     width: 325px;
+  }
+  .login-box img {
+    width: 250px;
   }
 }
