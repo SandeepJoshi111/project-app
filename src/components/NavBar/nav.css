@@ -16,10 +16,11 @@
 }
 
 .nav-image img {
-  width: 200px !important;
-  height: 200px !important;
+  width: 120px !important;
+  height: 120px !important;
   display: flex;
   align-items: center;
+  margin-left: 2rem;
 }
 
 .logout {
@@ -130,8 +131,8 @@
     font-size: 15px;
   }
   .nav-image img {
-    width: 150px !important;
-    height: 150px !important;
+    width: 100px !important;
+    height: 100px !important;
   }
   .btn {
     font-size: 10px;
@@ -181,7 +182,7 @@
     font-size: 0.5rem !important;
   }
   .nav-image img {
-    width: 100px !important;
-    height: 100px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
 }

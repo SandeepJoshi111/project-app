@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import MainLayouts from "../../layouts/MainLayouts";
 import { Link } from "react-router-dom";
+import UseAuth from "../../hooks/UseAuth";
 import emailjs from "emailjs-com";
 import "./header.css";
 
@@ -13,7 +14,6 @@ import { firestore } from "../../firebase/Firebase";
 // ----------IMAGES----------
 import HOMEDOC from "../../assets/SVGFINAL.svg";
 import KHALTI from "../../assets/khalti.png";
-import UseAuth from "../../hooks/UseAuth";
 
 // ----------ICONS----------
 import { BsFillTelephoneFill } from "react-icons/bs";

@@ -12,7 +12,7 @@ import "firebase/compat/auth";
 import { signOut } from "firebase/auth";
 
 // ----------LOGO----------
-import LOGO from "../../assets/HCN-removebg-preview.png";
+import LOGO from "../../assets/HCN nobg.svg";
 
 // ----------ICONS----------
 import { AiFillHome } from "react-icons/ai";
