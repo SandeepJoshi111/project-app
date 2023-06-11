@@ -9,15 +9,6 @@
     url(../../assets/blob1.svg);
   background-size: cover;
 }
-.login-box img {
-  width: 400px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.1;
-  height: auto;
-}
 
 .login-box {
   width: 500px;
@@ -46,6 +37,7 @@ input {
   outline: none;
   padding: 8px 15px;
   color: var(--color-black);
+  z-index: 1;
 }
 label {
   display: block;
@@ -147,15 +139,9 @@ span {
     font-size: 2rem;
     width: 4rem;
   }
-  .login-box img {
-    width: 300px;
-  }
 }
 @media screen and (max-width: 600px) {
   .login-box {
     width: 325px;
-  }
-  .login-box img {
-    width: 250px;
   }
 }

@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import "./login.css";
 
-import LOGO from "../../assets/HCN nobg.svg";
 
 // ----------FIREBASE----------
 import firebase from "firebase/compat/app";
@@ -85,7 +84,7 @@ const LoginDoctor = ({ onLogin }) => {
         </div>
 
         <div className="backlogin">
-          <img src={LOGO} alt="" />
+        
           <Link to="/">
             <RxCross1 />
           </Link>

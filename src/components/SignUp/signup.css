@@ -10,15 +10,6 @@
   background-size: cover;
 }
 
-.signup-box img {
-  width: 400px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.1;
-  height: auto;
-}
 
 .signup-box {
   width: 500px;
@@ -127,15 +118,11 @@ span {
     font-size: 2rem;
     width: 4rem;
   }
-  .signup-box img {
-    width: 300px;
-  }
+
 }
 @media screen and (max-width: 600px) {
   .signup-box {
     width: 325px !important;
   }
-  .signup-box img {
-    width: 250px !important;
-  }
+
 }

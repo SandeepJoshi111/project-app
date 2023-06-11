@@ -3,7 +3,7 @@ import ModalLayout from "../Modal/ModalLayout/ModalLayout";
 import { Link } from "react-router-dom";
 import "./signup.css";
 
-import LOGO from "../../assets/HCN nobg.svg";
+
 
 // ----------FIREBASE----------
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -83,7 +83,7 @@ const SignUp = () => {
         </div>
 
         <div className="backsignup">
-          <img src={LOGO} alt="" />
+
           <Link to="/">
             <RxCross1 />
           </Link>

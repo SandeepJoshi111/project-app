@@ -4,8 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
 import "./login.css";
 
-import LOGO from "../../assets/HCN nobg.svg";
-
 // ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import { auth, provider } from "../../firebase/Firebase";
@@ -91,7 +89,7 @@ const Login = ({ onLogin }) => {
           </Link>
         </div>
         <div className="backlogin">
-          <img src={LOGO} alt="" />
+    
           <Link to="/">
             <RxCross1 />
           </Link>
