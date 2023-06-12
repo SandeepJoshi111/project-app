@@ -64,7 +64,7 @@ function Doctor() {
   const handleAccept = async (appointment) => {
     const messagesRef = firestore.collection("messages");
     const newMessage = {
-      sender: currentUser.email, // or any identifier for the doctor
+      sender: currentUser.displayName, // or any identifier for the doctor
       receiver: appointment.patientEmail, // or any identifier for the patient
       message: "Your appointment has been accepted.",
       timestamp: new Date(),
@@ -88,7 +88,7 @@ function Doctor() {
   const handleReject = async (appointment) => {
     const messagesRef = firestore.collection("messages");
     const newMessage = {
-      sender: currentUser.email, // or any identifier for the doctor
+      sender: currentUser.displayName, // or any identifier for the doctor
       receiver: appointment.patientEmail, // or any identifier for the patient
       message: "Sorry! The schedule is pack.",
       timestamp: new Date(),

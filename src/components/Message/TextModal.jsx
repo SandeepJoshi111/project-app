@@ -66,7 +66,7 @@ const TextModal = () => {
   return (
     <div className="modal-text">
       <div className="message-list">
-        <h4>Messages:</h4>
+        {/* <h4>Messages:</h4> */}
         {loading ? (
           <p>Loading...</p>
         ) : (
@@ -76,7 +76,8 @@ const TextModal = () => {
               <ul>
                 {messages.map((message, index) => (
                   <li key={index}>
-                    <p>{message?.message}</p>
+                    <p>From: Dr. {message.sender}</p>
+                    <p>{message.message}</p>
                   </li>
                 ))}
               </ul>
