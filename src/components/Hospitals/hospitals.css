@@ -55,6 +55,11 @@
   color: var(--color-primary);
 }
 
+.note {
+  color: red;
+  font-weight: 600;
+}
+
 .hospital-note {
   font-size: 1rem;
   text-align: justify;

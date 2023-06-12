@@ -302,8 +302,8 @@ function Header() {
           </div>
           <div className="footer-copyright">
             <small>
-              All rights reserved &copy; <br /> Designed by Dristi Gurung and
-              Sandeep Joshi .
+              All rights reserved &copy; <br /> Designed by Dristi Gurung.
+              Webcasted by Sandeep Joshi.
             </small>
           </div>
         </footer>

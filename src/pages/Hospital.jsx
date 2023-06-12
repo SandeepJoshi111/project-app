@@ -358,10 +358,10 @@ const Hospital = () => {
           </a>
         </div>
         <div className="hospital-note">
-          Please note that this list includes a mix of central, regional,
-          provincial, and district level governmental hospitals. There are many
-          more governmental hospitals in Nepal, but these are some notable ones
-          across different regions of the country.
+          <p className="note">NOTE:</p> This list includes a mix of central,
+          regional, provincial, and district level governmental hospitals. There
+          are many more governmental hospitals in Nepal, but these are some
+          notable ones across different regions of the country.
         </div>
       </div>
     </MainLayouts>
