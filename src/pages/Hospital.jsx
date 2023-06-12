@@ -356,6 +356,24 @@ const Hospital = () => {
               </div>
             </div>
           </a>
+
+          <a href="https://kantichildrenhospital.gov.np/en" target="_blank">
+            <div className="hospital-wrap" data-aos="zoom-in-up">
+              <div className="hospital-logo">
+                <FaHospitalAlt />
+              </div>
+              <div className="hospital-content">
+                <h1>Kanti Children's Hospital </h1>
+                <MdLocationPin />
+                <a
+                  href="https://www.google.com/maps/place/Kanti+Children's+Hospital/@27.7346864,85.3258972,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb193c042a6e29:0x64f289c5109f3317!8m2!3d27.7346817!4d85.3284721!16s%2Fm%2F0495x__?entry=ttu"
+                  target="_blank"
+                >
+                  Kathmandu{" "}
+                </a>
+              </div>
+            </div>
+          </a>
         </div>
         <div className="hospital-note">
           <p className="note">NOTE:</p> This list includes a mix of central,
