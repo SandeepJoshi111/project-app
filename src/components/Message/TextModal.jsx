@@ -28,7 +28,7 @@ const TextModal = () => {
         const query = db
           .collection("messages")
           .where("receiver", "==", currentUser.email)
-          .orderBy(firebase.firestore.FieldPath.documentId(), "desc");
+          .orderBy(firebase.firestore.FieldPath.documentId(), "asc");
 
         setLoading(true);
 
