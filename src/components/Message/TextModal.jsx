@@ -8,7 +8,7 @@ import "firebase/firestore";
 import SendChat from "./SendChat";
 import Chat from "./Chat";
 
-const TextModal = ({ toggleTextModal }) => {
+const TextModal = () => {
   const currentUser = UseAuth();
 
   const [messages, setMessages] = useState([]);
