@@ -65,6 +65,7 @@ function Doctor() {
     const messagesRef = firestore.collection("messages");
     const newMessage = {
       sender: currentUser.displayName, // or any identifier for the doctor
+      senderEmail: currentUser.email,
       receiver: appointment.patientEmail, // or any identifier for the patient
       message: "Your appointment has been accepted.",
       timestamp: new Date(),
@@ -89,6 +90,7 @@ function Doctor() {
     const messagesRef = firestore.collection("messages");
     const newMessage = {
       sender: currentUser.displayName, // or any identifier for the doctor
+      senderEmail: currentUser.email,
       receiver: appointment.patientEmail, // or any identifier for the patient
       message: "Sorry! The schedule is pack.",
       timestamp: new Date(),
