@@ -268,21 +268,15 @@ function Header() {
               <img src={KHALTI} alt="Khalti-Image" data-aos="zoom-in-up" />
             </div>
             <div className="footer-content">
-              <div className="permalinks">
+              <div className="permalinks" data-aos="fade-up">
                 <li>
-                  <a href="#" data-aos="fade-up">
-                    Home
-                  </a>
+                  <a href="#">Home</a>
                 </li>
                 <li>
-                  <a href="#about" data-aos="fade-up">
-                    About
-                  </a>
+                  <a href="#about">About</a>
                 </li>
                 <li>
-                  <a href="#contact" data-aos="fade-up">
-                    Contact Us
-                  </a>
+                  <a href="#contact">Contact Us</a>
                 </li>
               </div>
 

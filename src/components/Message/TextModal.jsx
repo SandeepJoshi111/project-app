@@ -5,12 +5,14 @@ import "./textmodal.css";
 // ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
+import SendChat from "./SendChat";
+import Chat from "./Chat";
 
-const TextModal = () => {
+const TextModal = ({ toggleTextModal }) => {
   const currentUser = UseAuth();
 
   const [messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); // Add loading
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -85,6 +87,7 @@ const TextModal = () => {
           </>
         )}
       </div>
+      <Chat />
     </div>
   );
 };

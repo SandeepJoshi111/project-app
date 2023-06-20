@@ -188,8 +188,8 @@ function Doctor() {
       </div>
       <button className="bubble" onClick={toggleTextModal}>
         <BiMessageAltDots />
-        {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
       </button>
+      {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
       {modal && (
         <ModalLayout toggleModalLayout={toggleModalLayout} title={modalTitle} />
       )}

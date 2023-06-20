@@ -110,8 +110,8 @@ function Patient() {
       </div>
       <button className="bubble" onClick={toggleTextModal}>
         <BiMessageAltDots />
-        {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
       </button>
+      {textmodal && <TextModal toggleTextModal={toggleTextModal} />}
     </MainLayouts>
   );
 }
