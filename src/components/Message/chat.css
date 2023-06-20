@@ -53,7 +53,6 @@
 
 .send-input {
   width: 80%;
-
   border-radius: 10px;
 }
 .send-button {
@@ -83,6 +82,7 @@
   font-size: 1.3rem;
   color: var(--color-white);
 }
+
 
 @media screen and (max-width: 1024px) {
   .message-list h4 {
