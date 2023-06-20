@@ -19,7 +19,7 @@
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
-  overflow-wrap: break-word;
+  word-break: break-all;
   display: flex;
 }
 .sent {
@@ -82,7 +82,6 @@
   font-size: 1.3rem;
   color: var(--color-white);
 }
-
 
 @media screen and (max-width: 1024px) {
   .message-list h4 {
