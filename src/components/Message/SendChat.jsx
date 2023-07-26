@@ -11,7 +11,7 @@ function SendChat({ scroll }) {
 
     await firestore.collection("chats").add({
       text: msg,
-      uid,
+      senderUid: uid,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setMsg("");

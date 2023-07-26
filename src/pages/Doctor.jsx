@@ -3,7 +3,7 @@ import MainLayouts from "../layouts/MainLayouts";
 import "../components/Doctor/doctor.css";
 
 // ----------FIREBASE----------
-import { firestore } from "../firebase/Firebase";
+import { auth, firestore } from "../firebase/Firebase";
 import firebase from "firebase/compat/app";
 import UseAuth from "../hooks/UseAuth";
 
@@ -18,7 +18,7 @@ import ModalLayout from "../components/Modal/ModalLayout/ModalLayout";
 
 function Doctor() {
   const currentUser = UseAuth();
-
+  const uid = currentUser?.uid;
   const [appointments, setAppointments] = useState([]);
   const [textmodal, setTextModal] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
@@ -66,20 +66,14 @@ function Doctor() {
       sender: currentUser.displayName, // or any identifier for the doctor
       senderEmail: currentUser.email,
       receiver: appointment.patientEmail, // or any identifier for the patient
+      receiverUid: appointment.patientUid,
+      sendUid: uid, // or any identifier for the
       message: "Your appointment has been accepted.",
       timestamp: new Date(),
     };
     setModalTitle("Appointment Accepted");
     toggleModalLayout();
-
-    const messageDocRef = await messagesRef.add(newMessage); // Save the reference to the newly added message
-    // Add the chat to the "chats" subcollection of the message document
-    const chatsRef = messageDocRef.collection("chats"); // Get the reference to the "chats" subcollection
-    await chatsRef.add({
-      text: "Chat message text goes here.",
-      uid: currentUser.uid,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    await messagesRef.add(newMessage);
 
     // Update the state to remove the deleted appointment
     setAppointments((prevAppointments) =>
@@ -98,7 +92,9 @@ function Doctor() {
     const newMessage = {
       sender: currentUser.displayName, // or any identifier for the doctor
       senderEmail: currentUser.email,
-      receiver: appointment.patientEmail, // or any identifier for the patient
+      receiver: appointment.patientEmail,
+      receiverUid: appointment.patientUid,
+      sendUid: uid, // or any identifier for the patient
       message: "Sorry! The schedule is pack.",
       timestamp: new Date(),
     };

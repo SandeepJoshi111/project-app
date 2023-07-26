@@ -5,6 +5,7 @@ import "./modal.css";
 // ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import UseAuth from "../../hooks/UseAuth";
+import { auth } from "../../firebase/Firebase";
 import "firebase/firestore";
 
 // ----------ICONS----------
@@ -12,6 +13,7 @@ import { RxCross1 } from "react-icons/rx";
 
 const Modal = ({ toggleModal, doctorEmail }) => {
   const currentUser = UseAuth();
+  const { uid } = auth.currentUser;
   const [modal, setModal] = useState(false);
   const [formData, setFormData] = useState({
     //Create a form with the following user credential
@@ -22,6 +24,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
     number: "",
     age: "",
     message: "",
+    patientUid: uid,
   });
 
   const handleSubmit = async (event) => {
@@ -47,6 +50,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
         number: "",
         age: "",
         message: "",
+        patientUid: "",
       });
 
       toggleModalLayout();

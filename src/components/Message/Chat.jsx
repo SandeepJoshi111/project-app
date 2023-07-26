@@ -56,13 +56,13 @@ function Chat() {
   return (
     <div>
       <div className="msgs">
-        {chats.map(({ id, text, uid }) => (
+        {chats.map(({ id, text, senderUid }) => (
           <div>
             {filteredMessages.length > 0 && (
               <div
                 key={id}
                 className={`msg ${
-                  uid === currentUser?.uid ? "sent" : "received"
+                  senderUid === currentUser?.uid ? "sent" : "received"
                 }`}
               >
                 <p className="text-msg">{text}</p>
