@@ -4,8 +4,7 @@ import "../components/Doctor/doctor.css";
 
 // ----------FIREBASE----------
 import { firestore } from "../firebase/Firebase";
-import "firebase/firestore";
-import "firebase/compat/auth";
+import firebase from "firebase/compat/app";
 import UseAuth from "../hooks/UseAuth";
 
 import { BiMessageAltDots } from "react-icons/bi";
@@ -72,7 +71,15 @@ function Doctor() {
     };
     setModalTitle("Appointment Accepted");
     toggleModalLayout();
-    await messagesRef.add(newMessage);
+
+    const messageDocRef = await messagesRef.add(newMessage); // Save the reference to the newly added message
+    // Add the chat to the "chats" subcollection of the message document
+    const chatsRef = messageDocRef.collection("chats"); // Get the reference to the "chats" subcollection
+    await chatsRef.add({
+      text: "Chat message text goes here.",
+      uid: currentUser.uid,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
 
     // Update the state to remove the deleted appointment
     setAppointments((prevAppointments) =>
