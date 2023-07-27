@@ -93,8 +93,8 @@ function Doctor() {
       sender: currentUser.displayName, // or any identifier for the doctor
       senderEmail: currentUser.email,
       receiver: appointment.patientEmail,
-      receiverUid: appointment.patientUid,
-      sendUid: uid, // or any identifier for the patient
+      // receiverUid: appointment.patientUid,
+      // sendUid: uid, // or any identifier for the patient
       message: "Sorry! The schedule is pack.",
       timestamp: new Date(),
     };
