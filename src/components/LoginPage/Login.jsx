@@ -9,6 +9,7 @@ import firebase from "firebase/compat/app";
 import { auth, provider } from "../../firebase/Firebase";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 // ----------ICONS----------
 import { RxCross1 } from "react-icons/rx";
@@ -48,15 +49,25 @@ const Login = ({ onLogin }) => {
   // Signing in with Email and Password
   const handleLogin = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-      console.log("user", user);
-      // Toggleing a modal to display user has signed in
-      toggleModalLayout();
+      // Check if the email exists in the "doctor" collection
+      const doctorsRef = collection(firebase.firestore(), "doctor");
+      const doctorQuery = query(doctorsRef, where("email", "==", email));
+      const doctorSnapshot = await getDocs(doctorQuery);
+
+      if (!doctorSnapshot.empty) {
+        // If the email exists in the "doctor" collection, prevent login and show an error message
+        setError("Go to Doctor Login.");
+      } else {
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        const user = userCredential.user;
+        console.log("user", user);
+        // Toggleing a modal to display user has signed in
+        toggleModalLayout();
+      }
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
@@ -89,7 +100,6 @@ const Login = ({ onLogin }) => {
           </Link>
         </div>
         <div className="backlogin">
-    
           <Link to="/">
             <RxCross1 />
           </Link>

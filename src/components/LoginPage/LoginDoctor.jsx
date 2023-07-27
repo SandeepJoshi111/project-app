@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import "./login.css";
 
-
 // ----------FIREBASE----------
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
@@ -18,6 +17,7 @@ import { FaUserMd } from "react-icons/fa";
 
 // ----------ANIMATION----------
 import { motion } from "framer-motion";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const LoginDoctor = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -45,14 +45,24 @@ const LoginDoctor = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-      console.log("user", user);
-      toggleModalLayout();
+      // Check if the email exists in the "user" collection
+      const usersRef = collection(firebase.firestore(), "users");
+      const userQuery = query(usersRef, where("email", "==", email));
+      const userSnapshot = await getDocs(userQuery);
+
+      if (!userSnapshot.empty) {
+        // If the email exists in the "user" collection, prevent login and show an error message
+        setError("Go to User Login.");
+      } else {
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        const user = userCredential.user;
+        console.log("user", user);
+        toggleModalLayout();
+      }
     } catch (error) {
       const errorMessage = error.message;
       setError(errorMessage);
@@ -84,7 +94,6 @@ const LoginDoctor = ({ onLogin }) => {
         </div>
 
         <div className="backlogin">
-        
           <Link to="/">
             <RxCross1 />
           </Link>
