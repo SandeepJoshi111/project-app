@@ -156,7 +156,7 @@ const Modal = ({ toggleModal, doctorEmail }) => {
             <div className="message">
               <label>
                 <textarea
-                  placeholder="Message"
+                  placeholder="Physical or Online appointment"
                   name="message"
                   value={formData.message}
                   onChange={(e) =>

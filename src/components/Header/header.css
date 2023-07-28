@@ -298,29 +298,29 @@ textarea {
 /* Footer */
 footer {
   height: 55vh;
-  background: #464c6a;
+  background: var(--color-white);
   padding: 3rem 0;
   text-align: center;
   font-size: 0.9rem;
   position: relative;
   border-radius: 3rem 3rem 0 0;
-  box-shadow: -5px -15.5px 10px -8px var(--color-accent);
+  box-shadow: -5px -15.5px 10px -8px var(--color-secondary);
 }
 .footer-quote {
   font-size: 2.5rem;
   font-weight: 600;
-  color: var(--color-secondary);
+  color: var(--color-accent);
 }
 .seperator-footer {
   width: 100%;
-  background: var(--color-secondary);
+  background: var(--color-accent);
   height: 1px;
   margin: 2rem 0;
 }
 
 .footer-payment h2 {
   font-size: 1.5rem;
-  color: var(--color-secondary);
+  color: var(--color-accent);
   margin: 1rem;
 }
 .footer-payment img {
@@ -345,12 +345,12 @@ footer {
   font-size: 1.2rem;
 }
 .permalinks a {
-  color: var(--color-secondary);
+  color: var(--color-accent);
   font-weight: 600;
   transition: var(--transition);
 }
 .permalinks a:hover {
-  color: var(--color-black);
+  color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -362,14 +362,14 @@ footer {
   justify-content: center;
 }
 .footer-social-media a {
-  color: var(--color-secondary);
+  color: var(--color-accent);
   transition: var(--transition);
 }
 .footer-social-media a:hover {
   color: var(--color-black);
 }
 .footer-copyright {
-  color: var(--color-black);
+  color: var(--color-accent);
   font-size: 1.1rem;
   position: absolute;
   bottom: 6rem;
